@@ -1,6 +1,7 @@
 $origami_app $mol_book2_catalog
 	menu_title \Подковка
 	param \page
+	Spread_default <= Welcome $origami_app_welcome
 	plugins /
 		<= Theme $mol_theme_auto
 	menu_tools /
@@ -27,3 +28,8 @@ $origami_app $mol_book2_catalog
 			title \Вау-фичи
 			body /
 				<= Wow_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
+
+$origami_app_welcome $mol_page
+	title \Наше приложение
+	body /
+		<= Welcome_text $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
