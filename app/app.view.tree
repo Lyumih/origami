@@ -1,4 +1,5 @@
 $origami_app $mol_page
 	title \Подкова
+	- Head null
 	body /
 		<= Luck $mol_icon_horseshoe
