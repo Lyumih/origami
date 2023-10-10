@@ -9515,6 +9515,9 @@ var $;
         param() {
             return "page";
         }
+        Spread_default() {
+            return this.Welcome();
+        }
         plugins() {
             return [
                 this.Theme()
@@ -9538,6 +9541,10 @@ var $;
                 bank: this.Bank(),
                 wow: this.Wow()
             };
+        }
+        Welcome() {
+            const obj = new this.$.$origami_app_welcome();
+            return obj;
         }
         Theme() {
             const obj = new this.$.$mol_theme_auto();
@@ -9624,6 +9631,9 @@ var $;
     }
     __decorate([
         $mol_mem
+    ], $origami_app.prototype, "Welcome", null);
+    __decorate([
+        $mol_mem
     ], $origami_app.prototype, "Theme", null);
     __decorate([
         $mol_mem
@@ -9665,6 +9675,25 @@ var $;
         $mol_mem
     ], $origami_app.prototype, "Wow", null);
     $.$origami_app = $origami_app;
+    class $origami_app_welcome extends $mol_page {
+        title() {
+            return "Наше приложение";
+        }
+        body() {
+            return [
+                this.Welcome_text()
+            ];
+        }
+        Welcome_text() {
+            const obj = new this.$.$mol_text();
+            obj.text = () => "Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.";
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_welcome.prototype, "Welcome_text", null);
+    $.$origami_app_welcome = $origami_app_welcome;
 })($ || ($ = {}));
 //origami/app/-view.tree/app.view.tree.ts
 ;

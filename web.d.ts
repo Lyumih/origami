@@ -2828,10 +2828,12 @@ declare namespace $ {
     class $origami_app extends $mol_book2_catalog {
         menu_title(): string;
         param(): string;
+        Spread_default(): $origami_app_welcome;
         plugins(): readonly any[];
         menu_tools(): readonly any[];
         menu_foot(): readonly any[];
         spreads(): Record<string, any>;
+        Welcome(): $origami_app_welcome;
         Theme(): $$.$mol_theme_auto;
         logout(next?: any): any;
         Logout_icon(): $mol_icon_logout;
@@ -2846,6 +2848,11 @@ declare namespace $ {
         Bank(): $mol_page;
         Wow_text(): $$.$mol_text;
         Wow(): $mol_page;
+    }
+    class $origami_app_welcome extends $mol_page {
+        title(): string;
+        body(): readonly any[];
+        Welcome_text(): $$.$mol_text;
     }
 }
 
