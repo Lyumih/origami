@@ -1,0 +1,4 @@
+$origami_app $mol_page
+	title \Подкова
+	body /
+		<= Luck $mol_icon_horseshoe
