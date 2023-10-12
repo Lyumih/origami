@@ -768,9 +768,9 @@ $origami_app $mol_book2_catalog
 			body /
 				<= Wow_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
 		todo <= Todo $mol_page
-			title \Todo
+			title \Api
 			body /
-				<= Todo_url $mol_text text \http://31.129.109.90/todo/f9850879-d439-434d-88c2-a4797d90b110
+				<= Todo_url $mol_text text \https://origami-team.site/docs
 				<= Todo_test $mol_dump_value
 					expanded true
 					value <= todo_test null

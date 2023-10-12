@@ -10755,7 +10755,7 @@ var $;
         }
         Todo_url() {
             const obj = new this.$.$mol_text();
-            obj.text = () => "http://31.129.109.90/todo/f9850879-d439-434d-88c2-a4797d90b110";
+            obj.text = () => "https://origami-team.site/docs";
             return obj;
         }
         todo_test() {
@@ -10769,7 +10769,7 @@ var $;
         }
         Todo() {
             const obj = new this.$.$mol_page();
-            obj.title = () => "Todo";
+            obj.title = () => "Api";
             obj.body = () => [
                 this.Todo_url(),
                 this.Todo_test()
