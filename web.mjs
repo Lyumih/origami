@@ -10249,7 +10249,7 @@ var $;
     (function ($$) {
         class $origami_app extends $.$origami_app {
             todo_test() {
-                let result = this.$.$mol_fetch.json('http://31.129.109.90/todo/f9850879-d439-434d-88c2-a4797d90b110');
+                let result = this.$.$mol_fetch.json('https://origami-team.site/todo/f9850879-d439-434d-88c2-a4797d90b110');
                 console.log(result);
                 return result;
             }
