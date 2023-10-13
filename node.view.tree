@@ -674,6 +674,29 @@ $mol_text_span $mol_paragraph
 		^
 		mol_text_type <= type \
 
+$mol_map_yandex_mark $mol_object
+	pos $mol_vector_2d /
+		0
+		0
+	box $mol_vector_2d /
+		<= box_lat $mol_vector_range /
+			0
+			0
+		<= box_lon $mol_vector_range /
+			0
+			0
+	hint \
+	title <= address \
+	content \
+	object null
+
+$mol_map_yandex $mol_view
+	zoom? 2
+	center? /
+		0
+		0
+	objects /$mol_map_yandex_mark
+
 $mol_dump_list $mol_view
 	values /
 	sub /
@@ -755,6 +778,12 @@ $origami_app $mol_book2_catalog
 			title \На карте
 			body /
 				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
+				<= Map_show $mol_map_yandex
+					objects /
+						<= Place $mol_map_yandex_mark
+							title <= place_title \
+							address <= place_addres \Saint-Petersburg
+							content <= place_content \It is Russia's second-largest city after Moscow
 		route <= Route $mol_page
 			title \Маршрут
 			body /
