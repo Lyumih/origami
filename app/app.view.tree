@@ -17,17 +17,11 @@ $origami_app $mol_book2_catalog
 			body /
 				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
 				<= Map_show $mol_map_yandex
-					center /
-						60
-						30
-					zoom 10
 					objects /
 						<= Place $mol_map_yandex_mark
-							pos <= place_pos /
-								59.9
-								30.3
-							title <= place_title \Санкт Петербург
-							content <= place_content \Белые ночи тут
+							title <= place_title \
+							address <= place_addres \Saint-Petersburg
+							content <= place_content \It is Russia's second-largest city after Moscow
 		route <= Route $mol_page
 			title \Маршрут
 			body /
