@@ -73,6 +73,7 @@
 \/origami/app
 	include \/mol/offline/install
 	deploy \/origami/app/manifest.json
+	deploy \/origami/app/robots.txt
 	deploy \/origami/app/favicon.ico
 	deploy \/origami/app/assets/img/logo.svg
 	deploy \/origami/app/assets/img/logo_white.svg
