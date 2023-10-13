@@ -1,0 +1,14 @@
+$origami_app_bank $mol_list
+	rows /
+		<= Bank_text $mol_text text \Поиск оптимального отделения с учетом загруженности отделения и задач клиента на основе разработанного алгоритма
+		<= Bank_search $mol_search
+		<= Bank_list $mol_list
+			rows <= bank_list /
+				<= Bank*0 $mol_view sub /
+					<= Bank_card* $mol_labeler
+						title <= bank_name* \
+						content /
+							<= Bank_address* $mol_text text <= bank_address* \
+							<= Bank_type* $mol_text text <= bank_type* \
+							<= Bank_distance* $mol_text text <= bank_distance* \
+							<= Bank_workload* $mol_text text <= bank_workload* \

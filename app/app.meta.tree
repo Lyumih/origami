@@ -1,4 +1,4 @@
-include \/mol/offline/install
+- include \/mol/offline/install
 
 deploy \/origami/app/manifest.json
 

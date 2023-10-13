@@ -14,9 +14,7 @@ $origami_app $mol_page
 		<= Route $mol_view
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
-		<= Bank $mol_view
-			sub /
-				<= Bank_text $mol_text text \Поиск оптимального отделения с учетом загруженности отделения и задач клиента на основе разработанного алгоритма
+		<= Bank $origami_app_bank
 		<= Wow $mol_view
 			sub /
 				<= Wow_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
