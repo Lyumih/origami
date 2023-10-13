@@ -12,23 +12,6 @@
 		<= GitHub $mol_link_source uri \https://github.com/Lyumih/origami
 		<= Lights $mol_lights_toggle
 
-$origami_app_welcome $mol_page
-	title \Наше приложение
-	body /
-		<= Welcome_text $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
-
-- $origami_app $mol_view
-	sub /
-		<= Map $mol_page
-			body /
-				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
-				<= Map_show $origami_map
-					objects /
-						<= Place $origami_map_mark
-							title <= place_title \
-							address <= place_addres \СПБ
-							content <= place_content \Вам нужно съездить в СПБ
-
 $origami_app $mol_page
 	title \AnonVTB
 	body /

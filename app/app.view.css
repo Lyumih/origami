@@ -6,7 +6,6 @@
 	font-size: 20rem;
 } */
 [origami_app_foot] > * {
-	background: 'red';
 	font-size: 1.5rem;
 	flex: 1;
 	justify-content: center;
