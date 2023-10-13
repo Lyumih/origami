@@ -72,4 +72,5 @@
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
 \/origami/app
 	include \/mol/offline/install
-	deploy \/origami/app/logo.png
+	deploy \/origami/app/logo.svg
+	deploy \/origami/app/logo_vtb.png
