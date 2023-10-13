@@ -3053,6 +3053,7 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $mol_map_yandex extends $.$mol_map_yandex {
+        static api_key(): string;
         static api(): any;
         wait_ready(ymaps: any): Promise<unknown>;
         api(next?: any, force?: $mol_mem_force): any;
@@ -3073,7 +3074,6 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $origami_map extends $.$origami_map {
-        static api(): any;
     }
 }
 
@@ -3237,6 +3237,7 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $origami_app extends $.$origami_app {
+        autorun(): void;
         todo_test(): unknown;
     }
 }

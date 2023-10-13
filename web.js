@@ -10015,8 +10015,11 @@ var $;
     var $$;
     (function ($$) {
         class $mol_map_yandex extends $.$mol_map_yandex {
+            static api_key() {
+                return "";
+            }
             static api() {
-                return $mol_import.script(`https://api-maps.yandex.ru/2.1/?lang=${$mol_locale.lang()}`).ymaps;
+                return $mol_import.script(`https://api-maps.yandex.ru/2.1/?apikey=${this.api_key()}&lang=${$mol_locale.lang()}`).ymaps;
             }
             wait_ready(ymaps) {
                 return new Promise(done => ymaps.ready(done));
@@ -10106,13 +10109,6 @@ var $;
     var $$;
     (function ($$) {
         class $origami_map extends $.$origami_map {
-            static api() {
-                console.log(123);
-                const KEY = '3b2caac0-490e-4fdc-92de-d2a09e400365';
-                let a = $mol_map_yandex.api();
-                console.log(a);
-                return $mol_import.script(`https://api-maps.yandex.ru/2.1/?lang=${$mol_locale.lang()}`).ymaps;
-            }
         }
         $$.$origami_map = $origami_map;
     })($$ = $.$$ || ($.$$ = {}));
@@ -10957,6 +10953,10 @@ var $;
     var $$;
     (function ($$) {
         class $origami_app extends $.$origami_app {
+            autorun() {
+                $mol_map_yandex.api_key = () => "3b2caac0-490e-4fdc-92de-d2a09e400365";
+                super.autorun();
+            }
             todo_test() {
                 let result = this.$.$mol_fetch.json('https://origami-team.site/todo/f9850879-d439-434d-88c2-a4797d90b110');
                 console.log(result);
