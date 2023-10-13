@@ -16,7 +16,7 @@ namespace $.$$ {
 				wow: this.Wow(),
 				todo: this.Todo(),
 			}
-			return [configs[page] ?? this.Map()]
+			return [configs[page] ?? this.Welcome()]
 		}
 
 		@$mol_mem
