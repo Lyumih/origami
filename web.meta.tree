@@ -71,7 +71,7 @@
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
 \/origami/app
-	include \/mol/offline/install
+	- include \/mol/offline/install
 	deploy \/origami/app/manifest.json
 	deploy \/origami/app/robots.txt
 	deploy \/origami/app/favicon.ico
