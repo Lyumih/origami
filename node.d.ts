@@ -2907,11 +2907,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $origami_app_welcome extends $mol_page {
-        title(): string;
-        body(): readonly any[];
-        Welcome_text(): $$.$mol_text;
-    }
     class $origami_app extends $mol_page {
         title(): string;
         body(): readonly any[];
