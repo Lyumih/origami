@@ -10189,7 +10189,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", "/* [origami_app_luck] {\n\tflex: 1;\n\tjustify-content: center;\n\talign-items: center;\n\talign-self: center;\n\tfont-size: 20rem;\n} */\n");
+    $mol_style_attach("origami/app/app.view.css", "/* [origami_app_luck] {\n\tflex: 1;\n\tjustify-content: center;\n\talign-items: center;\n\talign-self: center;\n\tfont-size: 20rem;\n} */\n[origami_app_foot] > * {\n\tbackground: 'red';\n\tfont-size: 1.5rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
 ;
