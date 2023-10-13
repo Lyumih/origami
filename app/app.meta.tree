@@ -1,3 +1,5 @@
 include \/mol/offline/install
+deploy \/origami/app/favicon.ico
 deploy \/origami/app/logo.svg
+deploy \/origami/app/logo_white.svg
 deploy \/origami/app/logo_vtb.png
