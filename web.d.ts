@@ -3071,6 +3071,15 @@ declare namespace $ {
     }
 }
 
+declare namespace $.$$ {
+    class $origami_map extends $.$origami_map {
+        static api(): any;
+    }
+}
+
+declare namespace $ {
+}
+
 declare namespace $ {
     class $origami_map_mark extends $mol_map_yandex_mark {
     }
@@ -3206,7 +3215,7 @@ declare namespace $ {
         place_addres(): string;
         place_content(): string;
         Place(): $origami_map_mark;
-        Map_show(): $origami_map;
+        Map_show(): $$.$origami_map;
         Map(): $mol_page;
         Route_text(): $$.$mol_text;
         Route(): $mol_page;

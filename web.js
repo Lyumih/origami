@@ -10103,6 +10103,32 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    var $$;
+    (function ($$) {
+        class $origami_map extends $.$origami_map {
+            static api() {
+                console.log(123);
+                const KEY = '3b2caac0-490e-4fdc-92de-d2a09e400365';
+                let a = $mol_map_yandex.api();
+                console.log(a);
+                return $mol_import.script(`https://api-maps.yandex.ru/2.1/?lang=${$mol_locale.lang()}`).ymaps;
+            }
+        }
+        $$.$origami_map = $origami_map;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//origami/map/map.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/map/map.view.css", "[origami_map] {\n\tfilter: none;\n}\n");
+})($ || ($ = {}));
+//origami/map/-css/map.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $origami_map_mark extends $mol_map_yandex_mark {
     }
     $.$origami_map_mark = $origami_map_mark;
@@ -10751,10 +10777,10 @@ var $;
             return "";
         }
         place_addres() {
-            return "Saint-Petersburg";
+            return "СПБ";
         }
         place_content() {
-            return "It is Russia's second-largest city after Moscow";
+            return "Вам нужно съездить в СПБ";
         }
         Place() {
             const obj = new this.$.$origami_map_mark();
