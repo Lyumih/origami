@@ -10179,7 +10179,7 @@ var $;
                     wow: this.Wow(),
                     todo: this.Todo(),
                 };
-                return [configs[page] ?? this.Map()];
+                return [configs[page] ?? this.Welcome()];
             }
             todo_test() {
                 let result = this.$.$mol_fetch.json('https://origami-team.site/todo/f9850879-d439-434d-88c2-a4797d90b110');
