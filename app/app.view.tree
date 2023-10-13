@@ -20,8 +20,8 @@ $origami_app $mol_book2_catalog
 					objects /
 						<= Place $origami_map_mark
 							title <= place_title \
-							address <= place_addres \Saint-Petersburg
-							content <= place_content \It is Russia's second-largest city after Moscow
+							address <= place_addres \СПБ
+							content <= place_content \Вам нужно съездить в СПБ
 		route <= Route $mol_page
 			title \Маршрут
 			body /
