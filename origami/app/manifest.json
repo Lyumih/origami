@@ -3,7 +3,7 @@
 	"name": "More Tech 5.0",
 	"icons": [
 		{
-			"src": "/origami/app/assets/img/logo.svg",
+			"src": "./origami/app/assets/img/logo.svg",
 			"type": "image/svg+xml",
 			"sizes": "512x512"
 		}
