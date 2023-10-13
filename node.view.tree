@@ -697,6 +697,10 @@ $mol_map_yandex $mol_view
 		0
 	objects /$mol_map_yandex_mark
 
+$origami_map $mol_map_yandex
+
+$origami_map_mark $mol_map_yandex_mark
+
 $mol_dump_list $mol_view
 	values /
 	sub /
@@ -778,9 +782,9 @@ $origami_app $mol_book2_catalog
 			title \На карте
 			body /
 				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
-				<= Map_show $mol_map_yandex
+				<= Map_show $origami_map
 					objects /
-						<= Place $mol_map_yandex_mark
+						<= Place $origami_map_mark
 							title <= place_title \
 							address <= place_addres \Saint-Petersburg
 							content <= place_content \It is Russia's second-largest city after Moscow

@@ -10718,6 +10718,24 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $origami_map extends $mol_map_yandex {
+    }
+    $.$origami_map = $origami_map;
+})($ || ($ = {}));
+//origami/map/-view.tree/map.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_map_mark extends $mol_map_yandex_mark {
+    }
+    $.$origami_map_mark = $origami_map_mark;
+})($ || ($ = {}));
+//origami/map/mark/-view.tree/mark.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_dump_list extends $mol_view {
         values() {
             return [];
@@ -11351,14 +11369,14 @@ var $;
             return "It is Russia's second-largest city after Moscow";
         }
         Place() {
-            const obj = new this.$.$mol_map_yandex_mark();
+            const obj = new this.$.$origami_map_mark();
             obj.title = () => this.place_title();
             obj.address = () => this.place_addres();
             obj.content = () => this.place_content();
             return obj;
         }
         Map_show() {
-            const obj = new this.$.$mol_map_yandex();
+            const obj = new this.$.$origami_map();
             obj.objects = () => [
                 this.Place()
             ];

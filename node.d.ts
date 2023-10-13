@@ -3197,6 +3197,16 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $origami_map extends $mol_map_yandex {
+    }
+}
+
+declare namespace $ {
+    class $origami_map_mark extends $mol_map_yandex_mark {
+    }
+}
+
+declare namespace $ {
     class $mol_dump_list extends $mol_view {
         values(): readonly any[];
         sub(): readonly any[];
@@ -3325,8 +3335,8 @@ declare namespace $ {
         place_title(): string;
         place_addres(): string;
         place_content(): string;
-        Place(): $$.$mol_map_yandex_mark;
-        Map_show(): $$.$mol_map_yandex;
+        Place(): $origami_map_mark;
+        Map_show(): $origami_map;
         Map(): $mol_page;
         Route_text(): $$.$mol_text;
         Route(): $mol_page;
