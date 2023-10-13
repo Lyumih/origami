@@ -70,3 +70,6 @@
 	pack home git \https://github.com/hyoo-ru/hyoo.ru.git
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
+\/origami/app
+	include \/mol/offline/install
+	deploy \/logo.svg
