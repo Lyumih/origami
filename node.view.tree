@@ -32,6 +32,9 @@ $mol_page $mol_view
 			dom_name \footer
 			sub <= foot /$mol_view
 
+$mol_theme_auto $mol_plugin
+	attr * mol_theme <= theme \
+
 $mol_list $mol_view
 	render_visible_only true
 	render_over 0
@@ -627,6 +630,8 @@ $mol_text_list_item $mol_paragraph
 
 $origami_app $mol_page
 	title \AnonVTB
+	plugins /
+		<= Theme $mol_theme_auto theme \$mol_theme_light
 	body /
 		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
 		<= Map $mol_list
