@@ -11,6 +11,10 @@ $origami_app $mol_page
 			rows /
 				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
 				<= Map_show_2 $origami_map
+					zoom 10
+					center /
+						55.754742
+						37.621407
 					objects /
 						<= Place_3 $origami_map_mark
 							title <= place_title \
