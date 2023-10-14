@@ -9640,7 +9640,7 @@ var $;
         }
         Return_amount_text() {
             const obj = new this.$.$origami_ui_text();
-            obj.text = () => "Возврат средств";
+            obj.text = () => "**Возврат средств**";
             return obj;
         }
         Return_amount_date() {
