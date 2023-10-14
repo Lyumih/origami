@@ -3,7 +3,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		banks_data() {
-			const result = this.$.$origami_app_bank.fetch_banks_data(270)
+			const result = this.$.$origami_app_bank.fetch_banks_data(10)
 			console.log(result)
 			return result
 		}
@@ -13,7 +13,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		center( next?: readonly [number, number] | undefined, force?: $mol_mem_force | undefined ): $mol_vector_2d<number> | readonly [number, number] {
+		center( next?: readonly [number, number] | undefined): $mol_vector_2d<number> | readonly [number, number] {
 			console.log('center', next)
 			const bank_id = this.$.$mol_state_arg.value('bank' )
 			console.log(bank_id)
@@ -31,9 +31,9 @@ namespace $.$$ {
 			return this.banks_data().map( bank => this.Place(bank.id))
 		}
 
-		mark_pos( id: any ): readonly any[] {
-			const bank = this.bank_id( id )
-			return [ bank?.latitude || 0, bank?.longitude || 0 ]
+		mark_pos( id?: string ){
+			const bank = this.bank_id( id || '' )
+			return new $mol_vector_2d( bank?.latitude || 0, bank?.longitude || 0 ) as readonly any[]
 		}
 	}
 }

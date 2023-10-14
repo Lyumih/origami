@@ -7,7 +7,7 @@ $origami_app_world $mol_list
 				0
 			objects <= banks_mark_list /
 				<= Place*0 $mol_map_yandex_mark
-					pos <= mark_pos* /
+					pos <= mark_pos*? /
 						0
 						0
 					title <= place_title* \
