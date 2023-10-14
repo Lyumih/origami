@@ -11,7 +11,7 @@ namespace $.$$ {
 					type?: string,
 					distance?: number,
 					openHoursIndividual?: [],
-					openHours?: [ { day: string, hours: null | string } ],
+					openHours?: { day: string, hours: null | string }[],
 				}[]
 			console.log(result)
 			return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
@@ -50,9 +50,8 @@ namespace $.$$ {
 		}
 
 		bank_time( id: any ): string {
-			const time = this.bank_id( id )?.openHours?.[ 0 ]?.hours
-			// console.log(time)
-			return time ?? 'Выходной'
+			const day = new Date().getDay() - 1
+			return this.bank_id( id )?.openHours?.[day]?.hours ?? 'Выходной'
 		}
 
 		bank_workload( id: any ) {
