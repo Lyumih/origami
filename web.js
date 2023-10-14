@@ -8874,7 +8874,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: 20px;\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n");
+    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: 20px;\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n\n[origami_ui_card_top]+[origami_ui_card_bottom] {\n\tmargin-top: -0.5rem;\n}\n");
 })($ || ($ = {}));
 //origami/ui/card/-css/card.view.css.ts
 ;
@@ -8892,12 +8892,12 @@ var $;
         }
         LastOperations() {
             const obj = new this.$.$mol_text();
-            obj.text = () => "Последние операции";
+            obj.text = () => "**Последние операции**";
             return obj;
         }
         Appeals() {
             const obj = new this.$.$mol_text();
-            obj.text = () => "Обращения";
+            obj.text = () => "**Обращения**";
             return obj;
         }
         Return_amount_text() {
