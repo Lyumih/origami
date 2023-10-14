@@ -1,7 +1,7 @@
 [origami_app_bank_bank] {
 	flex-direction: column;
 	border-radius: 20px;
-	/* background-color: white; */
+	background-color: white;
 }
 
 [origami_app_bank_bank_list] {
