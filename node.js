@@ -9308,421 +9308,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_check_list extends $mol_view {
-        dictionary() {
-            return {};
-        }
-        Option(id) {
-            const obj = new this.$.$mol_check();
-            obj.checked = (next) => this.option_checked(id, next);
-            obj.label = () => this.option_label(id);
-            obj.enabled = () => this.option_enabled(id);
-            obj.hint = () => this.option_hint(id);
-            obj.minimal_height = () => 24;
-            return obj;
-        }
-        options() {
-            return {};
-        }
-        keys() {
-            return [];
-        }
-        sub() {
-            return this.items();
-        }
-        option_checked(id, next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        option_title(id) {
-            return "";
-        }
-        option_label(id) {
-            return [
-                this.option_title(id)
-            ];
-        }
-        enabled() {
-            return true;
-        }
-        option_enabled(id) {
-            return this.enabled();
-        }
-        option_hint(id) {
-            return "";
-        }
-        items() {
-            return [];
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "Option", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "option_checked", null);
-    $.$mol_check_list = $mol_check_list;
-})($ || ($ = {}));
-//mol/check/list/-view.tree/list.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_check_list extends $.$mol_check_list {
-            options() {
-                return {};
-            }
-            dictionary(next) {
-                return next ?? {};
-            }
-            option_checked(id, next) {
-                const prev = this.dictionary();
-                if (next === undefined)
-                    return prev[id] ?? null;
-                const next_rec = { ...prev, [id]: next };
-                if (next === null)
-                    delete next_rec[id];
-                return this.dictionary(next_rec)[id] ?? null;
-            }
-            keys() {
-                return Object.keys(this.options());
-            }
-            items() {
-                return this.keys().map(key => this.Option(key));
-            }
-            option_title(key) {
-                return this.options()[key] || key;
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mol_check_list.prototype, "keys", null);
-        __decorate([
-            $mol_mem
-        ], $mol_check_list.prototype, "items", null);
-        $$.$mol_check_list = $mol_check_list;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/check/list/list.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/check/list/list.view.css", "[mol_check_list] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex: 1 1 auto;\n\tborder-radius: var(--mol_gap_round);\n\tgap: 1px;\n}\n\n[mol_check_list_option] {\n\tflex: 0 1 auto;\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"]) {\n\ttext-shadow: 0 0;\n\tcolor: var(--mol_theme_current);\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"][disabled]) {\n\tcolor: var(--mol_theme_text);\n}\n");
-})($ || ($ = {}));
-//mol/check/list/-css/list.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_switch extends $mol_check_list {
-        value(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_switch.prototype, "value", null);
-    $.$mol_switch = $mol_switch;
-})($ || ($ = {}));
-//mol/switch/-view.tree/switch.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_switch extends $.$mol_switch {
-            value(next) {
-                return $mol_state_session.value(`${this}.value()`, next) ?? '';
-            }
-            option_checked(key, next) {
-                if (next === undefined)
-                    return this.value() == key;
-                this.value(next ? key : '');
-                return next;
-            }
-        }
-        $$.$mol_switch = $mol_switch;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/switch/switch.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map extends $mol_icon {
-        path() {
-            return "M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20.34,3L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5C3,20.78 3.22,21 3.5,21C3.55,21 3.61,21 3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19 21,18.85 21,18.62V3.5C21,3.22 20.78,3 20.5,3Z";
-        }
-    }
-    $.$mol_icon_map = $mol_icon_map;
-})($ || ($ = {}));
-//mol/icon/map/-view.tree/map.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map_marker extends $mol_icon {
-        path() {
-            return "M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z";
-        }
-    }
-    $.$mol_icon_map_marker = $mol_icon_map_marker;
-})($ || ($ = {}));
-//mol/icon/map/marker/-view.tree/marker.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map_marker_distance extends $mol_icon {
-        path() {
-            return "M6.5,8.11C5.61,8.11 4.89,7.39 4.89,6.5C4.89,5.61 5.61,4.89 6.5,4.89C7.39,4.89 8.11,5.61 8.11,6.5V6.5C8.11,7.39 7.39,8.11 6.5,8.11M6.5,2C4,2 2,4 2,6.5C2,9.87 6.5,14.86 6.5,14.86C6.5,14.86 11,9.87 11,6.5C11,4 9,2 6.5,2M17.5,8.11C16.61,8.11 15.89,7.39 15.89,6.5C15.89,5.61 16.61,4.89 17.5,4.89C18.39,4.89 19.11,5.61 19.11,6.5C19.11,7.39 18.39,8.11 17.5,8.11M17.5,2C15,2 13,4 13,6.5C13,9.87 17.5,14.86 17.5,14.86C17.5,14.86 22,9.87 22,6.5C22,4 20,2 17.5,2M17.5,16C16.23,16 15.1,16.8 14.68,18H9.32C8.77,16.44 7.05,15.62 5.5,16.17C3.93,16.72 3.11,18.44 3.66,20C4.22,21.56 5.93,22.38 7.5,21.83C8.35,21.53 9,20.85 9.32,20H14.69C15.24,21.56 16.96,22.38 18.5,21.83C20.08,21.28 20.9,19.56 20.35,18C19.92,16.8 18.78,16 17.5,16V16M17.5,20.5C16.67,20.5 16,19.83 16,19C16,18.17 16.67,17.5 17.5,17.5C18.33,17.5 19,18.17 19,19C19,19.83 18.33,20.5 17.5,20.5Z";
-        }
-    }
-    $.$mol_icon_map_marker_distance = $mol_icon_map_marker_distance;
-})($ || ($ = {}));
-//mol/icon/map/marker/distance/-view.tree/distance.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $origami_app_bank extends $mol_list {
-        rows() {
-            return [
-                this.TypeSwitcher(),
-                this.Bank_list()
-            ];
-        }
-        filter_type(next) {
-            if (next !== undefined)
-                return next;
-            return "ind";
-        }
-        types() {
-            return {
-                ind: "Для физических лиц",
-                ur: "Для юридических лиц"
-            };
-        }
-        TypeSwitcher() {
-            const obj = new this.$.$mol_switch();
-            obj.value = (next) => this.filter_type(next);
-            obj.options = () => this.types();
-            return obj;
-        }
-        bank_address(id) {
-            return "";
-        }
-        Bank_address(id) {
-            const obj = new this.$.$mol_text();
-            obj.text = () => this.bank_address(id);
-            return obj;
-        }
-        Bank_distance_icon(id) {
-            const obj = new this.$.$mol_icon_map_marker_distance();
-            return obj;
-        }
-        bank_distance(id) {
-            return "";
-        }
-        Bank_distance(id) {
-            const obj = new this.$.$mol_text();
-            obj.text = () => this.bank_distance(id);
-            return obj;
-        }
-        Bank_workload(id) {
-            const obj = new this.$.$mol_icon();
-            return obj;
-        }
-        Bank(id) {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Bank_address(id),
-                this.Bank_distance_icon(id),
-                this.Bank_distance(id),
-                this.Bank_workload(id)
-            ];
-            return obj;
-        }
-        bank_list() {
-            return [
-                this.Bank("0")
-            ];
-        }
-        Bank_list() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.bank_list();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $origami_app_bank.prototype, "filter_type", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app_bank.prototype, "TypeSwitcher", null);
-    __decorate([
-        $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_address", null);
-    __decorate([
-        $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_distance_icon", null);
-    __decorate([
-        $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_distance", null);
-    __decorate([
-        $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_workload", null);
-    __decorate([
-        $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app_bank.prototype, "Bank_list", null);
-    $.$origami_app_bank = $origami_app_bank;
-})($ || ($ = {}));
-//origami/app/bank/-view.tree/bank.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal extends $mol_icon {
-        path() {
-            return "M3,21H6V18H3M8,21H11V14H8M13,21H16V9H13M18,21H21V3H18V21Z";
-        }
-    }
-    $.$mol_icon_signal = $mol_icon_signal;
-})($ || ($ = {}));
-//mol/icon/signal/-view.tree/signal.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_outline extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M5.5,15.5V18.5H3.5V15.5H5.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_outline = $mol_icon_signal_cellular_outline;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/outline/-view.tree/outline.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_1 extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_1 = $mol_icon_signal_cellular_1;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/1/-view.tree/1.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_2 extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_2 = $mol_icon_signal_cellular_2;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/2/-view.tree/2.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_3 extends $mol_icon {
-        path() {
-            return "M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_3 = $mol_icon_signal_cellular_3;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/3/-view.tree/3.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $origami_app_bank extends $.$origami_app_bank {
-            banks_data() {
-                console.log('banks');
-                return this.$.$mol_fetch
-                    .json('https://origami-team.site/office/all?offset=0&limit=30');
-            }
-            banks() {
-                if (!this.filter_type())
-                    return this.banks_data();
-                return this.banks_data().filter(bank => {
-                    const dates = this.filter_type() === 'ind' ? bank.openHoursIndividual : bank.openHours;
-                    return dates && dates[0]?.hours;
-                });
-            }
-            bank_id(id) {
-                return this.banks().find((bank) => bank.salePointName == id);
-            }
-            bank_list() {
-                console.log(this.banks());
-                return this.banks().map((bank) => this.Bank(bank.salePointName));
-            }
-            bank_name(id) {
-                return this.bank_id(id)?.salePointName || '';
-            }
-            bank_address(id) {
-                return this.bank_id(id)?.address || '';
-            }
-            bank_distance(id) {
-                const distance = this.bank_id(id)?.distance;
-                if (!distance)
-                    return '';
-                else if (distance > 1000) {
-                    return `${(distance / 1000).toFixed(1)} км`;
-                }
-                else {
-                    return `${distance} м`;
-                }
-            }
-            bank_workload(id) {
-                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
-                return `Загруженность ${workload}`;
-            }
-            Bank_workload(id) {
-                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
-                const icons = [new this.$.$mol_icon_signal_cellular_outline(), new this.$.$mol_icon_signal_cellular_1(), new this.$.$mol_icon_signal_cellular_2(), new this.$.$mol_icon_signal_cellular_3()];
-                return icons[workload];
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $origami_app_bank.prototype, "banks_data", null);
-        __decorate([
-            $mol_mem
-        ], $origami_app_bank.prototype, "banks", null);
-        $$.$origami_app_bank = $origami_app_bank;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//origami/app/bank/bank.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n");
-})($ || ($ = {}));
-//origami/app/bank/-css/bank.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_dump_list extends $mol_view {
         values() {
             return [];
@@ -10223,6 +9808,30 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_icon_map extends $mol_icon {
+        path() {
+            return "M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20.34,3L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5C3,20.78 3.22,21 3.5,21C3.55,21 3.61,21 3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19 21,18.85 21,18.62V3.5C21,3.22 20.78,3 20.5,3Z";
+        }
+    }
+    $.$mol_icon_map = $mol_icon_map;
+})($ || ($ = {}));
+//mol/icon/map/-view.tree/map.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_map_marker extends $mol_icon {
+        path() {
+            return "M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z";
+        }
+    }
+    $.$mol_icon_map_marker = $mol_icon_map_marker;
+})($ || ($ = {}));
+//mol/icon/map/marker/-view.tree/marker.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_icon_github_circle extends $mol_icon {
         path() {
             return "M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z";
@@ -10634,6 +10243,154 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_check_list extends $mol_view {
+        dictionary() {
+            return {};
+        }
+        Option(id) {
+            const obj = new this.$.$mol_check();
+            obj.checked = (next) => this.option_checked(id, next);
+            obj.label = () => this.option_label(id);
+            obj.enabled = () => this.option_enabled(id);
+            obj.hint = () => this.option_hint(id);
+            obj.minimal_height = () => 24;
+            return obj;
+        }
+        options() {
+            return {};
+        }
+        keys() {
+            return [];
+        }
+        sub() {
+            return this.items();
+        }
+        option_checked(id, next) {
+            if (next !== undefined)
+                return next;
+            return false;
+        }
+        option_title(id) {
+            return "";
+        }
+        option_label(id) {
+            return [
+                this.option_title(id)
+            ];
+        }
+        enabled() {
+            return true;
+        }
+        option_enabled(id) {
+            return this.enabled();
+        }
+        option_hint(id) {
+            return "";
+        }
+        items() {
+            return [];
+        }
+    }
+    __decorate([
+        $mol_mem_key
+    ], $mol_check_list.prototype, "Option", null);
+    __decorate([
+        $mol_mem_key
+    ], $mol_check_list.prototype, "option_checked", null);
+    $.$mol_check_list = $mol_check_list;
+})($ || ($ = {}));
+//mol/check/list/-view.tree/list.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_check_list extends $.$mol_check_list {
+            options() {
+                return {};
+            }
+            dictionary(next) {
+                return next ?? {};
+            }
+            option_checked(id, next) {
+                const prev = this.dictionary();
+                if (next === undefined)
+                    return prev[id] ?? null;
+                const next_rec = { ...prev, [id]: next };
+                if (next === null)
+                    delete next_rec[id];
+                return this.dictionary(next_rec)[id] ?? null;
+            }
+            keys() {
+                return Object.keys(this.options());
+            }
+            items() {
+                return this.keys().map(key => this.Option(key));
+            }
+            option_title(key) {
+                return this.options()[key] || key;
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_check_list.prototype, "keys", null);
+        __decorate([
+            $mol_mem
+        ], $mol_check_list.prototype, "items", null);
+        $$.$mol_check_list = $mol_check_list;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/check/list/list.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/check/list/list.view.css", "[mol_check_list] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex: 1 1 auto;\n\tborder-radius: var(--mol_gap_round);\n\tgap: 1px;\n}\n\n[mol_check_list_option] {\n\tflex: 0 1 auto;\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"]) {\n\ttext-shadow: 0 0;\n\tcolor: var(--mol_theme_current);\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"][disabled]) {\n\tcolor: var(--mol_theme_text);\n}\n");
+})($ || ($ = {}));
+//mol/check/list/-css/list.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_switch extends $mol_check_list {
+        value(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_switch.prototype, "value", null);
+    $.$mol_switch = $mol_switch;
+})($ || ($ = {}));
+//mol/switch/-view.tree/switch.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_switch extends $.$mol_switch {
+            value(next) {
+                return $mol_state_session.value(`${this}.value()`, next) ?? '';
+            }
+            option_checked(key, next) {
+                if (next === undefined)
+                    return this.value() == key;
+                this.value(next ? key : '');
+                return next;
+            }
+        }
+        $$.$mol_switch = $mol_switch;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/switch/switch.view.ts
+;
+"use strict";
+var $;
+(function ($) {
     var $$;
     (function ($$) {
         class $origami_app extends $.$origami_app {
@@ -10670,8 +10427,261 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n/* Переопределение цветов базовой темы */\n[mol_buttom_typed] {\n\tborder-radius: 2rem;\n}\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n[mol_button_minor]:active {\n\tcolor: black;\n}\n[mol_check_checked] {\n\tcolor: black;\n\tbackground-color: white;\n}\n[mol_check_checked=\"true\"] {\n\tcolor: white!important;\n\tbackground-color: var(--origami_app_primary_main)!important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor:  var(--origami_app_primary_dark)\n}\n[mol_link]:active {\n\tcolor:  var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch]{\n\tgap: 0.75rem;\n}\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings]{\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active{\n\tcolor: white;\n}\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\t/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */\n}\n\n[origami_app_foot] > * {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body] > * {\n\tgap: 1rem;\n}\n");
+    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n[mol_button_minor]:active {\n\tcolor: black;\n}\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n[mol_check_checked=\"true\"] {\n\tcolor: white!important;\n\tbackground-color: var(--origami_app_primary_main)!important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor:  var(--origami_app_primary_dark)\n}\n[mol_link]:active {\n\tcolor:  var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch]{\n\tgap: 0.75rem;\n}\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings]{\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active{\n\tcolor: white;\n}\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\t/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */\n}\n\n[origami_app_foot] > * {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body] > * {\n\tgap: 1rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_map_marker_distance extends $mol_icon {
+        path() {
+            return "M6.5,8.11C5.61,8.11 4.89,7.39 4.89,6.5C4.89,5.61 5.61,4.89 6.5,4.89C7.39,4.89 8.11,5.61 8.11,6.5V6.5C8.11,7.39 7.39,8.11 6.5,8.11M6.5,2C4,2 2,4 2,6.5C2,9.87 6.5,14.86 6.5,14.86C6.5,14.86 11,9.87 11,6.5C11,4 9,2 6.5,2M17.5,8.11C16.61,8.11 15.89,7.39 15.89,6.5C15.89,5.61 16.61,4.89 17.5,4.89C18.39,4.89 19.11,5.61 19.11,6.5C19.11,7.39 18.39,8.11 17.5,8.11M17.5,2C15,2 13,4 13,6.5C13,9.87 17.5,14.86 17.5,14.86C17.5,14.86 22,9.87 22,6.5C22,4 20,2 17.5,2M17.5,16C16.23,16 15.1,16.8 14.68,18H9.32C8.77,16.44 7.05,15.62 5.5,16.17C3.93,16.72 3.11,18.44 3.66,20C4.22,21.56 5.93,22.38 7.5,21.83C8.35,21.53 9,20.85 9.32,20H14.69C15.24,21.56 16.96,22.38 18.5,21.83C20.08,21.28 20.9,19.56 20.35,18C19.92,16.8 18.78,16 17.5,16V16M17.5,20.5C16.67,20.5 16,19.83 16,19C16,18.17 16.67,17.5 17.5,17.5C18.33,17.5 19,18.17 19,19C19,19.83 18.33,20.5 17.5,20.5Z";
+        }
+    }
+    $.$mol_icon_map_marker_distance = $mol_icon_map_marker_distance;
+})($ || ($ = {}));
+//mol/icon/map/marker/distance/-view.tree/distance.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_app_bank extends $mol_list {
+        rows() {
+            return [
+                this.TypeSwitcher(),
+                this.Bank_list()
+            ];
+        }
+        filter_type(next) {
+            if (next !== undefined)
+                return next;
+            return "ind";
+        }
+        types() {
+            return {
+                ind: "Для физических лиц",
+                ur: "Для юридических лиц"
+            };
+        }
+        TypeSwitcher() {
+            const obj = new this.$.$mol_switch();
+            obj.value = (next) => this.filter_type(next);
+            obj.options = () => this.types();
+            return obj;
+        }
+        bank_address(id) {
+            return "";
+        }
+        Bank_address(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.bank_address(id);
+            return obj;
+        }
+        Bank_distance_icon(id) {
+            const obj = new this.$.$mol_icon_map_marker_distance();
+            return obj;
+        }
+        bank_distance(id) {
+            return "";
+        }
+        Bank_distance(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.bank_distance(id);
+            return obj;
+        }
+        Bank_workload(id) {
+            const obj = new this.$.$mol_icon();
+            return obj;
+        }
+        Bank_status_line(id) {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.Bank_distance_icon(id),
+                this.Bank_distance(id),
+                this.Bank_workload(id)
+            ];
+            return obj;
+        }
+        Bank(id) {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.Bank_address(id),
+                this.Bank_status_line(id)
+            ];
+            return obj;
+        }
+        bank_list() {
+            return [
+                this.Bank("0")
+            ];
+        }
+        Bank_list() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.bank_list();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_bank.prototype, "filter_type", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_bank.prototype, "TypeSwitcher", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank_address", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank_distance_icon", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank_distance", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank_workload", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank_status_line", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "Bank", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_bank.prototype, "Bank_list", null);
+    $.$origami_app_bank = $origami_app_bank;
+})($ || ($ = {}));
+//origami/app/bank/-view.tree/bank.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_signal extends $mol_icon {
+        path() {
+            return "M3,21H6V18H3M8,21H11V14H8M13,21H16V9H13M18,21H21V3H18V21Z";
+        }
+    }
+    $.$mol_icon_signal = $mol_icon_signal;
+})($ || ($ = {}));
+//mol/icon/signal/-view.tree/signal.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_signal_cellular_outline extends $mol_icon {
+        path() {
+            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M5.5,15.5V18.5H3.5V15.5H5.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
+        }
+    }
+    $.$mol_icon_signal_cellular_outline = $mol_icon_signal_cellular_outline;
+})($ || ($ = {}));
+//mol/icon/signal/cellular/outline/-view.tree/outline.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_signal_cellular_1 extends $mol_icon {
+        path() {
+            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
+        }
+    }
+    $.$mol_icon_signal_cellular_1 = $mol_icon_signal_cellular_1;
+})($ || ($ = {}));
+//mol/icon/signal/cellular/1/-view.tree/1.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_signal_cellular_2 extends $mol_icon {
+        path() {
+            return "M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
+        }
+    }
+    $.$mol_icon_signal_cellular_2 = $mol_icon_signal_cellular_2;
+})($ || ($ = {}));
+//mol/icon/signal/cellular/2/-view.tree/2.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_signal_cellular_3 extends $mol_icon {
+        path() {
+            return "M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
+        }
+    }
+    $.$mol_icon_signal_cellular_3 = $mol_icon_signal_cellular_3;
+})($ || ($ = {}));
+//mol/icon/signal/cellular/3/-view.tree/3.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $origami_app_bank extends $.$origami_app_bank {
+            banks_data() {
+                console.log('banks');
+                return this.$.$mol_fetch
+                    .json('https://origami-team.site/office/all?offset=0&limit=30');
+            }
+            banks() {
+                if (!this.filter_type())
+                    return this.banks_data();
+                return this.banks_data().filter(bank => {
+                    const dates = this.filter_type() === 'ind' ? bank.openHoursIndividual : bank.openHours;
+                    return dates && dates[0]?.hours;
+                });
+            }
+            bank_id(id) {
+                return this.banks().find((bank) => bank.salePointName == id);
+            }
+            bank_list() {
+                console.log(this.banks());
+                return this.banks().map((bank) => this.Bank(bank.salePointName));
+            }
+            bank_name(id) {
+                return this.bank_id(id)?.salePointName || '';
+            }
+            bank_address(id) {
+                return this.bank_id(id)?.address || '';
+            }
+            bank_distance(id) {
+                const distance = this.bank_id(id)?.distance;
+                if (!distance)
+                    return '';
+                else if (distance > 1000) {
+                    return `${(distance / 1000).toFixed(1)} км`;
+                }
+                else {
+                    return `${distance} м`;
+                }
+            }
+            bank_workload(id) {
+                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
+                return `Загруженность ${workload}`;
+            }
+            Bank_workload(id) {
+                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
+                const icons = [new this.$.$mol_icon_signal_cellular_outline(), new this.$.$mol_icon_signal_cellular_1(), new this.$.$mol_icon_signal_cellular_2(), new this.$.$mol_icon_signal_cellular_3()];
+                return icons[workload];
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $origami_app_bank.prototype, "banks_data", null);
+        __decorate([
+            $mol_mem
+        ], $origami_app_bank.prototype, "banks", null);
+        $$.$origami_app_bank = $origami_app_bank;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//origami/app/bank/bank.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_distance] {\n\tflex-grow: 1;\n}\n");
+})($ || ($ = {}));
+//origami/app/bank/-css/bank.view.css.ts
 
 //# sourceMappingURL=node.js.map
