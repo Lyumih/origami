@@ -2675,6 +2675,8 @@ declare namespace $.$$ {
         center(): $mol_vector_2d<number>;
         banks_mark_list(): $mol_map_yandex_mark[];
         mark_pos(id: any): $mol_vector_2d<number>;
+        place_address(id: any): string;
+        place_content(id: any): string;
     }
 }
 
