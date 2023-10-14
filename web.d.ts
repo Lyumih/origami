@@ -3070,6 +3070,7 @@ declare namespace $.$$ {
         atm_address(id: any): string;
         atm_distance(id: any): string;
         atm_time(id: any): string;
+        open_map(id: string, next?: any): void;
     }
 }
 
