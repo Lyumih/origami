@@ -8,13 +8,15 @@ $origami_app_bank $mol_list
 		- <= Bank_search $mol_search
 		<= Bank_list $mol_list
 			rows <= bank_list /
-				<= Bank*0 $mol_view sub /
-					<= Bank_address* $mol_text text <= bank_address* \
-					<= Bank_status_line* $mol_view sub /
-						<= Bank_distance* $mol_text text <= bank_distance* \
-						<= Bank_time* $mol_text text <= bank_time* \8:00-18:00
-						<= Bank_workload* $mol_text
-							attr *
-								workload <= bank_workload*? 0
-							text \Загруженность
+				<= Bank*0 $mol_view
+					event * click? <=> open_map*? null
+					sub /
+						<= Bank_address* $mol_text text <= bank_address* \
+						<= Bank_status_line* $mol_view sub /
+							<= Bank_distance* $mol_text text <= bank_distance* \
+							<= Bank_time* $mol_text text <= bank_time* \8:00-18:00
+							<= Bank_workload* $mol_text
+								attr *
+									workload <= bank_workload*? 0
+								text \Загруженность
 

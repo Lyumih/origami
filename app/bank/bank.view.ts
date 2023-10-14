@@ -10,6 +10,7 @@ namespace $.$$ {
 					address: string,
 					type?: string,
 					distance?: number,
+					latitude?: number,
 					openHoursIndividual?: [],
 					openHours?: { day: string, hours: null | string }[],
 				}[]
@@ -27,11 +28,11 @@ namespace $.$$ {
 		}
 
 		bank_id( id: string ) {
-			return this.banks().find( ( bank ) => bank.salePointName == id )
+			return this.banks().find( ( bank ) => bank.id == id )
 		}
 
 		bank_list(): readonly any[] {
-			return this.banks().map( ( bank ) => this.Bank( bank.salePointName ) )
+			return this.banks().map( ( bank ) => this.Bank( bank.id ) )
 		}
 
 		bank_name( id: any ): string {
@@ -57,6 +58,14 @@ namespace $.$$ {
 		bank_workload( id: any ) {
 			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
 			return workload
+		}
+
+		@ $mol_action
+		open_map( id: string, next?: any ) {
+			const bank = this.bank_id(id)
+			console.log(next, bank)
+			this.$.$mol_state_arg.go({'page': 'map', bank: bank?.id || ''})
+			// this.$.$mol_state_arg.value('page', 'map')
 		}
 	}
 }
