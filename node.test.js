@@ -10449,7 +10449,7 @@ var $;
         class $origami_app_bank extends $.$origami_app_bank {
             banks_data() {
                 const result = this.$.$mol_fetch
-                    .json('https://origami-team.site/office/all?offset=0&limit=100');
+                    .json('https://origami-team.site/office/all?offset=0&limit=10');
                 console.log(result);
                 return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
             }
@@ -10507,7 +10507,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n\n[origami_app_bank_bank_status_line] {\n\tjustify-content: space-between;\n}\n\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_time_paragraph] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n\n[origami_app_bank_bank_distance] {\n\tmargin-left: 2rem;\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n\n[origami_app_bank_bank_status_line] {\n\tjustify-content: space-between;\n}\n\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_time_paragraph] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n\n[origami_app_bank_bank_distance] {\n\tmargin-left: 20px;\n\tposition: relative;\n}\n\n[origami_app_bank_bank_distance]::before {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 12px;\n\tleft: -20px;\n\twidth: 24px;\n\theight: 24px;\n\tbackground-image: url(../../../origami/app/assets/img/traced.svg);\n\tbackground-size: contain;\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 ;
