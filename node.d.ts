@@ -2759,21 +2759,56 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $origami_map extends $mol_map_yandex {
+    class $origami_app_world extends $mol_list {
+        rows(): readonly any[];
+        center(): $mol_vector_2d<number>;
+        mark_pos(id: any): $mol_vector_2d<number>;
+        place_title(id: any): string;
+        place_address(id: any): string;
+        place_content(id: any): string;
+        Place(id: any): $$.$mol_map_yandex_mark;
+        banks_mark_list(): readonly any[];
+        Map(): $$.$mol_map_yandex;
     }
 }
 
 declare namespace $.$$ {
-    class $origami_map extends $.$origami_map {
+    class $origami_app_world extends $.$origami_app_world {
+        banks_data(): {
+            id: string;
+            salePointName?: string | undefined;
+            address: string;
+            type?: string | undefined;
+            distance?: number | undefined;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: {
+                day: string;
+                hours: string | null;
+            }[] | undefined;
+        }[];
+        bank_id(id: string): {
+            id: string;
+            salePointName?: string | undefined;
+            address: string;
+            type?: string | undefined;
+            distance?: number | undefined;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: {
+                day: string;
+                hours: string | null;
+            }[] | undefined;
+        } | undefined;
+        center(): $mol_vector_2d<number>;
+        banks_mark_list(): $mol_map_yandex_mark[];
+        mark_pos(id: any): $mol_vector_2d<number>;
     }
 }
 
 declare namespace $ {
-}
-
-declare namespace $ {
-    class $origami_map_mark extends $mol_map_yandex_mark {
-    }
 }
 
 declare namespace $ {
@@ -2896,13 +2931,7 @@ declare namespace $ {
         Settings_icon(): $mol_icon_settings;
         Settings(): $mol_button_minor;
         Welcome(): $$.$mol_text;
-        Map_text(): $$.$mol_text;
-        place_title(): string;
-        place_addres(): string;
-        place_content(): string;
-        Place_3(): $origami_map_mark;
-        Map_show_2(): $$.$origami_map;
-        Map(): $$.$mol_list;
+        World(): $$.$origami_app_world;
         Route_text(): $$.$mol_text;
         Route(): $mol_view;
         Bank(): $$.$origami_app_bank;
@@ -2911,7 +2940,7 @@ declare namespace $ {
         Todo_url(): $$.$mol_text;
         todo_test(): any;
         Todo_test(): $$.$mol_dump_value;
-        Todo(): $mol_view;
+        Todo(): $mol_page;
         Map_link(): $origami_app_menu_link;
         Bank_link(): $origami_app_menu_link;
         Atms_link(): $origami_app_menu_link;
@@ -3017,17 +3046,32 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $origami_app_bank extends $.$origami_app_bank {
+        static fetch_banks_data(limit?: number): {
+            id: string;
+            salePointName?: string | undefined;
+            address: string;
+            type?: string | undefined;
+            distance?: number | undefined;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: {
+                day: string;
+                hours: null | string;
+            }[] | undefined;
+        }[];
         banks_data(): {
             id: string;
             salePointName?: string | undefined;
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            longitude?: number | undefined;
             latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
-                hours: null | string;
+                hours: string | null;
             }[] | undefined;
         }[];
         banks(): {
@@ -3036,6 +3080,7 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            longitude?: number | undefined;
             latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
@@ -3049,6 +3094,7 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            longitude?: number | undefined;
             latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {

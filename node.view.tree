@@ -513,9 +513,21 @@ $mol_map_yandex $mol_view
 		0
 	objects /$mol_map_yandex_mark
 
-$origami_map $mol_map_yandex
-
-$origami_map_mark $mol_map_yandex_mark
+$origami_app_world $mol_list
+	rows /
+		<= Map $mol_map_yandex
+			zoom 13
+			center <= center $mol_vector_2d /
+				0
+				0
+			objects <= banks_mark_list /
+				<= Place*0 $mol_map_yandex_mark
+					pos <= mark_pos* $mol_vector_2d /
+						0
+						0
+					title <= place_title* \
+					address <= place_address* \СПБ
+					content <= place_content* \Вам нужно съездить в СПБ
 
 $mol_dump_list $mol_view
 	values /
@@ -589,19 +601,7 @@ $origami_app $mol_page
 			sub / <= Settings_icon $mol_icon_settings
 	body /
 		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
-		<= Map $mol_list
-			rows /
-				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
-				<= Map_show_2 $origami_map
-					zoom 10
-					center /
-						55.754742
-						37.621407
-					objects /
-						<= Place_3 $origami_map_mark
-							title <= place_title \
-							address <= place_addres \СПБ
-							content <= place_content \Вам нужно съездить в СПБ
+		<= World $origami_app_world
 		<= Route $mol_view
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
@@ -609,8 +609,8 @@ $origami_app $mol_page
 		<= Atms $mol_view
 			sub /
 				<= Atms_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
-		<= Todo $mol_view
-			sub /
+		<= Todo $mol_page
+			body /
 				<= Todo_url $mol_text text \https://origami-team.site/docs
 				<= Todo_test $mol_dump_value
 					expanded true

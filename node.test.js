@@ -9263,39 +9263,113 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $origami_map extends $mol_map_yandex {
+    class $origami_app_world extends $mol_list {
+        rows() {
+            return [
+                this.Map()
+            ];
+        }
+        center() {
+            const obj = new this.$.$mol_vector_2d(0, 0);
+            return obj;
+        }
+        mark_pos(id) {
+            const obj = new this.$.$mol_vector_2d(0, 0);
+            return obj;
+        }
+        place_title(id) {
+            return "";
+        }
+        place_address(id) {
+            return "СПБ";
+        }
+        place_content(id) {
+            return "Вам нужно съездить в СПБ";
+        }
+        Place(id) {
+            const obj = new this.$.$mol_map_yandex_mark();
+            obj.pos = () => this.mark_pos(id);
+            obj.title = () => this.place_title(id);
+            obj.address = () => this.place_address(id);
+            obj.content = () => this.place_content(id);
+            return obj;
+        }
+        banks_mark_list() {
+            return [
+                this.Place("0")
+            ];
+        }
+        Map() {
+            const obj = new this.$.$mol_map_yandex();
+            obj.zoom = () => 13;
+            obj.center = () => this.center();
+            obj.objects = () => this.banks_mark_list();
+            return obj;
+        }
     }
-    $.$origami_map = $origami_map;
+    __decorate([
+        $mol_mem
+    ], $origami_app_world.prototype, "center", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_world.prototype, "mark_pos", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_world.prototype, "Place", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_world.prototype, "Map", null);
+    $.$origami_app_world = $origami_app_world;
 })($ || ($ = {}));
-//origami/map/-view.tree/map.view.tree.ts
+//origami/app/world/-view.tree/world.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        class $origami_map extends $.$origami_map {
+        class $origami_app_world extends $.$origami_app_world {
+            banks_data() {
+                const result = this.$.$origami_app_bank.fetch_banks_data(10);
+                console.log(result);
+                return result;
+            }
+            bank_id(id) {
+                return this.banks_data().find((bank) => bank.id == id);
+            }
+            center() {
+                const bank_id = this.$.$mol_state_arg.value('bank');
+                console.log(bank_id);
+                if (bank_id) {
+                    const central_bank = this.bank_id(bank_id);
+                    console.log('central_bank', central_bank);
+                    return new $mol_vector_2d(central_bank?.latitude || 0, central_bank?.longitude || 0);
+                }
+                return new $mol_vector_2d(55.754742, 37.621407);
+            }
+            banks_mark_list() {
+                console.log('banks_mark');
+                return this.banks_data().map(bank => this.Place(bank.id));
+            }
+            mark_pos(id) {
+                const bank = this.bank_id(id || '');
+                return new $mol_vector_2d(bank?.latitude || 0, bank?.longitude || 0);
+            }
         }
-        $$.$origami_map = $origami_map;
+        __decorate([
+            $mol_mem
+        ], $origami_app_world.prototype, "banks_data", null);
+        $$.$origami_app_world = $origami_app_world;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//origami/map/map.view.ts
+//origami/app/world/world.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/map/map.view.css", "[origami_map] {\n\tfilter: none;\n\tmin-height: calc(100vh - 270px);\n}\n");
+    $mol_style_attach("origami/app/world/world.view.css", "[origami_app_world_map] {\n\tfilter: none;\n\tmin-height: calc(100vh - 270px);\n\tmin-width: 100px;\n}\n");
 })($ || ($ = {}));
-//origami/map/-css/map.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $origami_map_mark extends $mol_map_yandex_mark {
-    }
-    $.$origami_map_mark = $origami_map_mark;
-})($ || ($ = {}));
-//origami/map/mark/-view.tree/mark.view.tree.ts
+//origami/app/world/-css/world.view.css.ts
 ;
 "use strict";
 var $;
@@ -9866,7 +9940,7 @@ var $;
         body() {
             return [
                 this.Welcome(),
-                this.Map(),
+                this.World(),
                 this.Route(),
                 this.Bank(),
                 this.Atms(),
@@ -9902,45 +9976,8 @@ var $;
             obj.text = () => "Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.";
             return obj;
         }
-        Map_text() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "Отображение отделений на карте и их загруженности";
-            return obj;
-        }
-        place_title() {
-            return "";
-        }
-        place_addres() {
-            return "СПБ";
-        }
-        place_content() {
-            return "Вам нужно съездить в СПБ";
-        }
-        Place_3() {
-            const obj = new this.$.$origami_map_mark();
-            obj.title = () => this.place_title();
-            obj.address = () => this.place_addres();
-            obj.content = () => this.place_content();
-            return obj;
-        }
-        Map_show_2() {
-            const obj = new this.$.$origami_map();
-            obj.zoom = () => 10;
-            obj.center = () => [
-                55.754742,
-                37.621407
-            ];
-            obj.objects = () => [
-                this.Place_3()
-            ];
-            return obj;
-        }
-        Map() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Map_text(),
-                this.Map_show_2()
-            ];
+        World() {
+            const obj = new this.$.$origami_app_world();
             return obj;
         }
         Route_text() {
@@ -9986,8 +10023,8 @@ var $;
             return obj;
         }
         Todo() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
+            const obj = new this.$.$mol_page();
+            obj.body = () => [
                 this.Todo_url(),
                 this.Todo_test()
             ];
@@ -10036,16 +10073,7 @@ var $;
     ], $origami_app.prototype, "Welcome", null);
     __decorate([
         $mol_mem
-    ], $origami_app.prototype, "Map_text", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Place_3", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Map_show_2", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Map", null);
+    ], $origami_app.prototype, "World", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Route_text", null);
@@ -10301,7 +10329,7 @@ var $;
                 let page = this.$.$mol_state_arg.value('page') || 'default';
                 const configs = {
                     route: this.Route(),
-                    map: this.Map(),
+                    map: this.World(),
                     bank: this.Bank(),
                     atms: this.Atms(),
                     todo: this.Todo(),
@@ -10309,7 +10337,7 @@ var $;
                 return [configs[page] ?? this.Welcome()];
             }
             todo_test() {
-                let result = this.$.$mol_fetch.json('https://origami-team.site/todo/f9850879-d439-434d-88c2-a4797d90b110');
+                let result = this.$.$mol_fetch.json('https://origami-team.site/office/all');
                 return result;
             }
         }
@@ -10471,11 +10499,15 @@ var $;
     var $$;
     (function ($$) {
         class $origami_app_bank extends $.$origami_app_bank {
-            banks_data() {
+            static fetch_banks_data(limit) {
                 const result = this.$.$mol_fetch
-                    .json('https://origami-team.site/office/all?offset=0&limit=150');
+                    .json(`https://origami-team.site/office/all?offset=0&limit=${limit || 10}`);
                 console.log(result);
                 return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
+            }
+            banks_data() {
+                console.log('get_data_banks');
+                return this.$.$origami_app_bank.fetch_banks_data();
             }
             banks() {
                 if (!this.filter_type())
@@ -10531,6 +10563,9 @@ var $;
         __decorate([
             $mol_action
         ], $origami_app_bank.prototype, "open_map", null);
+        __decorate([
+            $mol_mem
+        ], $origami_app_bank, "fetch_banks_data", null);
         $$.$origami_app_bank = $origami_app_bank;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
