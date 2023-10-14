@@ -9338,7 +9338,7 @@ var $;
     (function ($$) {
         class $origami_app_world extends $.$origami_app_world {
             banks_data() {
-                const result = this.$.$origami_app_bank.fetch_banks_data(10);
+                const result = this.$.$origami_app_bank.fetch_banks_data(100);
                 console.log(result);
                 return result;
             }
@@ -10388,8 +10388,8 @@ var $;
         }
         types() {
             return {
-                ind: "Физлица",
-                ur: "Юрлица"
+                ind: "Физ. лицо",
+                ur: "Юр. лицо"
             };
         }
         TypeSwitcher() {
@@ -10516,7 +10516,7 @@ var $;
         class $origami_app_bank extends $.$origami_app_bank {
             static fetch_banks_data(limit) {
                 const result = this.$.$mol_fetch
-                    .json(`https://origami-team.site/office/all?offset=0&limit=${limit || 10}`);
+                    .json(`https://origami-team.site/office/all?offset=0&limit=${limit || 50}`);
                 console.log(result);
                 return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
             }
@@ -10589,7 +10589,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tjustify-content: space-between;\n\t/* flex-wrap: wrap; */\n\tfont-size: 14px;\n}\n\n[origami_app_bank_bank_status_line]>[mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_time_paragraph] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n\n[origami_app_bank_bank_distance],\n[origami_app_bank_bank_time] {\n\tmargin-left: 18px;\n\tposition: relative;\n}\n\n[origami_app_bank_bank_distance]::before,\n[origami_app_bank_bank_time]::before {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 11px;\n\tleft: -18px;\n\twidth: 24px;\n\theight: 24px;\n\tbackground-size: contain;\n}\n\n[origami_app_bank_bank_distance]::before {\n\tbackground-image: url(./origami/app/assets/img/traced.svg);\n}\n\n[origami_app_bank_bank_time]::before {\n\tbackground-image: url(./origami/app/assets/img/time.svg);\n}\n[origami_app_bank_bank_workload_paragraph] {\n\tpadding-left: 0;\n}\n[origami_app_bank_bank_workload] {\n\tposition: relative;\n\tfont-size: 12px;\n\tcolor: var(--origami_app_primary_light);\n\tfont-weight: lighter;\n\tmargin-right: 18px;\n}\n\n[origami_app_bank_bank_workload]::before {\n\tcontent: \"\";\n\tbackground-size: contain;\n\tbackground-repeat: no-repeat;\n\tposition: absolute;\n\tbottom: 12px;\n\tright: -14px;\n\twidth: 18px;\n\theight: 24px;\n}\n\n[origami_app_bank_bank_workload][workload=\"0\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_1.svg);\n}\n\n[origami_app_bank_bank_workload][workload=\"1\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_2.svg);\n}\n\n[origami_app_bank_bank_workload][workload=\"2\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_3.svg);\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank] {\n\tmargin-top: 0;\n}\n\n[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tjustify-content: space-between;\n\t/* flex-wrap: wrap; */\n\tfont-size: 14px;\n}\n\n[origami_app_bank_bank_status_line]>[mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_time_paragraph] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n\n[origami_app_bank_bank_distance],\n[origami_app_bank_bank_time] {\n\tmargin-left: 18px;\n\tposition: relative;\n}\n\n[origami_app_bank_bank_distance]::before,\n[origami_app_bank_bank_time]::before {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 11px;\n\tleft: -18px;\n\twidth: 24px;\n\theight: 24px;\n\tbackground-size: contain;\n}\n\n[origami_app_bank_bank_distance]::before {\n\tbackground-image: url(./origami/app/assets/img/traced.svg);\n}\n\n[origami_app_bank_bank_time]::before {\n\tbackground-image: url(./origami/app/assets/img/time.svg);\n}\n[origami_app_bank_bank_workload_paragraph] {\n\tpadding-left: 0;\n}\n[origami_app_bank_bank_workload] {\n\tposition: relative;\n\tfont-size: 12px;\n\tcolor: var(--origami_app_primary_light);\n\tfont-weight: lighter;\n\tmargin-right: 18px;\n}\n\n[origami_app_bank_bank_workload]::before {\n\tcontent: \"\";\n\tbackground-size: contain;\n\tbackground-repeat: no-repeat;\n\tposition: absolute;\n\tbottom: 12px;\n\tright: -14px;\n\twidth: 18px;\n\theight: 24px;\n}\n\n[origami_app_bank_bank_workload][workload=\"0\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_1.svg);\n}\n\n[origami_app_bank_bank_workload][workload=\"1\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_2.svg);\n}\n\n[origami_app_bank_bank_workload][workload=\"2\"]::before {\n\tbackground-image: url(./origami/app/assets/img/workload_3.svg);\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 
