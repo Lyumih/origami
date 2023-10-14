@@ -2624,8 +2624,57 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_check_list extends $mol_view {
+        dictionary(): Record<string, any>;
+        Option(id: any): $$.$mol_check;
+        options(): Record<string, any>;
+        keys(): readonly string[];
+        sub(): readonly $mol_check[];
+        option_checked(id: any, next?: any): boolean;
+        option_title(id: any): string;
+        option_label(id: any): readonly any[];
+        enabled(): boolean;
+        option_enabled(id: any): boolean;
+        option_hint(id: any): string;
+        items(): readonly $mol_check[];
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_check_list extends $.$mol_check_list {
+        options(): {
+            [key: string]: string;
+        };
+        dictionary(next?: Record<string, boolean>): Record<string, boolean>;
+        option_checked(id: string, next?: boolean | null): boolean;
+        keys(): readonly string[];
+        items(): $mol_check[];
+        option_title(key: string): string;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_switch extends $mol_check_list {
+        value(next?: any): string;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_switch extends $.$mol_switch {
+        value(next?: any): any;
+        option_checked(key: string, next?: boolean): boolean;
+    }
+}
+
+declare namespace $ {
     class $origami_app_bank extends $mol_list {
         rows(): readonly any[];
+        filter_type(next?: any): string;
+        types(): Record<string, any>;
+        TypeSwitcher(): $$.$mol_switch;
         Bank_text(): $$.$mol_text;
         bank_address(id: any): string;
         Bank_address(id: any): $$.$mol_text;
@@ -2649,6 +2698,11 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: [{
+                day: string;
+                hours: null | string;
+            }] | undefined;
         }[];
         banks(): {
             id: string;
@@ -2656,6 +2710,11 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: [{
+                day: string;
+                hours: string | null;
+            }] | undefined;
         }[];
         bank_id(id: string): {
             id: string;
@@ -2663,6 +2722,11 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            openHoursIndividual?: [] | undefined;
+            openHours?: [{
+                day: string;
+                hours: string | null;
+            }] | undefined;
         } | undefined;
         bank_list(): readonly any[];
         bank_name(id: any): string;

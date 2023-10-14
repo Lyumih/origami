@@ -512,8 +512,29 @@ $origami_map $mol_map_yandex
 
 $origami_map_mark $mol_map_yandex_mark
 
+$mol_check_list $mol_view
+	dictionary *
+	Option* $mol_check
+		checked? <=> option_checked*? false
+		label <= option_label* /
+			<= option_title* \
+		enabled <= option_enabled* <= enabled true
+		hint <= option_hint* \
+		minimal_height 24
+	options *
+	keys /string
+	sub <= items /$mol_check
+
+$mol_switch $mol_check_list
+	value? \
+
 $origami_app_bank $mol_list
 	rows /
+		<= TypeSwitcher $mol_switch
+			value? <=> filter_type? \ind
+			options <= types *
+				ind \Для физических лиц
+				ur \Для юридических лиц
 		<= Bank_text $mol_text text \Поиск оптимального отделения с учетом загруженности отделения и задач клиента на основе разработанного алгоритма
 		- <= Bank_search $mol_search
 		<= Bank_list $mol_list
