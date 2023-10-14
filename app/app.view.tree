@@ -1,7 +1,10 @@
 $origami_app $mol_page
-	title \AnonVTB
+	title \More Tech 5.0
 	plugins /
 		<= Theme $mol_theme_auto theme \$mol_theme_light
+	tools /
+		<= Settings $mol_button_minor
+			sub / <= Settings_icon $mol_icon_settings
 	body /
 		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
 		<= Map $mol_list

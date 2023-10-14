@@ -1,3 +1,5 @@
 [origami_app_bank_bank] {
 	flex-direction: column;
+	border-radius: 20px;
+	/* background: gray; */
 }
