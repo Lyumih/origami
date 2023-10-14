@@ -9708,7 +9708,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\t/* background-color: white; */\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 ;
