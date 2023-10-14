@@ -2989,6 +2989,15 @@ declare namespace $ {
     }
 }
 
+declare namespace $ {
+    class $mol_button_major extends $mol_button_typed {
+        attr(): Record<string, any>;
+    }
+}
+
+declare namespace $ {
+}
+
 declare namespace $.$$ {
     class $origami_app extends $.$origami_app {
         autorun(): void;

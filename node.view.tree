@@ -546,7 +546,6 @@ $origami_app_bank $mol_list
 			options <= types *
 				ind \Для физических лиц
 				ur \Для юридических лиц
-		- <= Bank_text $mol_text text \Поиск оптимального отделения с учетом загруженности отделения и задач клиента на основе разработанного алгоритма
 		- <= Bank_search $mol_search
 		<= Bank_list $mol_list
 			rows <= bank_list /
@@ -705,3 +704,8 @@ $origami_app $mol_page
 	menu_foot /
 		<= GitHub $mol_link_source uri \https://github.com/Lyumih/origami
 		<= Lights $mol_lights_toggle
+
+$mol_button_major $mol_button_typed
+	attr *
+		^
+		mol_theme \$mol_theme_accent

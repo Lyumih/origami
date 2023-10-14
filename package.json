@@ -246,7 +246,8 @@
     "$mol_icon_bank",
     "$mol_icon_account",
     "$mol_icon_dots_vertical",
-    "$mol_icon_dots"
+    "$mol_icon_dots",
+    "$mol_button_major"
   ],
   "dependencies": {
     "jsdom": "*",

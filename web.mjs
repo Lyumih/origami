@@ -9092,7 +9092,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\t/* background: gray; */\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\t/* background-color: white; */\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 ;
@@ -10019,6 +10019,28 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_button_major extends $mol_button_typed {
+        attr() {
+            return {
+                ...super.attr(),
+                mol_theme: "$mol_theme_accent"
+            };
+        }
+    }
+    $.$mol_button_major = $mol_button_major;
+})($ || ($ = {}));
+//mol/button/major/-view.tree/major.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/button/major/major.view.css", "[mol_button_major][disabled] {\n\topacity: .5;\n\tfilter: grayscale();\n}\n");
+})($ || ($ = {}));
+//mol/button/major/-css/major.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     var $$;
     (function ($$) {
         class $origami_app extends $.$origami_app {
@@ -10055,7 +10077,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", "[origami_app_head] {\n\tbackground-color: #1E4BD2;\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n[origami_app_settings]{\n\tcolor: white;\n\t/* font-size: 2rem; */\n}\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\tbox-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10);\n}\n\n[origami_app_foot] > * {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: #EAEDF5;\n}\n\n");
+    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n/* Переопределение базовой темы */\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n[mol_button_minor]:active {\n\tcolor: black;\n}\n[mol_check_checked] {\n\tcolor: black;\n\tbackground-color: white;\n}\n[mol_check_checked=\"true\"] {\n\tcolor: white!important;\n\tbackground-color: var(--origami_app_primary_main)!important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor:  var(--origami_app_primary_dark)\n}\n[mol_link]:active {\n\tcolor:  var(--origami_app_primary_dark)\n}\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings]{\n\tcolor: white;\n\tfont-size: 2rem;\n}\n[origami_app_settings]:active{\n\tcolor: white;\n}\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\t/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */\n}\n\n[origami_app_foot] > * {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body] > * {\n\tgap: 1rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
 
