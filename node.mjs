@@ -9389,6 +9389,330 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_check_list extends $mol_view {
+        dictionary() {
+            return {};
+        }
+        Option(id) {
+            const obj = new this.$.$mol_check();
+            obj.checked = (next) => this.option_checked(id, next);
+            obj.label = () => this.option_label(id);
+            obj.enabled = () => this.option_enabled(id);
+            obj.hint = () => this.option_hint(id);
+            obj.minimal_height = () => 24;
+            return obj;
+        }
+        options() {
+            return {};
+        }
+        keys() {
+            return [];
+        }
+        sub() {
+            return this.items();
+        }
+        option_checked(id, next) {
+            if (next !== undefined)
+                return next;
+            return false;
+        }
+        option_title(id) {
+            return "";
+        }
+        option_label(id) {
+            return [
+                this.option_title(id)
+            ];
+        }
+        enabled() {
+            return true;
+        }
+        option_enabled(id) {
+            return this.enabled();
+        }
+        option_hint(id) {
+            return "";
+        }
+        items() {
+            return [];
+        }
+    }
+    __decorate([
+        $mol_mem_key
+    ], $mol_check_list.prototype, "Option", null);
+    __decorate([
+        $mol_mem_key
+    ], $mol_check_list.prototype, "option_checked", null);
+    $.$mol_check_list = $mol_check_list;
+})($ || ($ = {}));
+//mol/check/list/-view.tree/list.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_check_list extends $.$mol_check_list {
+            options() {
+                return {};
+            }
+            dictionary(next) {
+                return next ?? {};
+            }
+            option_checked(id, next) {
+                const prev = this.dictionary();
+                if (next === undefined)
+                    return prev[id] ?? null;
+                const next_rec = { ...prev, [id]: next };
+                if (next === null)
+                    delete next_rec[id];
+                return this.dictionary(next_rec)[id] ?? null;
+            }
+            keys() {
+                return Object.keys(this.options());
+            }
+            items() {
+                return this.keys().map(key => this.Option(key));
+            }
+            option_title(key) {
+                return this.options()[key] || key;
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_check_list.prototype, "keys", null);
+        __decorate([
+            $mol_mem
+        ], $mol_check_list.prototype, "items", null);
+        $$.$mol_check_list = $mol_check_list;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/check/list/list.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/check/list/list.view.css", "[mol_check_list] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex: 1 1 auto;\n\tborder-radius: var(--mol_gap_round);\n\tgap: 1px;\n}\n\n[mol_check_list_option] {\n\tflex: 0 1 auto;\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"]) {\n\ttext-shadow: 0 0;\n\tcolor: var(--mol_theme_current);\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"][disabled]) {\n\tcolor: var(--mol_theme_text);\n}\n");
+})($ || ($ = {}));
+//mol/check/list/-css/list.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_switch extends $mol_check_list {
+        value(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_switch.prototype, "value", null);
+    $.$mol_switch = $mol_switch;
+})($ || ($ = {}));
+//mol/switch/-view.tree/switch.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_switch extends $.$mol_switch {
+            value(next) {
+                return $mol_state_session.value(`${this}.value()`, next) ?? '';
+            }
+            option_checked(key, next) {
+                if (next === undefined)
+                    return this.value() == key;
+                this.value(next ? key : '');
+                return next;
+            }
+        }
+        $$.$mol_switch = $mol_switch;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/switch/switch.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_app_atm extends $mol_view {
+        sub() {
+            return [
+                this.CashSwitcher(),
+                this.Atm_list()
+            ];
+        }
+        filter_type(next) {
+            if (next !== undefined)
+                return next;
+            return "withdrawal";
+        }
+        types() {
+            return {
+                withdrawal: "Снятие наличных",
+                deposit: "Внесение наличных"
+            };
+        }
+        CashSwitcher() {
+            const obj = new this.$.$mol_switch();
+            obj.value = (next) => this.filter_type(next);
+            obj.options = () => this.types();
+            return obj;
+        }
+        open_map(id, next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        atm_address(id) {
+            return "";
+        }
+        Atm_address(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.atm_address(id);
+            return obj;
+        }
+        atm_distance(id) {
+            return "";
+        }
+        Atm_distance(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.atm_distance(id);
+            return obj;
+        }
+        atm_time(id) {
+            return "8:00-18:00";
+        }
+        Atm_time(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.atm_time(id);
+            return obj;
+        }
+        Atm_status_line(id) {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.Atm_distance(id),
+                this.Atm_time(id)
+            ];
+            return obj;
+        }
+        Atm(id) {
+            const obj = new this.$.$mol_view();
+            obj.event = () => ({
+                click: (next) => this.open_map(id, next)
+            });
+            obj.sub = () => [
+                this.Atm_address(id),
+                this.Atm_status_line(id)
+            ];
+            return obj;
+        }
+        atm_list() {
+            return [
+                this.Atm("0")
+            ];
+        }
+        Atm_list() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.atm_list();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_atm.prototype, "filter_type", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_atm.prototype, "CashSwitcher", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "open_map", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "Atm_address", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "Atm_distance", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "Atm_time", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "Atm_status_line", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_atm.prototype, "Atm", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_atm.prototype, "Atm_list", null);
+    $.$origami_app_atm = $origami_app_atm;
+})($ || ($ = {}));
+//origami/app/atm/-view.tree/atm.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $origami_app_atm extends $.$origami_app_atm {
+            static fetch_atms_data(limit) {
+                const result = this.$.$mol_fetch
+                    .json(`https://origami-team.site/atm/all?offset=0&limit=${limit || 50}`);
+                const mocked = result.map(atm => ({ distance: JSON.stringify(atm).length, ...atm }));
+                console.log(result, mocked);
+                return mocked.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
+            }
+            atms_data() {
+                return this.$.$origami_app_atm.fetch_atms_data();
+            }
+            atms() {
+                if (!this.filter_type())
+                    return this.atms_data();
+                return this.atms_data().filter(atm => {
+                    const dates = this.filter_type() === 'ind' ? atm.allDay : atm.services;
+                    return dates;
+                });
+            }
+            atm_id(id) {
+                return this.atms().find((atm) => atm.id == id);
+            }
+            atm_list() {
+                return this.atms().map((atm) => this.Atm(atm.id));
+            }
+            atm_address(id) {
+                return this.atm_id(id)?.address || '';
+            }
+            atm_distance(id) {
+                const distance = this.atm_id(id)?.distance;
+                if (!distance)
+                    return '';
+                else if (distance > 1000) {
+                    return `${(distance / 1000).toFixed(1)} км`;
+                }
+                else {
+                    return `${distance} м`;
+                }
+            }
+            atm_time(id) {
+                return this.atm_id(id)?.allDay ? 'Круглосуточно' : '8:00-18:00';
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $origami_app_atm.prototype, "atms_data", null);
+        __decorate([
+            $mol_mem
+        ], $origami_app_atm, "fetch_atms_data", null);
+        $$.$origami_app_atm = $origami_app_atm;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//origami/app/atm/atm.view.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_dump_list extends $mol_view {
         values() {
             return [];
@@ -10011,16 +10335,8 @@ var $;
             const obj = new this.$.$origami_app_bank();
             return obj;
         }
-        Atms_text() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)";
-            return obj;
-        }
         Atms() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Atms_text()
-            ];
+            const obj = new this.$.$origami_app_atm();
             return obj;
         }
         Todo_url() {
@@ -10098,9 +10414,6 @@ var $;
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Bank", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Atms_text", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Atms", null);
@@ -10181,154 +10494,6 @@ var $;
     $mol_style_attach("mol/button/major/major.view.css", "[mol_button_major][disabled] {\n\topacity: .5;\n\tfilter: grayscale();\n}\n");
 })($ || ($ = {}));
 //mol/button/major/-css/major.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_check_list extends $mol_view {
-        dictionary() {
-            return {};
-        }
-        Option(id) {
-            const obj = new this.$.$mol_check();
-            obj.checked = (next) => this.option_checked(id, next);
-            obj.label = () => this.option_label(id);
-            obj.enabled = () => this.option_enabled(id);
-            obj.hint = () => this.option_hint(id);
-            obj.minimal_height = () => 24;
-            return obj;
-        }
-        options() {
-            return {};
-        }
-        keys() {
-            return [];
-        }
-        sub() {
-            return this.items();
-        }
-        option_checked(id, next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        option_title(id) {
-            return "";
-        }
-        option_label(id) {
-            return [
-                this.option_title(id)
-            ];
-        }
-        enabled() {
-            return true;
-        }
-        option_enabled(id) {
-            return this.enabled();
-        }
-        option_hint(id) {
-            return "";
-        }
-        items() {
-            return [];
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "Option", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "option_checked", null);
-    $.$mol_check_list = $mol_check_list;
-})($ || ($ = {}));
-//mol/check/list/-view.tree/list.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_check_list extends $.$mol_check_list {
-            options() {
-                return {};
-            }
-            dictionary(next) {
-                return next ?? {};
-            }
-            option_checked(id, next) {
-                const prev = this.dictionary();
-                if (next === undefined)
-                    return prev[id] ?? null;
-                const next_rec = { ...prev, [id]: next };
-                if (next === null)
-                    delete next_rec[id];
-                return this.dictionary(next_rec)[id] ?? null;
-            }
-            keys() {
-                return Object.keys(this.options());
-            }
-            items() {
-                return this.keys().map(key => this.Option(key));
-            }
-            option_title(key) {
-                return this.options()[key] || key;
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mol_check_list.prototype, "keys", null);
-        __decorate([
-            $mol_mem
-        ], $mol_check_list.prototype, "items", null);
-        $$.$mol_check_list = $mol_check_list;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/check/list/list.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/check/list/list.view.css", "[mol_check_list] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex: 1 1 auto;\n\tborder-radius: var(--mol_gap_round);\n\tgap: 1px;\n}\n\n[mol_check_list_option] {\n\tflex: 0 1 auto;\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"]) {\n\ttext-shadow: 0 0;\n\tcolor: var(--mol_theme_current);\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"][disabled]) {\n\tcolor: var(--mol_theme_text);\n}\n");
-})($ || ($ = {}));
-//mol/check/list/-css/list.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_switch extends $mol_check_list {
-        value(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_switch.prototype, "value", null);
-    $.$mol_switch = $mol_switch;
-})($ || ($ = {}));
-//mol/switch/-view.tree/switch.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_switch extends $.$mol_switch {
-            value(next) {
-                return $mol_state_session.value(`${this}.value()`, next) ?? '';
-            }
-            option_checked(key, next) {
-                if (next === undefined)
-                    return this.value() == key;
-                this.value(next ? key : '');
-                return next;
-            }
-        }
-        $$.$mol_switch = $mol_switch;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/switch/switch.view.ts
 ;
 "use strict";
 var $;
@@ -10560,8 +10725,7 @@ var $;
                 return this.bank_id(id)?.openHours?.[day]?.hours ?? 'Выходной';
             }
             bank_workload(id) {
-                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
-                return workload;
+                return this.bank_id(id)?.workload_type || 0;
             }
             open_map(id, next) {
                 const bank = this.bank_id(id);

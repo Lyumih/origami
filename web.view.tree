@@ -529,6 +529,39 @@ $origami_app_world $mol_list
 					address <= place_address* \СПБ
 					content <= place_content* \Вам нужно съездить в СПБ
 
+$mol_check_list $mol_view
+	dictionary *
+	Option* $mol_check
+		checked? <=> option_checked*? false
+		label <= option_label* /
+			<= option_title* \
+		enabled <= option_enabled* <= enabled true
+		hint <= option_hint* \
+		minimal_height 24
+	options *
+	keys /string
+	sub <= items /$mol_check
+
+$mol_switch $mol_check_list
+	value? \
+
+$origami_app_atm $mol_view
+	sub /
+		<= CashSwitcher $mol_switch
+			value? <=> filter_type? \withdrawal
+			options <= types *
+				withdrawal \Снятие наличных
+				deposit \Внесение наличных
+		<= Atm_list $mol_list
+			rows <= atm_list /
+				<= Atm*0 $mol_view
+					event * click? <=> open_map*? null
+					sub /
+						<= Atm_address* $mol_text text <= atm_address* \
+						<= Atm_status_line* $mol_view sub /
+							<= Atm_distance* $mol_text text <= atm_distance* \
+							<= Atm_time* $mol_text text <= atm_time* \8:00-18:00
+
 $mol_dump_list $mol_view
 	values /
 	sub /
@@ -606,9 +639,7 @@ $origami_app $mol_page
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
-		<= Atms $mol_view
-			sub /
-				<= Atms_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
+		<= Atms $origami_app_atm
 		<= Todo $mol_page
 			body /
 				<= Todo_url $mol_text text \https://origami-team.site/docs
@@ -644,22 +675,6 @@ $mol_button_major $mol_button_typed
 	attr *
 		^
 		mol_theme \$mol_theme_accent
-
-$mol_check_list $mol_view
-	dictionary *
-	Option* $mol_check
-		checked? <=> option_checked*? false
-		label <= option_label* /
-			<= option_title* \
-		enabled <= option_enabled* <= enabled true
-		hint <= option_hint* \
-		minimal_height 24
-	options *
-	keys /string
-	sub <= items /$mol_check
-
-$mol_switch $mol_check_list
-	value? \
 
 $origami_app_bank $mol_list
 	rows /

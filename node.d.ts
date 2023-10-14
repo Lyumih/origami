@@ -2782,6 +2782,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -2796,6 +2797,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -2811,6 +2813,133 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_check_list extends $mol_view {
+        dictionary(): Record<string, any>;
+        Option(id: any): $$.$mol_check;
+        options(): Record<string, any>;
+        keys(): readonly string[];
+        sub(): readonly $mol_check[];
+        option_checked(id: any, next?: any): boolean;
+        option_title(id: any): string;
+        option_label(id: any): readonly any[];
+        enabled(): boolean;
+        option_enabled(id: any): boolean;
+        option_hint(id: any): string;
+        items(): readonly $mol_check[];
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_check_list extends $.$mol_check_list {
+        options(): {
+            [key: string]: string;
+        };
+        dictionary(next?: Record<string, boolean>): Record<string, boolean>;
+        option_checked(id: string, next?: boolean | null): boolean;
+        keys(): readonly string[];
+        items(): $mol_check[];
+        option_title(key: string): string;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_switch extends $mol_check_list {
+        value(next?: any): string;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_switch extends $.$mol_switch {
+        value(next?: any): any;
+        option_checked(key: string, next?: boolean): boolean;
+    }
+}
+
+declare namespace $ {
+    class $origami_app_atm extends $mol_view {
+        sub(): readonly any[];
+        filter_type(next?: any): string;
+        types(): Record<string, any>;
+        CashSwitcher(): $$.$mol_switch;
+        open_map(id: any, next?: any): any;
+        atm_address(id: any): string;
+        Atm_address(id: any): $$.$mol_text;
+        atm_distance(id: any): string;
+        Atm_distance(id: any): $$.$mol_text;
+        atm_time(id: any): string;
+        Atm_time(id: any): $$.$mol_text;
+        Atm_status_line(id: any): $mol_view;
+        Atm(id: any): $mol_view;
+        atm_list(): readonly any[];
+        Atm_list(): $$.$mol_list;
+    }
+}
+
+declare namespace $.$$ {
+    class $origami_app_atm extends $.$origami_app_atm {
+        static fetch_atms_data(limit?: number): {
+            id: string;
+            address: string;
+            distance: number;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            allDay?: boolean | undefined;
+            services: {
+                name: string;
+                serviceCapability: "string";
+                serviceActivity: "string";
+            }[];
+        }[];
+        atms_data(): {
+            id: string;
+            address: string;
+            distance: number;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            allDay?: boolean | undefined;
+            services: {
+                name: string;
+                serviceCapability: "string";
+                serviceActivity: "string";
+            }[];
+        }[];
+        atms(): {
+            id: string;
+            address: string;
+            distance: number;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            allDay?: boolean | undefined;
+            services: {
+                name: string;
+                serviceCapability: "string";
+                serviceActivity: "string";
+            }[];
+        }[];
+        atm_id(id: string): {
+            id: string;
+            address: string;
+            distance: number;
+            longitude?: number | undefined;
+            latitude?: number | undefined;
+            allDay?: boolean | undefined;
+            services: {
+                name: string;
+                serviceCapability: "string";
+                serviceActivity: "string";
+            }[];
+        } | undefined;
+        atm_list(): readonly any[];
+        atm_address(id: any): string;
+        atm_distance(id: any): string;
+        atm_time(id: any): string;
+    }
 }
 
 declare namespace $ {
@@ -2937,8 +3066,7 @@ declare namespace $ {
         Route_text(): $$.$mol_text;
         Route(): $mol_view;
         Bank(): $$.$origami_app_bank;
-        Atms_text(): $$.$mol_text;
-        Atms(): $mol_view;
+        Atms(): $$.$origami_app_atm;
         Todo_url(): $$.$mol_text;
         todo_test(): any;
         Todo_test(): $$.$mol_dump_value;
@@ -2965,52 +3093,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_check_list extends $mol_view {
-        dictionary(): Record<string, any>;
-        Option(id: any): $$.$mol_check;
-        options(): Record<string, any>;
-        keys(): readonly string[];
-        sub(): readonly $mol_check[];
-        option_checked(id: any, next?: any): boolean;
-        option_title(id: any): string;
-        option_label(id: any): readonly any[];
-        enabled(): boolean;
-        option_enabled(id: any): boolean;
-        option_hint(id: any): string;
-        items(): readonly $mol_check[];
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_check_list extends $.$mol_check_list {
-        options(): {
-            [key: string]: string;
-        };
-        dictionary(next?: Record<string, boolean>): Record<string, boolean>;
-        option_checked(id: string, next?: boolean | null): boolean;
-        keys(): readonly string[];
-        items(): $mol_check[];
-        option_title(key: string): string;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_switch extends $mol_check_list {
-        value(next?: any): string;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_switch extends $.$mol_switch {
-        value(next?: any): any;
-        option_checked(key: string, next?: boolean): boolean;
-    }
 }
 
 declare namespace $.$$ {
@@ -3056,6 +3138,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -3070,6 +3153,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -3084,6 +3168,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -3098,6 +3183,7 @@ declare namespace $.$$ {
             distance?: number | undefined;
             longitude?: number | undefined;
             latitude?: number | undefined;
+            workload_type?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
