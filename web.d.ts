@@ -2869,6 +2869,7 @@ declare namespace $ {
         filter_type(next?: any): string;
         types(): Record<string, any>;
         TypeSwitcher(): $$.$mol_switch;
+        open_map(id: any, next?: any): any;
         bank_address(id: any): string;
         Bank_address(id: any): $$.$mol_text;
         bank_distance(id: any): string;
@@ -2892,6 +2893,7 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -2904,6 +2906,7 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -2916,6 +2919,7 @@ declare namespace $.$$ {
             address: string;
             type?: string | undefined;
             distance?: number | undefined;
+            latitude?: number | undefined;
             openHoursIndividual?: [] | undefined;
             openHours?: {
                 day: string;
@@ -2928,6 +2932,7 @@ declare namespace $.$$ {
         bank_distance(id: any): string;
         bank_time(id: any): string;
         bank_workload(id: any): number;
+        open_map(id: string, next?: any): void;
     }
 }
 

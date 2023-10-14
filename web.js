@@ -9751,6 +9751,11 @@ var $;
             obj.options = () => this.types();
             return obj;
         }
+        open_map(id, next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         bank_address(id) {
             return "";
         }
@@ -9799,6 +9804,9 @@ var $;
         }
         Bank(id) {
             const obj = new this.$.$mol_view();
+            obj.event = () => ({
+                click: (next) => this.open_map(id, next)
+            });
             obj.sub = () => [
                 this.Bank_address(id),
                 this.Bank_status_line(id)
@@ -9822,6 +9830,9 @@ var $;
     __decorate([
         $mol_mem
     ], $origami_app_bank.prototype, "TypeSwitcher", null);
+    __decorate([
+        $mol_mem_key
+    ], $origami_app_bank.prototype, "open_map", null);
     __decorate([
         $mol_mem_key
     ], $origami_app_bank.prototype, "Bank_address", null);
@@ -9871,10 +9882,10 @@ var $;
                 });
             }
             bank_id(id) {
-                return this.banks().find((bank) => bank.salePointName == id);
+                return this.banks().find((bank) => bank.id == id);
             }
             bank_list() {
-                return this.banks().map((bank) => this.Bank(bank.salePointName));
+                return this.banks().map((bank) => this.Bank(bank.id));
             }
             bank_name(id) {
                 return this.bank_id(id)?.salePointName || '';
@@ -9901,6 +9912,11 @@ var $;
                 const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
                 return workload;
             }
+            open_map(id, next) {
+                const bank = this.bank_id(id);
+                console.log(next, bank);
+                this.$.$mol_state_arg.go({ 'page': 'map', bank: bank?.id || '' });
+            }
         }
         __decorate([
             $mol_mem
@@ -9908,6 +9924,9 @@ var $;
         __decorate([
             $mol_mem
         ], $origami_app_bank.prototype, "banks", null);
+        __decorate([
+            $mol_action
+        ], $origami_app_bank.prototype, "open_map", null);
         $$.$origami_app_bank = $origami_app_bank;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
