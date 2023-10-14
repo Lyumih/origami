@@ -2978,8 +2978,6 @@ declare namespace $ {
         Todo(): $mol_view;
         Map_icon(): $mol_icon_map_marker;
         Map_link(): $mol_link_source;
-        Office_icon(): $mol_icon_map;
-        Office_link(): $mol_link_source;
         Bank_icon(): $mol_icon_bank;
         Bank_link(): $mol_link_source;
         Profile_icon(): $mol_icon_account;

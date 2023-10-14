@@ -677,7 +677,7 @@ $origami_app $mol_page
 		<= Map_link $mol_link_source
 			Icon <= Map_icon $mol_icon_map_marker
 			arg * page \map
-		<= Office_link $mol_link_source
+		- <= Office_link $mol_link_source
 			Icon <= Office_icon $mol_icon_map
 			arg * page \route
 		<= Bank_link $mol_link_source
