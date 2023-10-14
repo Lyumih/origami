@@ -9501,7 +9501,6 @@ var $;
         rows() {
             return [
                 this.LastOperations(),
-                this.Appeals(),
                 this.Return_amount(),
                 this.Disable_push()
             ];
@@ -9509,11 +9508,6 @@ var $;
         LastOperations() {
             const obj = new this.$.$mol_text();
             obj.text = () => "**Последние операции**";
-            return obj;
-        }
-        Appeals() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "**Обращения**";
             return obj;
         }
         Return_amount_text() {
@@ -9572,9 +9566,6 @@ var $;
     __decorate([
         $mol_mem
     ], $origami_app_profile.prototype, "LastOperations", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app_profile.prototype, "Appeals", null);
     __decorate([
         $mol_mem
     ], $origami_app_profile.prototype, "Return_amount_text", null);

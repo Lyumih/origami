@@ -2728,7 +2728,6 @@ declare namespace $ {
     class $origami_app_profile extends $mol_list {
         rows(): readonly any[];
         LastOperations(): $$.$mol_text;
-        Appeals(): $$.$mol_text;
         Return_amount_text(): $$.$mol_text;
         Return_amount_date(): $origami_ui_text_main;
         Return_amount_status(): $origami_ui_text_warning;
