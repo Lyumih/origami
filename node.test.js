@@ -9925,6 +9925,11 @@ var $;
         }
         Map_show_2() {
             const obj = new this.$.$origami_map();
+            obj.zoom = () => 10;
+            obj.center = () => [
+                55.754742,
+                37.621407
+            ];
             obj.objects = () => [
                 this.Place_3()
             ];
