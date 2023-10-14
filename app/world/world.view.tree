@@ -2,12 +2,12 @@ $origami_app_world $mol_list
 	rows /
 		<= Map $mol_map_yandex
 			zoom 13
-			center <= center /
+			center <= center $mol_vector_2d /
 				0
 				0
 			objects <= banks_mark_list /
 				<= Place*0 $mol_map_yandex_mark
-					pos <= mark_pos* /
+					pos <= mark_pos* $mol_vector_2d /
 						0
 						0
 					title <= place_title* \
