@@ -5,6 +5,14 @@ deploy \/origami/app/manifest.json
 deploy \/origami/app/robots.txt
 
 deploy \/origami/app/favicon.ico
+
 deploy \/origami/app/assets/img/logo.svg
 deploy \/origami/app/assets/img/logo_white.svg
 deploy \/origami/app/assets/img/logo_vtb.png
+
+
+deploy \/origami/app/assets/fonts/VTBGroupUI-Light.ttf
+deploy \/origami/app/assets/fonts/VTBGroupUI-Medium.ttf
+deploy \/origami/app/assets/fonts/VTBGroupUI-Regular.ttf
+deploy \/origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf
+deploy \/origami/app/assets/fonts/VTBGroupUI-Bold.ttf
