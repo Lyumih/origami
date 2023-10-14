@@ -2696,6 +2696,16 @@ declare namespace $ {
     }
     class $origami_ui_text_smallest extends $origami_ui_text {
     }
+    class $origami_ui_text_contrast extends $mol_text {
+    }
+    class $origami_ui_text_contrast_large extends $origami_ui_text {
+    }
+    class $origami_ui_text_contrast_largest extends $origami_ui_text {
+    }
+    class $origami_ui_text_contrast_small extends $origami_ui_text {
+    }
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text {
+    }
     class $origami_ui_text_light extends $origami_ui_text {
     }
     class $origami_ui_text_light_large extends $origami_ui_text_large {

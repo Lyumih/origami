@@ -529,7 +529,7 @@ $origami_app_world $mol_list
 					address <= place_address* \СПБ
 					content <= place_content* \Вам нужно съездить в СПБ
 
-- Colors: common text(black); light(lightblue), main(blue), dark(darkblue); success(green), warning(orange);
+- Colors: common text(black), contrast(white); light(lightblue), main(blue), dark(darkblue); success(green), warning(orange);
 - Sizes: common(16px, 400-regular); large(18px, 500); largest(20px, 600); small(14px, 300); smallest(12px, 200);
 
 - Common text (black)
@@ -538,6 +538,13 @@ $origami_ui_text_large $origami_ui_text
 $origami_ui_text_largest $origami_ui_text
 $origami_ui_text_small $origami_ui_text
 $origami_ui_text_smallest $origami_ui_text
+
+- Contrast text (white)
+$origami_ui_text_contrast $mol_text
+$origami_ui_text_contrast_large $origami_ui_text
+$origami_ui_text_contrast_largest $origami_ui_text
+$origami_ui_text_contrast_small $origami_ui_text
+$origami_ui_text_contrast_smallest $origami_ui_text
 
 - Light primary text (lightblue)
 $origami_ui_text_light $origami_ui_text

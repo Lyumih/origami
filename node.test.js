@@ -9396,6 +9396,21 @@ var $;
     class $origami_ui_text_smallest extends $origami_ui_text {
     }
     $.$origami_ui_text_smallest = $origami_ui_text_smallest;
+    class $origami_ui_text_contrast extends $mol_text {
+    }
+    $.$origami_ui_text_contrast = $origami_ui_text_contrast;
+    class $origami_ui_text_contrast_large extends $origami_ui_text {
+    }
+    $.$origami_ui_text_contrast_large = $origami_ui_text_contrast_large;
+    class $origami_ui_text_contrast_largest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_contrast_largest = $origami_ui_text_contrast_largest;
+    class $origami_ui_text_contrast_small extends $origami_ui_text {
+    }
+    $.$origami_ui_text_contrast_small = $origami_ui_text_contrast_small;
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_contrast_smallest = $origami_ui_text_contrast_smallest;
     class $origami_ui_text_light extends $origami_ui_text {
     }
     $.$origami_ui_text_light = $origami_ui_text_light;
@@ -9477,7 +9492,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
+    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_common: #000000;\n\t--origami_ui_theme_contrast: #FFFFFF;\n\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
 })($ || ($ = {}));
 //origami/ui/theme/-css/theme.view.css.ts
 ;
