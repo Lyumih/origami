@@ -159,12 +159,16 @@
 }
 
 [origami_app_menu_link] {
+	color: var(--origami_app_primary_light);
 	padding: 0;
 	gap: 0;
 	font-size: 12px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+[origami_app_menu_link][mol_link_current="true"] {
+	color: var(--origami_app_primary_dark);
 }
 
 [origami_app_menu_link]>[mol_icon] {
