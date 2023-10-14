@@ -3,7 +3,6 @@ namespace $.$$ {
 
 		@$mol_mem
 		banks_data() {
-			console.log( 'banks' )
 			return this.$.$mol_fetch
 				.json( 'https://origami-team.site/office/all?offset=0&limit=30' ) as {
 					id: string,
@@ -30,7 +29,6 @@ namespace $.$$ {
 		}
 
 		bank_list(): readonly any[] {
-			console.log( this.banks() )
 			return this.banks().map( ( bank ) => this.Bank( bank.salePointName ) )
 		}
 
