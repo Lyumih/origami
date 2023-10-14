@@ -16,7 +16,6 @@
 	align-items: center;
 	padding: var(--mol_gap_text);
 	justify-content: space-between;
-	/* flex-wrap: wrap; */
 	font-size: 14px;
 }
 
@@ -56,9 +55,11 @@
 [origami_app_bank_bank_time]::before {
 	background-image: url(./origami/app/assets/img/time.svg);
 }
+
 [origami_app_bank_bank_workload_paragraph] {
 	padding-left: 0;
 }
+
 [origami_app_bank_bank_workload] {
 	position: relative;
 	font-size: 12px;

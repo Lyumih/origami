@@ -1,5 +1,5 @@
-$origami_app_atm $mol_view
-	sub /
+$origami_app_atm $mol_list
+	rows /
 		<= CashSwitcher $mol_switch
 			value? <=> filter_type? \withdrawal
 			options <= types *

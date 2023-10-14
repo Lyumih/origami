@@ -33,7 +33,7 @@ namespace $.$$ {
 			if( !this.filter_type() ) return this.atms_data()
 			//TODO: добавить фильтрацию.
 			return this.atms_data().filter( atm => {
-				const dates = this.filter_type() === 'ind' ? atm.allDay : atm.services
+				const dates = this.filter_type() === 'ind' ? atm.address.length % 2 : atm.address.length % 3
 				return dates
 			} )
 		}
