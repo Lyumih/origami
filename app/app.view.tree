@@ -15,8 +15,8 @@ $origami_app $mol_page
 		<= Atms $mol_view
 			sub /
 				<= Atms_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
-		<= Todo $mol_view
-			sub /
+		<= Todo $mol_page
+			body /
 				<= Todo_url $mol_text text \https://origami-team.site/docs
 				<= Todo_test $mol_dump_value
 					expanded true
