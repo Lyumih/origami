@@ -13,7 +13,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		center( next?: readonly any[] ): readonly any[] {
+		center( next?: readonly [number, number] | undefined, force?: $mol_mem_force | undefined ): $mol_vector_2d<number> | readonly [number, number] {
 			console.log('center', next)
 			const bank_id = this.$.$mol_state_arg.value('bank' )
 			console.log(bank_id)
