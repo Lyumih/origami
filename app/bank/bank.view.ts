@@ -4,7 +4,7 @@ namespace $.$$ {
 		@$mol_mem
 		banks_data() {
 			const result = this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all?offset=0&limit=10' ) as {
+				.json( 'https://origami-team.site/office/all?offset=0&limit=150' ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
@@ -57,7 +57,7 @@ namespace $.$$ {
 
 		bank_workload( id: any ) {
 			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
-			return `Загруженность ${ workload }`
+			return workload
 		}
 	}
 }
