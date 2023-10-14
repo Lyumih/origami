@@ -30,5 +30,17 @@
 }
 
 [origami_app_bank_bank_distance] {
-	margin-left: 2rem;
+	margin-left: 20px;
+	position: relative;
+}
+
+[origami_app_bank_bank_distance]::before {
+	content: '';
+	position: absolute;
+	bottom: 12px;
+	left: -20px;
+	width: 24px;
+	height: 24px;
+	background-image: url(../../../origami/app/assets/img/traced.svg);
+	background-size: contain;
 }
