@@ -3,8 +3,8 @@ namespace $.$$ {
 
 		@$mol_mem
 		banks_data() {
-			return this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all?offset=0&limit=30' ) as {
+			const result = this.$.$mol_fetch
+				.json( 'https://origami-team.site/office/all?offset=0&limit=100' ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
@@ -13,6 +13,8 @@ namespace $.$$ {
 					openHoursIndividual?: [],
 					openHours?: [ { day: string, hours: null | string } ],
 				}[]
+			console.log(result)
+			return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
 		}
 
 		@$mol_mem
@@ -47,16 +49,15 @@ namespace $.$$ {
 			else { return `${ distance } м` }
 		}
 
+		bank_time( id: any ): string {
+			const time = this.bank_id( id )?.openHours?.[ 0 ]?.hours
+			// console.log(time)
+			return time ?? 'Выходной'
+		}
+
 		bank_workload( id: any ) {
 			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
 			return `Загруженность ${ workload }`
 		}
-
-		Bank_workload( id: any ) {
-			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
-			const icons = [ new this.$.$mol_icon_signal_cellular_outline(), new this.$.$mol_icon_signal_cellular_1(), new this.$.$mol_icon_signal_cellular_2(), new this.$.$mol_icon_signal_cellular_3() ]
-			return icons[ workload ]
-		}
-
 	}
 }

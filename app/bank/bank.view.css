@@ -12,14 +12,23 @@
 	align-items: center;
 	padding: var(--mol_gap_text);
 }
+
+[origami_app_bank_bank_status_line] {
+	justify-content: space-between;
+}
+
 [origami_app_bank_bank_status_line] > [mol_icon] {
 	color: var(--origami_app_primary_light);
 }
 
-[origami_app_bank_bank_distance] {
+[origami_app_bank_bank_time_paragraph] {
 	flex-grow: 1;
 }
 
 [origami_app_bank_typeswitcher] {
 	justify-content: center;
+}
+
+[origami_app_bank_bank_distance] {
+	margin-left: 2rem;
 }

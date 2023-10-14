@@ -144,6 +144,8 @@
 
 [origami_app_body]>* {
 	gap: 1rem;
+	width: 900px;
+	margin: auto;
 }
 
 
