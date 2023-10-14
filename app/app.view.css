@@ -6,7 +6,10 @@
 	--origami_app_background: #EAEDF5;
 }
 
-/* Переопределение базовой темы */
+/* Переопределение цветов базовой темы */
+[mol_buttom_typed] {
+	border-radius: 2rem;
+}
 [mol_button_major] {
 	background: var(--origami_app_primary_main);
 }
@@ -48,12 +51,23 @@
 	color:  var(--origami_app_primary_dark)
 }
 
+/* Переопределение границ элементом темы */
+[mol_button_typed] {
+	border-radius: 2rem;
+}
+
+/* Переопределение отступов */
+[mol_switch]{
+	gap: 0.75rem;
+}
+
 /* Переопределение элементов компонента */
 
 [origami_app_settings]{
 	color: white;
 	font-size: 2rem;
 }
+
 [origami_app_settings]:active{
 	color: white;
 }
