@@ -19,3 +19,7 @@
 [origami_app_bank_bank_distance] {
 	flex-grow: 1;
 }
+
+[origami_app_bank_typeswitcher] {
+	justify-content: center;
+}

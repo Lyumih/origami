@@ -1,4 +1,4 @@
 [origami_map] {
 	filter: none;
-	min-height: 450px;
+	min-height: calc(100vh - 270px);
 }

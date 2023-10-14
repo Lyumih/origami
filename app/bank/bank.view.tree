@@ -3,8 +3,8 @@ $origami_app_bank $mol_list
 		<= TypeSwitcher $mol_switch
 			value? <=> filter_type? \ind
 			options <= types *
-				ind \Для физических лиц
-				ur \Для юридических лиц
+				ind \Физлица
+				ur \Юрлица
 		- <= Bank_search $mol_search
 		<= Bank_list $mol_list
 			rows <= bank_list /
