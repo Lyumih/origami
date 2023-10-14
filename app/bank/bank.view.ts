@@ -5,11 +5,24 @@ namespace $.$$ {
 		banks_data(){
 			console.log('banks')
 			return this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all?offset=0&limit=50' ) as { id: string, salePointName?: string, address: string, type?: string, distance?: number }[]
+				.json( 'https://origami-team.site/office/all?offset=0&limit=400' ) as {
+					id: string,
+					salePointName?: string,
+					address: string,
+					type?: string,
+					distance?: number,
+					openHoursIndividual?: [],
+					openHours?: [{day: string, hours: null | string}],
+				 }[]
 		}
 
+		@ $mol_mem
 		banks() {
-			return this.banks_data()
+			if (!this.filter_type()) return this.banks_data()
+			return this.banks_data().filter( bank => {
+				const dates = this.filter_type() === 'ind' ? bank.openHoursIndividual : bank.openHours
+				return dates && dates[0]?.hours
+			})
 		}
 
 		bank_id(id: string) {
@@ -44,5 +57,6 @@ namespace $.$$ {
 			else if (distance > 1000) { return `${(distance / 1000).toFixed(1)} км` } 
 			else { return `${distance} м` }
 		}
+
 	}
 }
