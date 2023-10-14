@@ -140,8 +140,9 @@
 
 [origami_app_foot] {
 	border-radius: 20px 20px 0 0;
+	padding: 0;
+
 	background-color: white;
-	/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */
 }
 
 [origami_app_foot]>* {
@@ -156,4 +157,17 @@
 
 [origami_app_body]>* {
 	gap: 1rem;
+}
+
+[origami_app_menu_link] {
+	padding: 0;
+	font-size: 12px;
+	flex-direction: column;
+	gap: 0;
+	align-items: center;
+	justify-content: center;
+}
+
+[origami_app_menu_link]>[mol_icon] {
+	font-size: 32px;
 }

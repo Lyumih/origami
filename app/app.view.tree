@@ -30,19 +30,28 @@ $origami_app $mol_page
 					expanded true
 					value <= todo_test null
 	foot /
-		<= Map_link $mol_link_source
+		<= Map_link $origami_app_menu_link
 			Icon <= Map_icon $mol_icon_map_marker
-			arg * page \map
-		- <= Office_link $mol_link_source
+			link \map
+			title \Главная
+		- <= Office_link $origami_app_menu_link
 			Icon <= Office_icon $mol_icon_map
-			arg * page \route
-		<= Bank_link $mol_link_source
+			link \route
+		<= Bank_link $origami_app_menu_link
 			Icon <= Bank_icon $mol_icon_bank
-			arg * page \bank
-		<= Profile_link $mol_link_source
+			link \bank
+			title \Отделения
+		<= Profile_link $origami_app_menu_link
 			Icon <= Profile_icon $mol_icon_account
-			arg * page \wow
-			uri \#!page=wow
-		<= Api_link $mol_link_source
+			link \wow
+			title \Банкоматы
+		<= Api_link $origami_app_menu_link
 			Icon <= Api_icon $mol_icon_dots_vertical
-			arg * page \todo
+			link \todo
+			title \Профиль
+
+$origami_app_menu_link $mol_link
+	arg * page <= link \
+	sub /
+		<= Icon $mol_icon_bank
+		<= title \
