@@ -7,9 +7,8 @@
 }
 
 /* Переопределение цветов базовой темы */
-[mol_buttom_typed] {
-	border-radius: 2rem;
-}
+
+
 [mol_button_major] {
 	background: var(--origami_app_primary_main);
 }
@@ -35,7 +34,7 @@
 [mol_button_minor]:active {
 	color: black;
 }
-[mol_check_checked] {
+[mol_check] {
 	color: black;
 	background-color: white;
 }
