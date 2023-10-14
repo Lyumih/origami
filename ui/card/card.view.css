@@ -14,3 +14,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+
+[origami_ui_card_top]+[origami_ui_card_bottom] {
+	margin-top: -0.5rem;
+}
