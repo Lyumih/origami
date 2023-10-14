@@ -83,6 +83,10 @@
 	deploy \/origami/app/assets/img/atms.svg
 	deploy \/origami/app/assets/img/profile.svg
 	deploy \/origami/app/assets/img/traced.svg
+	deploy \/origami/app/assets/img/time.svg
+	deploy \/origami/app/assets/img/workload_1.svg
+	deploy \/origami/app/assets/img/workload_2.svg
+	deploy \/origami/app/assets/img/workload_3.svg
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Light.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Medium.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Regular.ttf

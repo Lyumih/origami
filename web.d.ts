@@ -2875,7 +2875,7 @@ declare namespace $ {
         Bank_distance(id: any): $$.$mol_text;
         bank_time(id: any): string;
         Bank_time(id: any): $$.$mol_text;
-        bank_workload(id: any): string;
+        bank_workload(id: any, next?: any): number;
         Bank_workload(id: any): $$.$mol_text;
         Bank_status_line(id: any): $mol_view;
         Bank(id: any): $mol_view;
@@ -2927,7 +2927,7 @@ declare namespace $.$$ {
         bank_address(id: any): string;
         bank_distance(id: any): string;
         bank_time(id: any): string;
-        bank_workload(id: any): string;
+        bank_workload(id: any): number;
     }
 }
 
