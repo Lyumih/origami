@@ -8668,7 +8668,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/map/map.view.css", "[origami_map] {\n\tfilter: none;\n\tmin-height: 450px;\n}\n");
+    $mol_style_attach("origami/map/map.view.css", "[origami_map] {\n\tfilter: none;\n\tmin-height: calc(100vh - 270px);\n}\n");
 })($ || ($ = {}));
 //origami/map/-css/map.view.css.ts
 ;
@@ -9772,8 +9772,8 @@ var $;
         }
         types() {
             return {
-                ind: "Для физических лиц",
-                ur: "Для юридических лиц"
+                ind: "Физлица",
+                ur: "Юрлица"
             };
         }
         TypeSwitcher() {
@@ -9990,7 +9990,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_distance] {\n\tflex-grow: 1;\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_distance] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 
