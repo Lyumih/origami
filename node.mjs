@@ -9808,66 +9808,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_icon_map extends $mol_icon {
-        path() {
-            return "M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20.34,3L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5C3,20.78 3.22,21 3.5,21C3.55,21 3.61,21 3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19 21,18.85 21,18.62V3.5C21,3.22 20.78,3 20.5,3Z";
-        }
-    }
-    $.$mol_icon_map = $mol_icon_map;
-})($ || ($ = {}));
-//mol/icon/map/-view.tree/map.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map_marker extends $mol_icon {
-        path() {
-            return "M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z";
-        }
-    }
-    $.$mol_icon_map_marker = $mol_icon_map_marker;
-})($ || ($ = {}));
-//mol/icon/map/marker/-view.tree/marker.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_bank extends $mol_icon {
-        path() {
-            return "M11.5,1L2,6V8H21V6M16,10V17H19V10M2,22H21V19H2M10,10V17H13V10M4,10V17H7V10H4Z";
-        }
-    }
-    $.$mol_icon_bank = $mol_icon_bank;
-})($ || ($ = {}));
-//mol/icon/bank/-view.tree/bank.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_account extends $mol_icon {
-        path() {
-            return "M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z";
-        }
-    }
-    $.$mol_icon_account = $mol_icon_account;
-})($ || ($ = {}));
-//mol/icon/account/-view.tree/account.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_dots_vertical extends $mol_icon {
-        path() {
-            return "M12,16C13.1,16 14,16.9 14,18C14,19.1 13.1,20 12,20C10.9,20 10,19.1 10,18C10,16.9 10.9,16 12,16M12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10M12,4C13.1,4 14,4.9 14,6C14,7.1 13.1,8 12,8C10.9,8 10,7.1 10,6C10,4.9 10.9,4 12,4Z";
-        }
-    }
-    $.$mol_icon_dots_vertical = $mol_icon_dots_vertical;
-})($ || ($ = {}));
-//mol/icon/dots/vertical/-view.tree/vertical.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_text_list extends $mol_text {
         auto_scroll() {
             return null;
@@ -10056,46 +9996,30 @@ var $;
             ];
             return obj;
         }
-        Map_icon() {
-            const obj = new this.$.$mol_icon_map_marker();
-            return obj;
-        }
         Map_link() {
             const obj = new this.$.$origami_app_menu_link();
-            obj.Icon = () => this.Map_icon();
+            obj.img = () => "origami/app/assets/img/main.svg";
             obj.link = () => "map";
             obj.title = () => "Главная";
             return obj;
         }
-        Bank_icon() {
-            const obj = new this.$.$mol_icon_bank();
-            return obj;
-        }
         Bank_link() {
             const obj = new this.$.$origami_app_menu_link();
-            obj.Icon = () => this.Bank_icon();
+            obj.img = () => "origami/app/assets/img/office.svg";
             obj.link = () => "bank";
             obj.title = () => "Отделения";
             return obj;
         }
-        Profile_icon() {
-            const obj = new this.$.$mol_icon_account();
-            return obj;
-        }
         Profile_link() {
             const obj = new this.$.$origami_app_menu_link();
-            obj.Icon = () => this.Profile_icon();
+            obj.img = () => "origami/app/assets/img/atms.svg";
             obj.link = () => "wow";
             obj.title = () => "Банкоматы";
             return obj;
         }
-        Api_icon() {
-            const obj = new this.$.$mol_icon_dots_vertical();
-            return obj;
-        }
         Api_link() {
             const obj = new this.$.$origami_app_menu_link();
-            obj.Icon = () => this.Api_icon();
+            obj.img = () => "origami/app/assets/img/profile.svg";
             obj.link = () => "todo";
             obj.title = () => "Профиль";
             return obj;
@@ -10151,25 +10075,13 @@ var $;
     ], $origami_app.prototype, "Todo", null);
     __decorate([
         $mol_mem
-    ], $origami_app.prototype, "Map_icon", null);
-    __decorate([
-        $mol_mem
     ], $origami_app.prototype, "Map_link", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Bank_icon", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Bank_link", null);
     __decorate([
         $mol_mem
-    ], $origami_app.prototype, "Profile_icon", null);
-    __decorate([
-        $mol_mem
     ], $origami_app.prototype, "Profile_link", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Api_icon", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Api_link", null);
@@ -10189,8 +10101,12 @@ var $;
         link() {
             return "";
         }
+        img() {
+            return "";
+        }
         Icon() {
-            const obj = new this.$.$mol_icon_bank();
+            const obj = new this.$.$mol_image();
+            obj.uri = () => this.img();
             return obj;
         }
         title() {
@@ -10411,9 +10327,33 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n\n/* Подключаем шрифты */\n\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 300;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Light.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 400;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 500;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 600;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 700;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n[origami_app] {\n\tfont-family: 'VTB Group UI', sans-serif;\n\tbackground: red;\n}\n\n\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n\n[mol_button_minor]:active {\n\tcolor: black;\n}\n\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n\n[mol_check_checked=\"true\"] {\n\tcolor: white !important;\n\tbackground-color: var(--origami_app_primary_main) !important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n[mol_link]:active {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch] {\n\tgap: 0.75rem;\n}\n\n\n\n\n\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tpadding: 0;\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n}\n\n[origami_app_foot]>* {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body]>* {\n\tgap: 1rem;\n}\n\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings] {\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active {\n\tcolor: white;\n}\n\n[origami_app_menu_link] {\n\tcolor: var(--origami_app_primary_light);\n\tpadding: 0;\n\tgap: 0;\n\tfont-size: 12px;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n}\n[origami_app_menu_link][mol_link_current=\"true\"] {\n\tcolor: var(--origami_app_primary_dark);\n}\n\n[origami_app_menu_link]>[mol_icon] {\n\tmargin-bottom: -0.5rem;\n\tfont-size: 32px;\n}\n");
+    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n\n/* Подключаем шрифты */\n\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 300;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Light.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 400;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 500;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 600;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 700;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n[origami_app] {\n\tfont-family: 'VTB Group UI', sans-serif;\n\tbackground: red;\n}\n\n\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n\n[mol_button_minor]:active {\n\tcolor: black;\n}\n\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n\n[mol_check_checked=\"true\"] {\n\tcolor: white !important;\n\tbackground-color: var(--origami_app_primary_main) !important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n[mol_link]:active {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch] {\n\tgap: 0.75rem;\n}\n\n\n\n\n\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tpadding: 0;\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n}\n\n[origami_app_foot]>* {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body]>* {\n\tgap: 1rem;\n}\n\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings] {\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active {\n\tcolor: white;\n}\n\n[origami_app_menu_link] {\n\tcolor: var(--origami_app_primary_light);\n\tgap: 0;\n\tfont-size: 12px;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n}\n[origami_app_menu_link][mol_link_current=\"true\"] {\n\tcolor: var(--origami_app_primary_dark);\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_map extends $mol_icon {
+        path() {
+            return "M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20.34,3L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5C3,20.78 3.22,21 3.5,21C3.55,21 3.61,21 3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19 21,18.85 21,18.62V3.5C21,3.22 20.78,3 20.5,3Z";
+        }
+    }
+    $.$mol_icon_map = $mol_icon_map;
+})($ || ($ = {}));
+//mol/icon/map/-view.tree/map.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_map_marker extends $mol_icon {
+        path() {
+            return "M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z";
+        }
+    }
+    $.$mol_icon_map_marker = $mol_icon_map_marker;
+})($ || ($ = {}));
+//mol/icon/map/marker/-view.tree/marker.view.tree.ts
 ;
 "use strict";
 var $;
