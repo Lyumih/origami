@@ -9384,35 +9384,107 @@ var $;
     class $origami_ui_text extends $mol_text {
     }
     $.$origami_ui_text = $origami_ui_text;
+    class $origami_ui_text_large extends $origami_ui_text {
+    }
+    $.$origami_ui_text_large = $origami_ui_text_large;
+    class $origami_ui_text_largest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_largest = $origami_ui_text_largest;
+    class $origami_ui_text_small extends $origami_ui_text {
+    }
+    $.$origami_ui_text_small = $origami_ui_text_small;
+    class $origami_ui_text_smallest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_smallest = $origami_ui_text_smallest;
     class $origami_ui_text_light extends $origami_ui_text {
     }
     $.$origami_ui_text_light = $origami_ui_text_light;
+    class $origami_ui_text_light_large extends $origami_ui_text_large {
+    }
+    $.$origami_ui_text_light_large = $origami_ui_text_light_large;
+    class $origami_ui_text_light_largest extends $origami_ui_text_largest {
+    }
+    $.$origami_ui_text_light_largest = $origami_ui_text_light_largest;
+    class $origami_ui_text_light_small extends $origami_ui_text_small {
+    }
+    $.$origami_ui_text_light_small = $origami_ui_text_light_small;
+    class $origami_ui_text_light_smallest extends $origami_ui_text_smallest {
+    }
+    $.$origami_ui_text_light_smallest = $origami_ui_text_light_smallest;
     class $origami_ui_text_main extends $origami_ui_text {
     }
     $.$origami_ui_text_main = $origami_ui_text_main;
+    class $origami_ui_text_main_large extends $origami_ui_text_large {
+    }
+    $.$origami_ui_text_main_large = $origami_ui_text_main_large;
+    class $origami_ui_text_main_largest extends $origami_ui_text_largest {
+    }
+    $.$origami_ui_text_main_largest = $origami_ui_text_main_largest;
+    class $origami_ui_text_main_small extends $origami_ui_text_small {
+    }
+    $.$origami_ui_text_main_small = $origami_ui_text_main_small;
+    class $origami_ui_text_main_smallest extends $origami_ui_text_smallest {
+    }
+    $.$origami_ui_text_main_smallest = $origami_ui_text_main_smallest;
     class $origami_ui_text_dark extends $origami_ui_text {
     }
     $.$origami_ui_text_dark = $origami_ui_text_dark;
-    class $origami_ui_text_warning extends $origami_ui_text {
+    class $origami_ui_text_dark_large extends $origami_ui_text_large {
     }
-    $.$origami_ui_text_warning = $origami_ui_text_warning;
+    $.$origami_ui_text_dark_large = $origami_ui_text_dark_large;
+    class $origami_ui_text_dark_largest extends $origami_ui_text_largest {
+    }
+    $.$origami_ui_text_dark_largest = $origami_ui_text_dark_largest;
+    class $origami_ui_text_dark_small extends $origami_ui_text_small {
+    }
+    $.$origami_ui_text_dark_small = $origami_ui_text_dark_small;
+    class $origami_ui_text_dark_smallest extends $origami_ui_text_smallest {
+    }
+    $.$origami_ui_text_dark_smallest = $origami_ui_text_dark_smallest;
     class $origami_ui_text_success extends $origami_ui_text {
     }
     $.$origami_ui_text_success = $origami_ui_text_success;
+    class $origami_ui_text_success_large extends $origami_ui_text_large {
+    }
+    $.$origami_ui_text_success_large = $origami_ui_text_success_large;
+    class $origami_ui_text_success_largest extends $origami_ui_text_largest {
+    }
+    $.$origami_ui_text_success_largest = $origami_ui_text_success_largest;
+    class $origami_ui_text_success_small extends $origami_ui_text_small {
+    }
+    $.$origami_ui_text_success_small = $origami_ui_text_success_small;
+    class $origami_ui_text_success_smallest extends $origami_ui_text_smallest {
+    }
+    $.$origami_ui_text_success_smallest = $origami_ui_text_success_smallest;
+    class $origami_ui_text_warning extends $origami_ui_text {
+    }
+    $.$origami_ui_text_warning = $origami_ui_text_warning;
+    class $origami_ui_text_warning_large extends $origami_ui_text_large {
+    }
+    $.$origami_ui_text_warning_large = $origami_ui_text_warning_large;
+    class $origami_ui_text_warning_largest extends $origami_ui_text_largest {
+    }
+    $.$origami_ui_text_warning_largest = $origami_ui_text_warning_largest;
+    class $origami_ui_text_warning_small extends $origami_ui_text_small {
+    }
+    $.$origami_ui_text_warning_small = $origami_ui_text_warning_small;
+    class $origami_ui_text_warning_smallest extends $origami_ui_text_smallest {
+    }
+    $.$origami_ui_text_warning_smallest = $origami_ui_text_warning_smallest;
 })($ || ($ = {}));
 //origami/ui/text/-view.tree/text.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* Colors */\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\t/* Border radius */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
+    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
 })($ || ($ = {}));
 //origami/ui/theme/-css/theme.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/text/text.view.css", "[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_primary_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_primary_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_primary_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n");
+    $mol_style_attach("origami/ui/text/text.view.css", "/* COLORS */\n[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_primary_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_primary_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_primary_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n\n/* FONT-SIZE and FONT-WEIGHT */\n[origami_ui_text] {\n\tfont-size: calc(var(--origami_ui_theme_font_size));\n\tfont-weight: 400;\n}\n\n[origami_ui_text_large] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));\n\tfont-weight: 500;\n}\n\n[origami_ui_text_largest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);\n\tfont-weight: 600;\n}\n\n[origami_ui_text_small] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));\n\tfont-weight: 300;\n}\n\n[origami_ui_text_smallest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);\n\tfont-weight: 200;\n}\n");
 })($ || ($ = {}));
 //origami/ui/text/-css/text.view.css.ts
 ;
@@ -9500,14 +9572,14 @@ var $;
     class $origami_app_profile extends $mol_list {
         rows() {
             return [
-                this.LastOperations(),
+                this.Appeals(),
                 this.Return_amount(),
                 this.Disable_push()
             ];
         }
-        LastOperations() {
+        Appeals() {
             const obj = new this.$.$mol_text();
-            obj.text = () => "**Последние операции**";
+            obj.text = () => "**Обращения**";
             return obj;
         }
         Return_amount_text() {
@@ -9565,7 +9637,7 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $origami_app_profile.prototype, "LastOperations", null);
+    ], $origami_app_profile.prototype, "Appeals", null);
     __decorate([
         $mol_mem
     ], $origami_app_profile.prototype, "Return_amount_text", null);
@@ -9593,13 +9665,6 @@ var $;
     $.$origami_app_profile = $origami_app_profile;
 })($ || ($ = {}));
 //origami/app/profile/-view.tree/profile.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("origami/app/profile/profile.view.css", "[origami_app_profile] {\n\tflex-direction: column;\n}\n");
-})($ || ($ = {}));
-//origami/app/profile/-css/profile.view.css.ts
 ;
 "use strict";
 var $;

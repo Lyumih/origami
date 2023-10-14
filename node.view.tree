@@ -529,14 +529,50 @@ $origami_app_world $mol_list
 					address <= place_address* \СПБ
 					content <= place_content* \Вам нужно съездить в СПБ
 
+- Colors: common text(black); light(lightblue), main(blue), dark(darkblue); success(green), warning(orange);
+- Sizes: common(16px, 400-regular); large(18px, 500); largest(20px, 600); small(14px, 300); smallest(12px, 200);
+
+- Common text (black)
 $origami_ui_text $mol_text
+$origami_ui_text_large $origami_ui_text
+$origami_ui_text_largest $origami_ui_text
+$origami_ui_text_small $origami_ui_text
+$origami_ui_text_smallest $origami_ui_text
 
+- Light primary text (lightblue)
 $origami_ui_text_light $origami_ui_text
-$origami_ui_text_main $origami_ui_text
-$origami_ui_text_dark $origami_ui_text
+$origami_ui_text_light_large $origami_ui_text_large
+$origami_ui_text_light_largest $origami_ui_text_largest
+$origami_ui_text_light_small $origami_ui_text_small
+$origami_ui_text_light_smallest $origami_ui_text_smallest
 
-$origami_ui_text_warning $origami_ui_text
+- Main primary text (blue)
+$origami_ui_text_main $origami_ui_text
+$origami_ui_text_main_large $origami_ui_text_large
+$origami_ui_text_main_largest $origami_ui_text_largest
+$origami_ui_text_main_small $origami_ui_text_small
+$origami_ui_text_main_smallest $origami_ui_text_smallest
+
+- Dark primary text (darkblue)
+$origami_ui_text_dark $origami_ui_text
+$origami_ui_text_dark_large $origami_ui_text_large
+$origami_ui_text_dark_largest $origami_ui_text_largest
+$origami_ui_text_dark_small $origami_ui_text_small
+$origami_ui_text_dark_smallest $origami_ui_text_smallest
+
+- Success primary text (green)
 $origami_ui_text_success $origami_ui_text
+$origami_ui_text_success_large $origami_ui_text_large
+$origami_ui_text_success_largest $origami_ui_text_largest
+$origami_ui_text_success_small $origami_ui_text_small
+$origami_ui_text_success_smallest $origami_ui_text_smallest
+
+- Warning primary text (orange)
+$origami_ui_text_warning $origami_ui_text
+$origami_ui_text_warning_large $origami_ui_text_large
+$origami_ui_text_warning_largest $origami_ui_text_largest
+$origami_ui_text_warning_small $origami_ui_text_small
+$origami_ui_text_warning_smallest $origami_ui_text_smallest
 
 $origami_ui_card $mol_view
 	sub /
@@ -548,8 +584,7 @@ $origami_ui_card $mol_view
 
 $origami_app_profile $mol_list
 	rows /
-		<= LastOperations $mol_text text \**Последние операции**
-		- <= Appeals $mol_text text \**Обращения**
+		<= Appeals $mol_text text \**Обращения**
 		<= Return_amount $origami_ui_card
 			top / <= Return_amount_text $mol_text text \**Возврат средств**
 			bottom /
