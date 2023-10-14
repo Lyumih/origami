@@ -1,6 +1,16 @@
 $origami_app_profile $mol_list
 	rows /
-		<= Appeals $origami_ui_text_large text \Обращения
+		<= Last_operations $origami_ui_text_large text \**Последние операции**
+		<= Operation_list $mol_list rows /
+			<= Transfer $origami_app_profile_card
+				title \**Перевод**
+				card \●●●● 4589
+				amount \78 678,26
+			<= Refill $origami_app_profile_card
+				title \**Пополнение**
+				card \**●●●● 4589**
+				amount \**3 458,26**
+		<= Appeals $origami_ui_text_large text \**Обращения**
 		<= Return_amount $origami_ui_card
 			top / <= Return_amount_text $origami_ui_text text \Возврат средств
 			bottom /
@@ -11,3 +21,10 @@ $origami_app_profile $mol_list
 			bottom /
 				<= Disable_push_date $origami_ui_text_main_small text \23 марта 2022 г
 				<= Disable_push_status $origami_ui_text_success_small text \Исполнено
+
+$origami_app_profile_card $origami_ui_card
+	top /
+		<= Title $origami_ui_text text <= title \
+		<= Card $origami_ui_text_light text <= card \
+		<= Amount $origami_ui_text_main_large text <= amount \
+	right / <= Arrow $mol_icon_chevron_right

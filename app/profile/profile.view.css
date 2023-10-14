@@ -1,0 +1,19 @@
+[origami_app_profile_operation_list] {
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+[origami_app_profile_card]{
+	flex: 1;
+	cursor: pointer;
+}
+
+[origami_app_profile_card_right] {
+	background: var(--origami_ui_theme_main);
+	color: white;
+	margin: -8px;
+	border-radius: 0 20px 20px 0;
+	width: 38px;
+	justify-content: center;
+	align-items: center;
+}
