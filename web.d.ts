@@ -2686,46 +2686,38 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_dump_list extends $mol_view {
-        values(): readonly any[];
+    class $origami_ui_text extends $mol_text {
+    }
+    class $origami_ui_text_light extends $origami_ui_text {
+    }
+    class $origami_ui_text_main extends $origami_ui_text {
+    }
+    class $origami_ui_text_dark extends $origami_ui_text {
+    }
+    class $origami_ui_text_warning extends $origami_ui_text {
+    }
+    class $origami_ui_text_success extends $origami_ui_text {
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $origami_ui_card extends $mol_view {
         sub(): readonly any[];
-        dump_value(id: any): any;
-        dump_expanded(id: any, next?: any): boolean;
-        prototypes(): boolean;
-        preview_show(): boolean;
-        Dump(id: any): $$.$mol_dump_value;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_dump_list extends $.$mol_dump_list {
-        sub(): $mol_dump_value[];
-        dump_value(index: number): any;
-        expand_all(event?: Event, blacklist?: Set<unknown>): void;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_expander extends $mol_list {
-        rows(): readonly any[];
-        expanded(next?: any): boolean;
-        expandable(): boolean;
-        label(): readonly any[];
-        Trigger(): $$.$mol_check_expand;
-        Tools(): any;
-        Label(): $mol_view;
-        content(): readonly any[];
+        left(): readonly $mol_view[];
+        Left(): $$.$mol_list;
+        top(): readonly $mol_view[];
+        Top(): $$.$mol_list;
+        bottom(): readonly $mol_view[];
+        Bottom(): $$.$mol_list;
         Content(): $$.$mol_list;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_expander extends $.$mol_expander {
-        rows(): $mol_view[];
-        expandable(): boolean;
+        right(): readonly $mol_view[];
+        Right(): $$.$mol_list;
     }
 }
 
@@ -2733,45 +2725,18 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_dump_value extends $mol_view {
-        value(next?: any): any;
-        preview_show(next?: any): boolean;
-        sub(): readonly any[];
-        simple(): string;
-        Simple(): $$.$mol_text_code;
-        expanded(next?: any): boolean;
-        expandable(): boolean;
-        expand_all(next?: any): any;
-        expand_title(): string;
-        Expand_title(): $$.$mol_text_code;
-        Expand_head(): $$.$mol_check_expand;
-        preview_dom(): any;
-        preview(): any;
-        Preview_dom(): $mol_view;
-        Preview(): $mol_view;
-        row_values(id: any): readonly any[];
-        prototypes(): boolean;
-        Row(id: any): $$.$mol_dump_list;
-        expand_content(): readonly any[];
-        Expand(): $$.$mol_expander;
-    }
-}
-
-declare namespace $ {
-    function $mol_try<Result>(handler2: () => Result): Result | Error;
-}
-
-declare namespace $.$$ {
-    class $mol_dump_value extends $.$mol_dump_value {
-        sub(): $mol_text_code[] | $mol_expander[];
-        simple(): string;
-        expand_title(): any;
-        rows_values(): any[][];
-        preview_dom(): Element | null;
-        expand_content(): ($mol_view | $mol_dump_list)[];
-        expandable(): boolean;
-        row_values(index: number): any[];
-        expand_all(event?: Event, blacklist?: Set<unknown>): void;
+    class $origami_app_profile extends $mol_list {
+        rows(): readonly any[];
+        LastOperations(): $$.$mol_text;
+        Appeals(): $$.$mol_text;
+        Return_amount_text(): $$.$mol_text;
+        Return_amount_date(): $origami_ui_text_main;
+        Return_amount_status(): $origami_ui_text_warning;
+        Return_amount(): $origami_ui_card;
+        Disable_push_text(): $$.$mol_text;
+        Disable_push_date(): $origami_ui_text_main;
+        Disable_push_status(): $origami_ui_text_success;
+        Disable_push(): $origami_ui_card;
     }
 }
 
@@ -2810,10 +2775,7 @@ declare namespace $ {
         Route(): $mol_view;
         Bank(): $$.$origami_app_bank;
         Atms(): $$.$origami_app_atm;
-        Todo_url(): $$.$mol_text;
-        todo_test(): any;
-        Todo_test(): $$.$mol_dump_value;
-        Todo(): $mol_page;
+        Profile(): $origami_app_profile;
         Map_link(): $origami_app_menu_link;
         Bank_link(): $origami_app_menu_link;
         Atms_link(): $origami_app_menu_link;

@@ -4299,16 +4299,5 @@ var $;
     });
 })($ || ($ = {}));
 //mol/data/record/record.test.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_test({
-        'return result without errors'() {
-            $mol_assert_equal($mol_try(() => false), false);
-        },
-    });
-})($ || ($ = {}));
-//mol/try/try.test.ts
 
 //# sourceMappingURL=web.test.js.map

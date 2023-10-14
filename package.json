@@ -226,11 +226,11 @@
     "$mol_switch",
     "$mol_check_list",
     "$origami_app_atm",
-    "$mol_dump_value",
-    "$mol_dump",
-    "$mol_dump_list",
-    "$mol_expander",
-    "$mol_try",
+    "$origami_app_profile",
+    "$origami_ui_text",
+    "$origami_ui",
+    "$origami_ui_theme",
+    "$origami_ui_card",
     "$mol_button_major"
   ],
   "dependencies": {
