@@ -1,3 +1,16 @@
 $origami_app_atm $mol_view
 	sub /
-		
+		<= CashSwitcher $mol_switch
+			value? <=> filter_type? \withdrawal
+			options <= types *
+				withdrawal \Снятие наличных
+				deposit \Внесение наличных
+		<= Atm_list $mol_list
+			rows <= atm_list /
+				<= Atm*0 $mol_view
+					event * click? <=> open_map*? null
+					sub /
+						<= Atm_address* $mol_text text <= atm_address* \
+						<= Atm_status_line* $mol_view sub /
+							<= Atm_distance* $mol_text text <= atm_distance* \
+							<= Atm_time* $mol_text text <= atm_time* \8:00-18:00

@@ -2,9 +2,9 @@ namespace $.$$ {
 	export class $origami_app_bank extends $.$origami_app_bank {
 
 		@$mol_mem
-		static fetch_banks_data(limit?: number) {
+		static fetch_banks_data( limit?: number ) {
 			const result = this.$.$mol_fetch
-				.json( `https://origami-team.site/office/all?offset=0&limit=${limit || 50}` ) as {
+				.json( `https://origami-team.site/office/all?offset=0&limit=${ limit || 50 }` ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
@@ -12,16 +12,17 @@ namespace $.$$ {
 					distance?: number,
 					longitude?: number,
 					latitude?: number,
+					workload_type?: number,
 					openHoursIndividual?: [],
 					openHours?: { day: string, hours: null | string }[],
 				}[]
-			console.log(result)
-			return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
+			console.log( result )
+			return result.sort( ( a, b ) => Number( a.distance ) > Number( b.distance ) ? 1 : -1 )
 		}
 
-		@ $mol_mem
+		@$mol_mem
 		banks_data() {
-			console.log('get_data_banks')
+			console.log( 'get_data_banks' )
 			return this.$.$origami_app_bank.fetch_banks_data()
 		}
 
@@ -59,20 +60,18 @@ namespace $.$$ {
 
 		bank_time( id: any ): string {
 			const day = new Date().getDay() - 1
-			return this.bank_id( id )?.openHours?.[day]?.hours ?? 'Выходной'
+			return this.bank_id( id )?.openHours?.[ day ]?.hours ?? 'Выходной'
 		}
 
 		bank_workload( id: any ) {
-			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
-			return workload
+			return this.bank_id( id )?.workload_type || 0
 		}
 
-		@ $mol_action
+		@$mol_action
 		open_map( id: string, next?: any ) {
-			const bank = this.bank_id(id)
-			console.log(next, bank)
-			this.$.$mol_state_arg.go({'page': 'map', bank: bank?.id || ''})
-			// this.$.$mol_state_arg.value('page', 'map')
+			const bank = this.bank_id( id )
+			console.log( next, bank )
+			this.$.$mol_state_arg.go( { 'page': 'map', bank: bank?.id || '' } )
 		}
 	}
 }

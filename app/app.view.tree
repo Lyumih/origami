@@ -12,9 +12,7 @@ $origami_app $mol_page
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
-		<= Atms $mol_view
-			sub /
-				<= Atms_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
+		<= Atms $origami_app_atm
 		<= Todo $mol_page
 			body /
 				<= Todo_url $mol_text text \https://origami-team.site/docs
