@@ -2826,65 +2826,65 @@ declare namespace $ {
     }
     class $origami_ui_text_smallest extends $origami_ui_text {
     }
-    class $origami_ui_text_contrast extends $mol_text {
+    class $origami_ui_text_contrast extends $origami_ui_text {
     }
-    class $origami_ui_text_contrast_large extends $origami_ui_text {
+    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
     }
-    class $origami_ui_text_contrast_largest extends $origami_ui_text {
+    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
     }
-    class $origami_ui_text_contrast_small extends $origami_ui_text {
+    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
     }
-    class $origami_ui_text_contrast_smallest extends $origami_ui_text {
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
     }
     class $origami_ui_text_light extends $origami_ui_text {
     }
-    class $origami_ui_text_light_large extends $origami_ui_text_large {
+    class $origami_ui_text_light_large extends $origami_ui_text_light {
     }
-    class $origami_ui_text_light_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_light_largest extends $origami_ui_text_light {
     }
-    class $origami_ui_text_light_small extends $origami_ui_text_small {
+    class $origami_ui_text_light_small extends $origami_ui_text_light {
     }
-    class $origami_ui_text_light_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
     }
     class $origami_ui_text_main extends $origami_ui_text {
     }
-    class $origami_ui_text_main_large extends $origami_ui_text_large {
+    class $origami_ui_text_main_large extends $origami_ui_text_main {
     }
-    class $origami_ui_text_main_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_main_largest extends $origami_ui_text_main {
     }
-    class $origami_ui_text_main_small extends $origami_ui_text_small {
+    class $origami_ui_text_main_small extends $origami_ui_text_main {
     }
-    class $origami_ui_text_main_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
     }
     class $origami_ui_text_dark extends $origami_ui_text {
     }
-    class $origami_ui_text_dark_large extends $origami_ui_text_large {
+    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
     }
-    class $origami_ui_text_dark_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
     }
-    class $origami_ui_text_dark_small extends $origami_ui_text_small {
+    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
     }
-    class $origami_ui_text_dark_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
     }
     class $origami_ui_text_success extends $origami_ui_text {
     }
-    class $origami_ui_text_success_large extends $origami_ui_text_large {
+    class $origami_ui_text_success_large extends $origami_ui_text_success {
     }
-    class $origami_ui_text_success_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_success_largest extends $origami_ui_text_success {
     }
-    class $origami_ui_text_success_small extends $origami_ui_text_small {
+    class $origami_ui_text_success_small extends $origami_ui_text_success {
     }
-    class $origami_ui_text_success_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
     }
     class $origami_ui_text_warning extends $origami_ui_text {
     }
-    class $origami_ui_text_warning_large extends $origami_ui_text_large {
+    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
     }
-    class $origami_ui_text_warning_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
     }
-    class $origami_ui_text_warning_small extends $origami_ui_text_small {
+    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
     }
-    class $origami_ui_text_warning_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
     }
 }
 
@@ -2915,14 +2915,14 @@ declare namespace $ {
 declare namespace $ {
     class $origami_app_profile extends $mol_list {
         rows(): readonly any[];
-        Appeals(): $$.$mol_text;
-        Return_amount_text(): $$.$mol_text;
-        Return_amount_date(): $origami_ui_text_main;
-        Return_amount_status(): $origami_ui_text_warning;
+        Appeals(): $origami_ui_text_large;
+        Return_amount_text(): $origami_ui_text;
+        Return_amount_date(): $origami_ui_text_main_small;
+        Return_amount_status(): $origami_ui_text_warning_small;
         Return_amount(): $origami_ui_card;
-        Disable_push_text(): $$.$mol_text;
-        Disable_push_date(): $origami_ui_text_main;
-        Disable_push_status(): $origami_ui_text_success;
+        Disable_push_text(): $origami_ui_text;
+        Disable_push_date(): $origami_ui_text_main_small;
+        Disable_push_status(): $origami_ui_text_success_small;
         Disable_push(): $origami_ui_card;
     }
 }

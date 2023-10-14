@@ -9396,94 +9396,94 @@ var $;
     class $origami_ui_text_smallest extends $origami_ui_text {
     }
     $.$origami_ui_text_smallest = $origami_ui_text_smallest;
-    class $origami_ui_text_contrast extends $mol_text {
+    class $origami_ui_text_contrast extends $origami_ui_text {
     }
     $.$origami_ui_text_contrast = $origami_ui_text_contrast;
-    class $origami_ui_text_contrast_large extends $origami_ui_text {
+    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
     }
     $.$origami_ui_text_contrast_large = $origami_ui_text_contrast_large;
-    class $origami_ui_text_contrast_largest extends $origami_ui_text {
+    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
     }
     $.$origami_ui_text_contrast_largest = $origami_ui_text_contrast_largest;
-    class $origami_ui_text_contrast_small extends $origami_ui_text {
+    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
     }
     $.$origami_ui_text_contrast_small = $origami_ui_text_contrast_small;
-    class $origami_ui_text_contrast_smallest extends $origami_ui_text {
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
     }
     $.$origami_ui_text_contrast_smallest = $origami_ui_text_contrast_smallest;
     class $origami_ui_text_light extends $origami_ui_text {
     }
     $.$origami_ui_text_light = $origami_ui_text_light;
-    class $origami_ui_text_light_large extends $origami_ui_text_large {
+    class $origami_ui_text_light_large extends $origami_ui_text_light {
     }
     $.$origami_ui_text_light_large = $origami_ui_text_light_large;
-    class $origami_ui_text_light_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_light_largest extends $origami_ui_text_light {
     }
     $.$origami_ui_text_light_largest = $origami_ui_text_light_largest;
-    class $origami_ui_text_light_small extends $origami_ui_text_small {
+    class $origami_ui_text_light_small extends $origami_ui_text_light {
     }
     $.$origami_ui_text_light_small = $origami_ui_text_light_small;
-    class $origami_ui_text_light_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
     }
     $.$origami_ui_text_light_smallest = $origami_ui_text_light_smallest;
     class $origami_ui_text_main extends $origami_ui_text {
     }
     $.$origami_ui_text_main = $origami_ui_text_main;
-    class $origami_ui_text_main_large extends $origami_ui_text_large {
+    class $origami_ui_text_main_large extends $origami_ui_text_main {
     }
     $.$origami_ui_text_main_large = $origami_ui_text_main_large;
-    class $origami_ui_text_main_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_main_largest extends $origami_ui_text_main {
     }
     $.$origami_ui_text_main_largest = $origami_ui_text_main_largest;
-    class $origami_ui_text_main_small extends $origami_ui_text_small {
+    class $origami_ui_text_main_small extends $origami_ui_text_main {
     }
     $.$origami_ui_text_main_small = $origami_ui_text_main_small;
-    class $origami_ui_text_main_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
     }
     $.$origami_ui_text_main_smallest = $origami_ui_text_main_smallest;
     class $origami_ui_text_dark extends $origami_ui_text {
     }
     $.$origami_ui_text_dark = $origami_ui_text_dark;
-    class $origami_ui_text_dark_large extends $origami_ui_text_large {
+    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
     }
     $.$origami_ui_text_dark_large = $origami_ui_text_dark_large;
-    class $origami_ui_text_dark_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
     }
     $.$origami_ui_text_dark_largest = $origami_ui_text_dark_largest;
-    class $origami_ui_text_dark_small extends $origami_ui_text_small {
+    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
     }
     $.$origami_ui_text_dark_small = $origami_ui_text_dark_small;
-    class $origami_ui_text_dark_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
     }
     $.$origami_ui_text_dark_smallest = $origami_ui_text_dark_smallest;
     class $origami_ui_text_success extends $origami_ui_text {
     }
     $.$origami_ui_text_success = $origami_ui_text_success;
-    class $origami_ui_text_success_large extends $origami_ui_text_large {
+    class $origami_ui_text_success_large extends $origami_ui_text_success {
     }
     $.$origami_ui_text_success_large = $origami_ui_text_success_large;
-    class $origami_ui_text_success_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_success_largest extends $origami_ui_text_success {
     }
     $.$origami_ui_text_success_largest = $origami_ui_text_success_largest;
-    class $origami_ui_text_success_small extends $origami_ui_text_small {
+    class $origami_ui_text_success_small extends $origami_ui_text_success {
     }
     $.$origami_ui_text_success_small = $origami_ui_text_success_small;
-    class $origami_ui_text_success_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
     }
     $.$origami_ui_text_success_smallest = $origami_ui_text_success_smallest;
     class $origami_ui_text_warning extends $origami_ui_text {
     }
     $.$origami_ui_text_warning = $origami_ui_text_warning;
-    class $origami_ui_text_warning_large extends $origami_ui_text_large {
+    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
     }
     $.$origami_ui_text_warning_large = $origami_ui_text_warning_large;
-    class $origami_ui_text_warning_largest extends $origami_ui_text_largest {
+    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
     }
     $.$origami_ui_text_warning_largest = $origami_ui_text_warning_largest;
-    class $origami_ui_text_warning_small extends $origami_ui_text_small {
+    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
     }
     $.$origami_ui_text_warning_small = $origami_ui_text_warning_small;
-    class $origami_ui_text_warning_smallest extends $origami_ui_text_smallest {
+    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
     }
     $.$origami_ui_text_warning_smallest = $origami_ui_text_warning_smallest;
 })($ || ($ = {}));
@@ -9492,14 +9492,14 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_common: #000000;\n\t--origami_ui_theme_contrast: #FFFFFF;\n\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
+    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_common: #000000;\n\t--origami_ui_theme_contrast: #FFFFFF;\n\n\t--origami_ui_theme_light: #99A9CD;\n\t--origami_ui_theme_main: #1E4BD2;\n\t--origami_ui_theme_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
 })($ || ($ = {}));
 //origami/ui/theme/-css/theme.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/text/text.view.css", "/* COLORS */\n[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_primary_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_primary_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_primary_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n\n/* FONT-SIZE and FONT-WEIGHT */\n[origami_ui_text] {\n\tfont-size: calc(var(--origami_ui_theme_font_size));\n\tfont-weight: 400;\n}\n\n[origami_ui_text_large] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));\n\tfont-weight: 500;\n}\n\n[origami_ui_text_largest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);\n\tfont-weight: 600;\n}\n\n[origami_ui_text_small] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));\n\tfont-weight: 300;\n}\n\n[origami_ui_text_smallest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);\n\tfont-weight: 200;\n}\n");
+    $mol_style_attach("origami/ui/text/text.view.css", "/*** COLORS ***/\n\n[origami_ui_text] {\n\tcolor: var(--origami_ui_theme_common);\n}\n\n[origami_ui_text_contrast] {\n\tcolor: var(--origami_ui_theme_contrast);\n}\n\n[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n\n/*** FONT-SIZE ***/\n/* COMMON TEXT */\n[origami_ui_text],\n[origami_ui_text_contrast],\n[origami_ui_text_light],\n[origami_ui_text_main],\n[origami_ui_text_dark],\n[origami_ui_text_success],\n[origami_ui_text_warning] {\n\tfont-size: calc(var(--origami_ui_theme_font_size));\n}\n\n/* LARGE */\n[origami_ui_text_large],\n[origami_ui_text_contrast_large],\n[origami_ui_text_light_large],\n[origami_ui_text_main_large],\n[origami_ui_text_dark_large],\n[origami_ui_text_success_warning_large],\n[origami_ui_text_large] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));\n}\n\n/* LARGEST */\n[origami_ui_text_largest],\n[origami_ui_text_contrast_largest],\n[origami_ui_text_light_largest],\n[origami_ui_text_main_largest],\n[origami_ui_text_dark_largest],\n[origami_ui_text_success_largest],\n[origami_ui_text_warning_largest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);\n}\n\n/* SMALL */\n[origami_ui_text_small],\n[origami_ui_text_contrast_small],\n[origami_ui_text_light_small],\n[origami_ui_text_main_small],\n[origami_ui_text_dark_small],\n[origami_ui_text_success_small],\n[origami_ui_text_warning_small] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));\n}\n\n/* SMALLEST */\n[origami_ui_text_smallest],\n[origami_ui_text_contrast_smallest],\n[origami_ui_text_light_smallest],\n[origami_ui_text_main_smallest],\n[origami_ui_text_dark_smallest],\n[origami_ui_text_success_smallest],\n[origami_ui_text_warning_smallest]{\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);\n}\n");
 })($ || ($ = {}));
 //origami/ui/text/-css/text.view.css.ts
 ;
@@ -9593,22 +9593,22 @@ var $;
             ];
         }
         Appeals() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "**Обращения**";
+            const obj = new this.$.$origami_ui_text_large();
+            obj.text = () => "Обращения";
             return obj;
         }
         Return_amount_text() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "**Возврат средств**";
+            const obj = new this.$.$origami_ui_text();
+            obj.text = () => "Возврат средств";
             return obj;
         }
         Return_amount_date() {
-            const obj = new this.$.$origami_ui_text_main();
+            const obj = new this.$.$origami_ui_text_main_small();
             obj.text = () => "24 июня 2023 г";
             return obj;
         }
         Return_amount_status() {
-            const obj = new this.$.$origami_ui_text_warning();
+            const obj = new this.$.$origami_ui_text_warning_small();
             obj.text = () => "Обрабатывается";
             return obj;
         }
@@ -9624,17 +9624,17 @@ var $;
             return obj;
         }
         Disable_push_text() {
-            const obj = new this.$.$mol_text();
+            const obj = new this.$.$origami_ui_text();
             obj.text = () => "**Отключение push-оповещений**";
             return obj;
         }
         Disable_push_date() {
-            const obj = new this.$.$origami_ui_text_main();
+            const obj = new this.$.$origami_ui_text_main_small();
             obj.text = () => "23 марта 2022 г";
             return obj;
         }
         Disable_push_status() {
-            const obj = new this.$.$origami_ui_text_success();
+            const obj = new this.$.$origami_ui_text_success_small();
             obj.text = () => "Исполнено";
             return obj;
         }
