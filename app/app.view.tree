@@ -20,9 +20,9 @@ $origami_app $mol_page
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
-		<= Wow $mol_view
+		<= Atms $mol_view
 			sub /
-				<= Wow_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
+				<= Atms_text $mol_text text \Дополнительные «вау-фичи» с учётом трендов IT-отрасли (например, использование AI-технологий)
 		<= Todo $mol_view
 			sub /
 				<= Todo_url $mol_text text \https://origami-team.site/docs
@@ -34,16 +34,13 @@ $origami_app $mol_page
 			img \origami/app/assets/img/main.svg
 			link \map
 			title \Главная
-		- <= Office_link $origami_app_menu_link
-			Icon <= Office_icon $mol_icon_map
-			link \route
 		<= Bank_link $origami_app_menu_link
 			img \origami/app/assets/img/office.svg
 			link \bank
 			title \Отделения
-		<= Profile_link $origami_app_menu_link
+		<= Atms_link $origami_app_menu_link
 			img \origami/app/assets/img/atms.svg
-			link \wow
+			link \atms
 			title \Банкоматы
 		<= Api_link $origami_app_menu_link
 			img \origami/app/assets/img/profile.svg

@@ -12,7 +12,7 @@ namespace $.$$ {
 				route: this.Route(),
 				map: this.Map(),
 				bank: this.Bank(),
-				wow: this.Wow(),
+				atms: this.Atms(),
 				todo: this.Todo(),
 			}
 			return [configs[page] ?? this.Welcome()]
