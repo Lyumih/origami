@@ -3023,10 +3023,10 @@ declare namespace $.$$ {
             type?: string | undefined;
             distance?: number | undefined;
             openHoursIndividual?: [] | undefined;
-            openHours?: [{
+            openHours?: {
                 day: string;
                 hours: null | string;
-            }] | undefined;
+            }[] | undefined;
         }[];
         banks(): {
             id: string;
@@ -3035,10 +3035,10 @@ declare namespace $.$$ {
             type?: string | undefined;
             distance?: number | undefined;
             openHoursIndividual?: [] | undefined;
-            openHours?: [{
+            openHours?: {
                 day: string;
                 hours: string | null;
-            }] | undefined;
+            }[] | undefined;
         }[];
         bank_id(id: string): {
             id: string;
@@ -3047,10 +3047,10 @@ declare namespace $.$$ {
             type?: string | undefined;
             distance?: number | undefined;
             openHoursIndividual?: [] | undefined;
-            openHours?: [{
+            openHours?: {
                 day: string;
                 hours: string | null;
-            }] | undefined;
+            }[] | undefined;
         } | undefined;
         bank_list(): readonly any[];
         bank_name(id: any): string;
