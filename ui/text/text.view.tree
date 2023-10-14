@@ -9,43 +9,43 @@ $origami_ui_text_small $origami_ui_text
 $origami_ui_text_smallest $origami_ui_text
 
 - Contrast text (white)
-$origami_ui_text_contrast $mol_text
-$origami_ui_text_contrast_large $origami_ui_text
-$origami_ui_text_contrast_largest $origami_ui_text
-$origami_ui_text_contrast_small $origami_ui_text
-$origami_ui_text_contrast_smallest $origami_ui_text
+$origami_ui_text_contrast $origami_ui_text
+$origami_ui_text_contrast_large $origami_ui_text_contrast
+$origami_ui_text_contrast_largest $origami_ui_text_contrast
+$origami_ui_text_contrast_small $origami_ui_text_contrast
+$origami_ui_text_contrast_smallest $origami_ui_text_contrast
 
 - Light primary text (lightblue)
 $origami_ui_text_light $origami_ui_text
-$origami_ui_text_light_large $origami_ui_text_large
-$origami_ui_text_light_largest $origami_ui_text_largest
-$origami_ui_text_light_small $origami_ui_text_small
-$origami_ui_text_light_smallest $origami_ui_text_smallest
+$origami_ui_text_light_large $origami_ui_text_light
+$origami_ui_text_light_largest $origami_ui_text_light
+$origami_ui_text_light_small $origami_ui_text_light
+$origami_ui_text_light_smallest $origami_ui_text_light
 
 - Main primary text (blue)
 $origami_ui_text_main $origami_ui_text
-$origami_ui_text_main_large $origami_ui_text_large
-$origami_ui_text_main_largest $origami_ui_text_largest
-$origami_ui_text_main_small $origami_ui_text_small
-$origami_ui_text_main_smallest $origami_ui_text_smallest
+$origami_ui_text_main_large $origami_ui_text_main
+$origami_ui_text_main_largest $origami_ui_text_main
+$origami_ui_text_main_small $origami_ui_text_main
+$origami_ui_text_main_smallest $origami_ui_text_main
 
 - Dark primary text (darkblue)
 $origami_ui_text_dark $origami_ui_text
-$origami_ui_text_dark_large $origami_ui_text_large
-$origami_ui_text_dark_largest $origami_ui_text_largest
-$origami_ui_text_dark_small $origami_ui_text_small
-$origami_ui_text_dark_smallest $origami_ui_text_smallest
+$origami_ui_text_dark_large $origami_ui_text_dark
+$origami_ui_text_dark_largest $origami_ui_text_dark
+$origami_ui_text_dark_small $origami_ui_text_dark
+$origami_ui_text_dark_smallest $origami_ui_text_dark
 
 - Success primary text (green)
 $origami_ui_text_success $origami_ui_text
-$origami_ui_text_success_large $origami_ui_text_large
-$origami_ui_text_success_largest $origami_ui_text_largest
-$origami_ui_text_success_small $origami_ui_text_small
-$origami_ui_text_success_smallest $origami_ui_text_smallest
+$origami_ui_text_success_large $origami_ui_text_success
+$origami_ui_text_success_largest $origami_ui_text_success
+$origami_ui_text_success_small $origami_ui_text_success
+$origami_ui_text_success_smallest $origami_ui_text_success
 
 - Warning primary text (orange)
 $origami_ui_text_warning $origami_ui_text
-$origami_ui_text_warning_large $origami_ui_text_large
-$origami_ui_text_warning_largest $origami_ui_text_largest
-$origami_ui_text_warning_small $origami_ui_text_small
-$origami_ui_text_warning_smallest $origami_ui_text_smallest
+$origami_ui_text_warning_large $origami_ui_text_warning
+$origami_ui_text_warning_largest $origami_ui_text_warning
+$origami_ui_text_warning_small $origami_ui_text_warning
+$origami_ui_text_warning_smallest $origami_ui_text_warning

@@ -8,9 +8,9 @@
 	--origami_ui_theme_common: #000000;
 	--origami_ui_theme_contrast: #FFFFFF;
 
-	--origami_ui_theme_primary_light: #99A9CD;
-	--origami_ui_theme_primary_main: #1E4BD2;
-	--origami_ui_theme_primary_dark: #002882;
+	--origami_ui_theme_light: #99A9CD;
+	--origami_ui_theme_main: #1E4BD2;
+	--origami_ui_theme_dark: #002882;
 
 	--origami_ui_theme_warning: #F1A038;
 	--origami_ui_theme_success: #4CC864;
