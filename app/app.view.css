@@ -116,18 +116,6 @@
 
 
 
-
-/* Переопределение элементов компонента */
-
-[origami_app_settings] {
-	color: white;
-	font-size: 2rem;
-}
-
-[origami_app_settings]:active {
-	color: white;
-}
-
 /* Переопределение шаблона страницы */
 [origami_app_head] {
 	background-color: var(--origami_app_primary_main);
@@ -139,9 +127,8 @@
 
 
 [origami_app_foot] {
-	border-radius: 20px 20px 0 0;
 	padding: 0;
-
+	border-radius: 20px 20px 0 0;
 	background-color: white;
 }
 
@@ -159,15 +146,28 @@
 	gap: 1rem;
 }
 
+
+/* Переопределение элементов компонента */
+
+[origami_app_settings] {
+	color: white;
+	font-size: 2rem;
+}
+
+[origami_app_settings]:active {
+	color: white;
+}
+
 [origami_app_menu_link] {
 	padding: 0;
+	gap: 0;
 	font-size: 12px;
 	flex-direction: column;
-	gap: 0;
 	align-items: center;
 	justify-content: center;
 }
 
 [origami_app_menu_link]>[mol_icon] {
+	margin-bottom: -0.5rem;
 	font-size: 32px;
 }
