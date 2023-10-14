@@ -7,46 +7,47 @@
 }
 
 
-
+/* Подключаем шрифты */
 
 
 @font-face {
 	font-family: "VTB Group UI";
 	font-display: swap;
-	font-weight: lighter;
-	src: url(./assets/fonts/VTBGroupUI-Light.ttf) format(truetype),
+	font-weight: 300;
+	src: url(./origami/app/assets/fonts/VTBGroupUI-Light.ttf) format(truetype),
 }
 
 @font-face {
 	font-family: "VTB Group UI";
 	font-display: swap;
 	font-weight: 400;
-	src: url(./assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),
+	src: url(./origami/app/assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),
 }
 
 @font-face {
 	font-family: "VTB Group UI";
 	font-display: swap;
 	font-weight: 500;
-	src: url(./assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),
+	src: url(./origami/app/assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),
 }
 
 @font-face {
 	font-family: "VTB Group UI";
 	font-display: swap;
 	font-weight: 600;
-	src: url(./assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),
+	src: url(./origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf) format(truetype),
 }
 
 @font-face {
 	font-family: "VTB Group UI";
 	font-display: swap;
 	font-weight: 700;
-	src: url(./assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),
+	src: url(./origami/app/assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),
 }
 
 [origami_app] {
-	font-family: 'VTB Group UI';
+	font-family: 'VTB Group UI', sans-serif;
+	background: red;
 }
 
 
