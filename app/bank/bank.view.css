@@ -38,7 +38,7 @@
 [origami_app_bank_bank_time]::before {
 	content: '';
 	position: absolute;
-	bottom: 12px;
+	bottom: 11px;
 	left: -18px;
 	width: 24px;
 	height: 24px;
@@ -46,7 +46,7 @@
 }
 
 [origami_app_bank_bank_distance]::before {
-	background-image: url(origami/app/assets/img/traced.svg);
+	background-image: url(/origami/app/assets/img/traced.svg);
 }
 
 [origami_app_bank_bank_time]::before {
@@ -75,13 +75,13 @@
 }
 
 [origami_app_bank_bank_workload][workload="0"]::before {
-	background-image: url(./origami/app/assets/img/workload_1.svg);
+	background-image: url(/origami/app/assets/img/workload_1.svg);
 }
 
 [origami_app_bank_bank_workload][workload="1"]::before {
-	background-image: url(./origami/app/assets/img/workload_2.svg);
+	background-image: url(/origami/app/assets/img/workload_2.svg);
 }
 
 [origami_app_bank_bank_workload][workload="2"]::before {
-	background-image: url(./origami/app/assets/img/workload_3.svg);
+	background-image: url(/origami/app/assets/img/workload_3.svg);
 }
