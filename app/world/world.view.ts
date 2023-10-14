@@ -33,5 +33,14 @@ namespace $.$$ {
 			const bank = this.bank_id( id || '' )
 			return new $mol_vector_2d( bank?.latitude || 0, bank?.longitude || 0 )
 		}
+
+		place_address( id: any ): string {
+			return this.bank_id( id )?.address || ''
+		}
+
+		place_content( id: any ): string {
+			const content = this.bank_id( id )?.salePointName
+			return content || ''
+		}
 	}
 }
