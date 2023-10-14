@@ -9413,7 +9413,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n}\n");
+    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* Colors */\n\t--origami_ui_theme_primary_light: #99A9CD;\n\t--origami_ui_theme_primary_main: #1E4BD2;\n\t--origami_ui_theme_primary_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\t/* Border radius */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
 })($ || ($ = {}));
 //origami/ui/theme/-css/theme.view.css.ts
 ;
@@ -9498,7 +9498,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: 20px;\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n\n[origami_ui_card_top]+[origami_ui_card_bottom] {\n\tmargin-top: -0.5rem;\n}\n");
+    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: var(--origami_ui_theme_border_radius);\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n\n[origami_ui_card_top]+[origami_ui_card_bottom] {\n\tmargin-top: -0.5rem;\n}\n");
 })($ || ($ = {}));
 //origami/ui/card/-css/card.view.css.ts
 ;
