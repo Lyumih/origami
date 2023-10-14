@@ -2752,20 +2752,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_icon_github_circle extends $mol_icon {
-        path(): string;
-    }
-}
-
-declare namespace $ {
-    class $mol_link_source extends $mol_link {
-        hint(): string;
-        sub(): readonly any[];
-        Icon(): $mol_icon_github_circle;
-    }
-}
-
-declare namespace $ {
     class $mol_icon_bank extends $mol_icon {
         path(): string;
     }
@@ -2827,13 +2813,20 @@ declare namespace $ {
         Todo_test(): $$.$mol_dump_value;
         Todo(): $mol_view;
         Map_icon(): $mol_icon_map_marker;
-        Map_link(): $mol_link_source;
+        Map_link(): $origami_app_menu_link;
         Bank_icon(): $mol_icon_bank;
-        Bank_link(): $mol_link_source;
+        Bank_link(): $origami_app_menu_link;
         Profile_icon(): $mol_icon_account;
-        Profile_link(): $mol_link_source;
+        Profile_link(): $origami_app_menu_link;
         Api_icon(): $mol_icon_dots_vertical;
-        Api_link(): $mol_link_source;
+        Api_link(): $origami_app_menu_link;
+    }
+    class $origami_app_menu_link extends $mol_link {
+        arg(): Record<string, any>;
+        sub(): readonly any[];
+        link(): string;
+        Icon(): $mol_icon_bank;
+        title(): string;
     }
 }
 

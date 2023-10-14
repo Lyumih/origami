@@ -570,13 +570,6 @@ $mol_icon_map $mol_icon path \M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20
 
 $mol_icon_map_marker $mol_icon path \M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z
 
-$mol_icon_github_circle $mol_icon path \M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z
-
-$mol_link_source $mol_link
-	hint @ \Source code
-	sub /
-		<= Icon $mol_icon_github_circle
-
 $mol_icon_bank $mol_icon path \M11.5,1L2,6V8H21V6M16,10V17H19V10M2,22H21V19H2M10,10V17H13V10M4,10V17H7V10H4Z
 
 $mol_icon_account $mol_icon path \M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z
@@ -629,22 +622,31 @@ $origami_app $mol_page
 					expanded true
 					value <= todo_test null
 	foot /
-		<= Map_link $mol_link_source
+		<= Map_link $origami_app_menu_link
 			Icon <= Map_icon $mol_icon_map_marker
-			arg * page \map
-		- <= Office_link $mol_link_source
+			link \map
+			title \Главная
+		- <= Office_link $origami_app_menu_link
 			Icon <= Office_icon $mol_icon_map
-			arg * page \route
-		<= Bank_link $mol_link_source
+			link \route
+		<= Bank_link $origami_app_menu_link
 			Icon <= Bank_icon $mol_icon_bank
-			arg * page \bank
-		<= Profile_link $mol_link_source
+			link \bank
+			title \Отделения
+		<= Profile_link $origami_app_menu_link
 			Icon <= Profile_icon $mol_icon_account
-			arg * page \wow
-			uri \#!page=wow
-		<= Api_link $mol_link_source
+			link \wow
+			title \Банкоматы
+		<= Api_link $origami_app_menu_link
 			Icon <= Api_icon $mol_icon_dots_vertical
-			arg * page \todo
+			link \todo
+			title \Профиль
+
+$origami_app_menu_link $mol_link
+	arg * page <= link \
+	sub /
+		<= Icon $mol_icon_bank
+		<= title \
 
 $mol_button_major $mol_button_typed
 	attr *
