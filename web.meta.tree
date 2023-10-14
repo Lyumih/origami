@@ -82,6 +82,7 @@
 	deploy \/origami/app/assets/img/office.svg
 	deploy \/origami/app/assets/img/atms.svg
 	deploy \/origami/app/assets/img/profile.svg
+	deploy \/origami/app/assets/img/traced.svg
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Light.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Medium.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Regular.ttf

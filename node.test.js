@@ -10319,45 +10319,9 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n\n/* Подключаем шрифты */\n\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 300;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Light.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 400;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 500;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 600;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 700;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n[origami_app] {\n\tfont-family: 'VTB Group UI', sans-serif;\n\tbackground: red;\n}\n\n\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n\n[mol_button_minor]:active {\n\tcolor: black;\n}\n\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n\n[mol_check_checked=\"true\"] {\n\tcolor: white !important;\n\tbackground-color: var(--origami_app_primary_main) !important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n[mol_link]:active {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch] {\n\tgap: 0.75rem;\n}\n\n\n\n\n\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tpadding: 0;\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n}\n\n[origami_app_foot]>* {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body]>* {\n\tgap: 1rem;\n}\n\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings] {\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active {\n\tcolor: white;\n}\n\n[origami_app_menu_link] {\n\tcolor: var(--origami_app_primary_light);\n\tgap: 0;\n\tfont-size: 12px;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n}\n[origami_app_menu_link][mol_link_current=\"true\"] {\n\tcolor: var(--origami_app_primary_dark);\n}\n");
+    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n\n/* Подключаем шрифты */\n\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 300;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Light.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 400;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 500;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 600;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-DemiBold.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 700;\n\tsrc: url(./origami/app/assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n[origami_app] {\n\tfont-family: 'VTB Group UI', sans-serif;\n\tbackground: red;\n}\n\n\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n\n[mol_button_minor]:active {\n\tcolor: black;\n}\n\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n\n[mol_check_checked=\"true\"] {\n\tcolor: white !important;\n\tbackground-color: var(--origami_app_primary_main) !important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n[mol_link]:active {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch] {\n\tgap: 0.75rem;\n}\n\n\n\n\n\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tpadding: 0;\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n}\n\n[origami_app_foot]>* {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body]>* {\n\tgap: 1rem;\n\twidth: 900px;\n\tmargin: auto;\n}\n\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings] {\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active {\n\tcolor: white;\n}\n\n[origami_app_menu_link] {\n\tcolor: var(--origami_app_primary_light);\n\tgap: 0;\n\tfont-size: 12px;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n}\n[origami_app_menu_link][mol_link_current=\"true\"] {\n\tcolor: var(--origami_app_primary_dark);\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map extends $mol_icon {
-        path() {
-            return "M15,19L9,16.89V5L15,7.11M20.5,3C20.44,3 20.39,3 20.34,3L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5C3,20.78 3.22,21 3.5,21C3.55,21 3.61,21 3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19 21,18.85 21,18.62V3.5C21,3.22 20.78,3 20.5,3Z";
-        }
-    }
-    $.$mol_icon_map = $mol_icon_map;
-})($ || ($ = {}));
-//mol/icon/map/-view.tree/map.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map_marker extends $mol_icon {
-        path() {
-            return "M12,11.5C10.62,11.5 9.5,10.38 9.5,9C9.5,7.62 10.62,6.5 12,6.5C13.38,6.5 14.5,7.62 14.5,9C14.5,10.38 13.38,11.5 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z";
-        }
-    }
-    $.$mol_icon_map_marker = $mol_icon_map_marker;
-})($ || ($ = {}));
-//mol/icon/map/marker/-view.tree/marker.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_map_marker_distance extends $mol_icon {
-        path() {
-            return "M6.5,8.11C5.61,8.11 4.89,7.39 4.89,6.5C4.89,5.61 5.61,4.89 6.5,4.89C7.39,4.89 8.11,5.61 8.11,6.5V6.5C8.11,7.39 7.39,8.11 6.5,8.11M6.5,2C4,2 2,4 2,6.5C2,9.87 6.5,14.86 6.5,14.86C6.5,14.86 11,9.87 11,6.5C11,4 9,2 6.5,2M17.5,8.11C16.61,8.11 15.89,7.39 15.89,6.5C15.89,5.61 16.61,4.89 17.5,4.89C18.39,4.89 19.11,5.61 19.11,6.5C19.11,7.39 18.39,8.11 17.5,8.11M17.5,2C15,2 13,4 13,6.5C13,9.87 17.5,14.86 17.5,14.86C17.5,14.86 22,9.87 22,6.5C22,4 20,2 17.5,2M17.5,16C16.23,16 15.1,16.8 14.68,18H9.32C8.77,16.44 7.05,15.62 5.5,16.17C3.93,16.72 3.11,18.44 3.66,20C4.22,21.56 5.93,22.38 7.5,21.83C8.35,21.53 9,20.85 9.32,20H14.69C15.24,21.56 16.96,22.38 18.5,21.83C20.08,21.28 20.9,19.56 20.35,18C19.92,16.8 18.78,16 17.5,16V16M17.5,20.5C16.67,20.5 16,19.83 16,19C16,18.17 16.67,17.5 17.5,17.5C18.33,17.5 19,18.17 19,19C19,19.83 18.33,20.5 17.5,20.5Z";
-        }
-    }
-    $.$mol_icon_map_marker_distance = $mol_icon_map_marker_distance;
-})($ || ($ = {}));
-//mol/icon/map/marker/distance/-view.tree/distance.view.tree.ts
 ;
 "use strict";
 var $;
@@ -10394,10 +10358,6 @@ var $;
             obj.text = () => this.bank_address(id);
             return obj;
         }
-        Bank_distance_icon(id) {
-            const obj = new this.$.$mol_icon_map_marker_distance();
-            return obj;
-        }
         bank_distance(id) {
             return "";
         }
@@ -10406,15 +10366,27 @@ var $;
             obj.text = () => this.bank_distance(id);
             return obj;
         }
+        bank_time(id) {
+            return "8:00-18:00";
+        }
+        Bank_time(id) {
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.bank_time(id);
+            return obj;
+        }
+        bank_workload(id) {
+            return "";
+        }
         Bank_workload(id) {
-            const obj = new this.$.$mol_icon();
+            const obj = new this.$.$mol_text();
+            obj.text = () => this.bank_workload(id);
             return obj;
         }
         Bank_status_line(id) {
             const obj = new this.$.$mol_view();
             obj.sub = () => [
-                this.Bank_distance_icon(id),
                 this.Bank_distance(id),
+                this.Bank_time(id),
                 this.Bank_workload(id)
             ];
             return obj;
@@ -10449,10 +10421,10 @@ var $;
     ], $origami_app_bank.prototype, "Bank_address", null);
     __decorate([
         $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_distance_icon", null);
+    ], $origami_app_bank.prototype, "Bank_distance", null);
     __decorate([
         $mol_mem_key
-    ], $origami_app_bank.prototype, "Bank_distance", null);
+    ], $origami_app_bank.prototype, "Bank_time", null);
     __decorate([
         $mol_mem_key
     ], $origami_app_bank.prototype, "Bank_workload", null);
@@ -10472,72 +10444,14 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_icon_signal extends $mol_icon {
-        path() {
-            return "M3,21H6V18H3M8,21H11V14H8M13,21H16V9H13M18,21H21V3H18V21Z";
-        }
-    }
-    $.$mol_icon_signal = $mol_icon_signal;
-})($ || ($ = {}));
-//mol/icon/signal/-view.tree/signal.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_outline extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M5.5,15.5V18.5H3.5V15.5H5.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_outline = $mol_icon_signal_cellular_outline;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/outline/-view.tree/outline.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_1 extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M12.5,10.5V18.5H10.5V10.5H12.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_1 = $mol_icon_signal_cellular_1;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/1/-view.tree/1.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_2 extends $mol_icon {
-        path() {
-            return "M19.5,5.5V18.5H17.5V5.5H19.5M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_2 = $mol_icon_signal_cellular_2;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/2/-view.tree/2.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_icon_signal_cellular_3 extends $mol_icon {
-        path() {
-            return "M21,4H16V20H21V4M14,9H9V20H14V9M7,14H2V20H7V14Z";
-        }
-    }
-    $.$mol_icon_signal_cellular_3 = $mol_icon_signal_cellular_3;
-})($ || ($ = {}));
-//mol/icon/signal/cellular/3/-view.tree/3.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
     var $$;
     (function ($$) {
         class $origami_app_bank extends $.$origami_app_bank {
             banks_data() {
-                return this.$.$mol_fetch
-                    .json('https://origami-team.site/office/all?offset=0&limit=30');
+                const result = this.$.$mol_fetch
+                    .json('https://origami-team.site/office/all?offset=0&limit=100');
+                console.log(result);
+                return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
             }
             banks() {
                 if (!this.filter_type())
@@ -10570,14 +10484,13 @@ var $;
                     return `${distance} м`;
                 }
             }
+            bank_time(id) {
+                const time = this.bank_id(id)?.openHours?.[0]?.hours;
+                return time ?? 'Выходной';
+            }
             bank_workload(id) {
                 const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
                 return `Загруженность ${workload}`;
-            }
-            Bank_workload(id) {
-                const workload = (this.bank_id(id)?.salePointName?.length || 3) % 3;
-                const icons = [new this.$.$mol_icon_signal_cellular_outline(), new this.$.$mol_icon_signal_cellular_1(), new this.$.$mol_icon_signal_cellular_2(), new this.$.$mol_icon_signal_cellular_3()];
-                return icons[workload];
             }
         }
         __decorate([
@@ -10594,7 +10507,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_distance] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n");
+    $mol_style_attach("origami/app/bank/bank.view.css", "[origami_app_bank_bank] {\n\tflex-direction: column;\n\tborder-radius: 20px;\n\tbackground-color: white;\n}\n\n[origami_app_bank_bank_list] {\n\tgap: 0.5rem;\n}\n\n[origami_app_bank_bank_status_line] {\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n}\n\n[origami_app_bank_bank_status_line] {\n\tjustify-content: space-between;\n}\n\n[origami_app_bank_bank_status_line] > [mol_icon] {\n\tcolor: var(--origami_app_primary_light);\n}\n\n[origami_app_bank_bank_time_paragraph] {\n\tflex-grow: 1;\n}\n\n[origami_app_bank_typeswitcher] {\n\tjustify-content: center;\n}\n\n[origami_app_bank_bank_distance] {\n\tmargin-left: 2rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/bank/-css/bank.view.css.ts
 ;
