@@ -9584,17 +9584,58 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_icon_chevron_right extends $mol_icon {
+        path() {
+            return "M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z";
+        }
+    }
+    $.$mol_icon_chevron_right = $mol_icon_chevron_right;
+})($ || ($ = {}));
+//mol/icon/chevron/right/-view.tree/right.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $origami_app_profile extends $mol_list {
         rows() {
             return [
+                this.Last_operations(),
+                this.Operation_list(),
                 this.Appeals(),
                 this.Return_amount(),
                 this.Disable_push()
             ];
         }
+        Last_operations() {
+            const obj = new this.$.$origami_ui_text_large();
+            obj.text = () => "**Последние операции**";
+            return obj;
+        }
+        Transfer() {
+            const obj = new this.$.$origami_app_profile_card();
+            obj.title = () => "**Перевод**";
+            obj.card = () => "●●●● 4589";
+            obj.amount = () => "78 678,26";
+            return obj;
+        }
+        Refill() {
+            const obj = new this.$.$origami_app_profile_card();
+            obj.title = () => "**Пополнение**";
+            obj.card = () => "**●●●● 4589**";
+            obj.amount = () => "**3 458,26**";
+            return obj;
+        }
+        Operation_list() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => [
+                this.Transfer(),
+                this.Refill()
+            ];
+            return obj;
+        }
         Appeals() {
             const obj = new this.$.$origami_ui_text_large();
-            obj.text = () => "Обращения";
+            obj.text = () => "**Обращения**";
             return obj;
         }
         Return_amount_text() {
@@ -9652,6 +9693,18 @@ var $;
     }
     __decorate([
         $mol_mem
+    ], $origami_app_profile.prototype, "Last_operations", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile.prototype, "Transfer", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile.prototype, "Refill", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile.prototype, "Operation_list", null);
+    __decorate([
+        $mol_mem
     ], $origami_app_profile.prototype, "Appeals", null);
     __decorate([
         $mol_mem
@@ -9678,8 +9731,70 @@ var $;
         $mol_mem
     ], $origami_app_profile.prototype, "Disable_push", null);
     $.$origami_app_profile = $origami_app_profile;
+    class $origami_app_profile_card extends $origami_ui_card {
+        top() {
+            return [
+                this.Title(),
+                this.Card(),
+                this.Amount()
+            ];
+        }
+        right() {
+            return [
+                this.Arrow()
+            ];
+        }
+        title() {
+            return "";
+        }
+        Title() {
+            const obj = new this.$.$origami_ui_text();
+            obj.text = () => this.title();
+            return obj;
+        }
+        card() {
+            return "";
+        }
+        Card() {
+            const obj = new this.$.$origami_ui_text_light();
+            obj.text = () => this.card();
+            return obj;
+        }
+        amount() {
+            return "";
+        }
+        Amount() {
+            const obj = new this.$.$origami_ui_text_main_large();
+            obj.text = () => this.amount();
+            return obj;
+        }
+        Arrow() {
+            const obj = new this.$.$mol_icon_chevron_right();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile_card.prototype, "Title", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile_card.prototype, "Card", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile_card.prototype, "Amount", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_profile_card.prototype, "Arrow", null);
+    $.$origami_app_profile_card = $origami_app_profile_card;
 })($ || ($ = {}));
 //origami/app/profile/-view.tree/profile.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/app/profile/profile.view.css", "[origami_app_profile_operation_list] {\n\tflex-direction: row;\n\tgap: 0.5rem;\n}\n\n[origami_app_profile_card]{\n\tflex: 1;\n\tcursor: pointer;\n}\n\n[origami_app_profile_card_right] {\n\tbackground: var(--origami_ui_theme_main);\n\tcolor: white;\n\tmargin: -8px;\n\tborder-radius: 0 20px 20px 0;\n\twidth: 38px;\n\tjustify-content: center;\n\talign-items: center;\n}\n");
+})($ || ($ = {}));
+//origami/app/profile/-css/profile.view.css.ts
 ;
 "use strict";
 var $;

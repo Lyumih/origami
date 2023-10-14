@@ -2913,8 +2913,18 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_icon_chevron_right extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
     class $origami_app_profile extends $mol_list {
         rows(): readonly any[];
+        Last_operations(): $origami_ui_text_large;
+        Transfer(): $origami_app_profile_card;
+        Refill(): $origami_app_profile_card;
+        Operation_list(): $$.$mol_list;
         Appeals(): $origami_ui_text_large;
         Return_amount_text(): $origami_ui_text;
         Return_amount_date(): $origami_ui_text_main_small;
@@ -2925,6 +2935,20 @@ declare namespace $ {
         Disable_push_status(): $origami_ui_text_success_small;
         Disable_push(): $origami_ui_card;
     }
+    class $origami_app_profile_card extends $origami_ui_card {
+        top(): readonly any[];
+        right(): readonly any[];
+        title(): string;
+        Title(): $origami_ui_text;
+        card(): string;
+        Card(): $origami_ui_text_light;
+        amount(): string;
+        Amount(): $origami_ui_text_main_large;
+        Arrow(): $mol_icon_chevron_right;
+    }
+}
+
+declare namespace $ {
 }
 
 declare namespace $ {
