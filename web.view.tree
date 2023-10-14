@@ -646,20 +646,6 @@ $origami_app $mol_page
 			Icon <= Api_icon $mol_icon_dots_vertical
 			arg * page \todo
 
-- $origami_app $mol_book2_catalog
-	menu_title \Подковка
-	param \page
-	Spread_default <= Welcome $origami_app_welcome
-	plugins /
-		<= Theme $mol_theme_auto
-	menu_tools /
-		<= Logout $mol_button_minor
-			click? <= logout? null
-			sub / <= Logout_icon $mol_icon_logout
-	menu_foot /
-		<= GitHub $mol_link_source uri \https://github.com/Lyumih/origami
-		<= Lights $mol_lights_toggle
-
 $mol_button_major $mol_button_typed
 	attr *
 		^

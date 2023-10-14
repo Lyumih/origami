@@ -10392,7 +10392,6 @@ var $;
             }
             body() {
                 let page = this.$.$mol_state_arg.value('page') || 'default';
-                console.log(page);
                 const configs = {
                     route: this.Route(),
                     map: this.Map(),
@@ -10404,7 +10403,6 @@ var $;
             }
             todo_test() {
                 let result = this.$.$mol_fetch.json('https://origami-team.site/todo/f9850879-d439-434d-88c2-a4797d90b110');
-                console.log(result);
                 return result;
             }
         }
@@ -10419,7 +10417,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n[mol_button_minor]:active {\n\tcolor: black;\n}\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n[mol_check_checked=\"true\"] {\n\tcolor: white!important;\n\tbackground-color: var(--origami_app_primary_main)!important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor:  var(--origami_app_primary_dark)\n}\n[mol_link]:active {\n\tcolor:  var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch]{\n\tgap: 0.75rem;\n}\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings]{\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active{\n\tcolor: white;\n}\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\t/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */\n}\n\n[origami_app_foot] > * {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body] > * {\n\tgap: 1rem;\n}\n");
+    $mol_style_attach("origami/app/app.view.css", ":root {\n\t--origami_app_primary_light: #99A9CD;\n\t--origami_app_primary_main: #1E4BD2;\n\t--origami_app_primary_dark: #002882;\n\n\t--origami_app_background: #EAEDF5;\n}\n\n\n\n\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: lighter;\n\tsrc: url(./assets/fonts/VTBGroupUI-Light.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 400;\n\tsrc: url(./assets/fonts/VTBGroupUI-Regular.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 500;\n\tsrc: url(./assets/fonts/VTBGroupUI-Medium.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 600;\n\tsrc: url(./assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n@font-face {\n\tfont-family: \"VTB Group UI\";\n\tfont-display: swap;\n\tfont-weight: 700;\n\tsrc: url(./assets/fonts/VTBGroupUI-Bold.ttf) format(truetype),\n}\n\n[origami_app] {\n\tfont-family: 'VTB Group UI';\n}\n\n\n\n/* Переопределение цветов базовой темы */\n\n\n[mol_button_major] {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:focus {\n\tbackground: var(--origami_app_primary_main);\n}\n\n[mol_button_major]:hover {\n\tbackground: var(--origami_app_primary_dark);\n}\n\n[mol_button_major]:active {\n\tcolor: white;\n}\n\n[mol_button_minor] {\n\tcolor: black\n}\n\n[mol_button_minor]:focus {\n\tbackground: initial;\n}\n\n[mol_button_minor]:active {\n\tcolor: black;\n}\n\n[mol_check] {\n\tcolor: black;\n\tbackground-color: white;\n}\n\n[mol_check_checked=\"true\"] {\n\tcolor: white !important;\n\tbackground-color: var(--origami_app_primary_main) !important;\n}\n\n[mol_link]:where([mol_link_current=\"true\"]) {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n[mol_link]:active {\n\tcolor: var(--origami_app_primary_dark)\n}\n\n/* Переопределение границ элементом темы */\n[mol_button_typed] {\n\tborder-radius: 2rem;\n}\n\n/* Переопределение отступов */\n[mol_switch] {\n\tgap: 0.75rem;\n}\n\n\n\n\n\n\n\n/* Переопределение элементов компонента */\n\n[origami_app_settings] {\n\tcolor: white;\n\tfont-size: 2rem;\n}\n\n[origami_app_settings]:active {\n\tcolor: white;\n}\n\n/* Переопределение шаблона страницы */\n[origami_app_head] {\n\tbackground-color: var(--origami_app_primary_main);\n\tcolor: white;\n\tborder-radius: 0 0 20px 20px;\n\tfont-size: 1.5rem;\n\talign-items: center;\n}\n\n\n[origami_app_foot] {\n\tborder-radius: 20px 20px 0 0;\n\tbackground-color: white;\n\t/* box-shadow: 0px -2px 9px -1px rgba(153, 153, 153, 0.10); */\n}\n\n[origami_app_foot]>* {\n\tfont-size: 2rem;\n\tflex: 1;\n\tjustify-content: center;\n}\n\n[origami_app] {\n\tbackground-color: var(--origami_app_background);\n}\n\n[origami_app_body]>* {\n\tgap: 1rem;\n}\n");
 })($ || ($ = {}));
 //origami/app/-css/app.view.css.ts
 ;
@@ -10612,7 +10610,6 @@ var $;
     (function ($$) {
         class $origami_app_bank extends $.$origami_app_bank {
             banks_data() {
-                console.log('banks');
                 return this.$.$mol_fetch
                     .json('https://origami-team.site/office/all?offset=0&limit=30');
             }
@@ -10628,7 +10625,6 @@ var $;
                 return this.banks().find((bank) => bank.salePointName == id);
             }
             bank_list() {
-                console.log(this.banks());
                 return this.banks().map((bank) => this.Bank(bank.salePointName));
             }
             bank_name(id) {
