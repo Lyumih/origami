@@ -5,6 +5,9 @@
 
 
 	/* COLORS */
+	--origami_ui_theme_common: #000000;
+	--origami_ui_theme_contrast: #FFFFFF;
+
 	--origami_ui_theme_primary_light: #99A9CD;
 	--origami_ui_theme_primary_main: #1E4BD2;
 	--origami_ui_theme_primary_dark: #002882;
