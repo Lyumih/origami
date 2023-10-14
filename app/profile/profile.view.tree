@@ -12,7 +12,7 @@ $origami_app_profile $mol_list
 				amount \**3 458,26**
 		<= Appeals $origami_ui_text_large text \**Обращения**
 		<= Return_amount $origami_ui_card
-			top / <= Return_amount_text $origami_ui_text text \Возврат средств
+			top / <= Return_amount_text $origami_ui_text text \**Возврат средств**
 			bottom /
 				<= Return_amount_date $origami_ui_text_main_small text \24 июня 2023 г
 				<= Return_amount_status $origami_ui_text_warning_small text \Обрабатывается
