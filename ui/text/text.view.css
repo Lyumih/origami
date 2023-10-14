@@ -1,3 +1,4 @@
+/* COLORS */
 [origami_ui_text_light] {
 	color: var(--origami_ui_theme_primary_light);
 }
@@ -16,4 +17,30 @@
 
 [origami_ui_text_success] {
 	color: var(--origami_ui_theme_success);
+}
+
+/* FONT-SIZE and FONT-WEIGHT */
+[origami_ui_text] {
+	font-size: calc(var(--origami_ui_theme_font_size));
+	font-weight: 400;
+}
+
+[origami_ui_text_large] {
+	font-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));
+	font-weight: 500;
+}
+
+[origami_ui_text_largest] {
+	font-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);
+	font-weight: 600;
+}
+
+[origami_ui_text_small] {
+	font-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));
+	font-weight: 300;
+}
+
+[origami_ui_text_smallest] {
+	font-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);
+	font-weight: 200;
 }

@@ -1,5 +1,10 @@
 :root {
-	/* Colors */
+	/* FONT STEP */
+	--origami_ui_theme_font_size: 16px;
+	--origami_ui_theme_font_size_step: 2px;
+
+
+	/* COLORS */
 	--origami_ui_theme_primary_light: #99A9CD;
 	--origami_ui_theme_primary_main: #1E4BD2;
 	--origami_ui_theme_primary_dark: #002882;
@@ -9,6 +14,7 @@
 
 	--origami_ui_theme_background: #EAEDF5;
 
-	/* Border radius */
+
+	/* BORDER RADIUS */
 	--origami_ui_theme_border_radius: 20px;
 }

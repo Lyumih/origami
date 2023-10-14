@@ -1,7 +1,6 @@
 $origami_app_profile $mol_list
 	rows /
-		<= LastOperations $mol_text text \**Последние операции**
-		- <= Appeals $mol_text text \**Обращения**
+		<= Appeals $mol_text text \**Обращения**
 		<= Return_amount $origami_ui_card
 			top / <= Return_amount_text $mol_text text \**Возврат средств**
 			bottom /
