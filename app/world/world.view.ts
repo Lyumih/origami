@@ -12,9 +12,7 @@ namespace $.$$ {
 			return this.banks_data().find( ( bank ) => bank.id == id )
 		}
 
-		@ $mol_mem
-		center( next?: readonly [number, number] | undefined): $mol_vector_2d<number> | readonly [number, number] {
-			console.log('center', next)
+		center(next? : $mol_vector_2d<number> | readonly[number,number] , force? : $mol_mem_force ): $mol_vector_2d<number> | readonly[number,number] {
 			const bank_id = this.$.$mol_state_arg.value('bank' )
 			console.log(bank_id)
 			if (bank_id) {
@@ -31,9 +29,9 @@ namespace $.$$ {
 			return this.banks_data().map( bank => this.Place(bank.id))
 		}
 
-		mark_pos( id?: string ){
+		mark_pos( id?: string, next?: $mol_vector_2d<number> | readonly[number,number] ): $mol_vector_2d<number> | readonly[number,number] {
 			const bank = this.bank_id( id || '' )
-			return new $mol_vector_2d( bank?.latitude || 0, bank?.longitude || 0 ) as readonly any[]
+			return new $mol_vector_2d( bank?.latitude || 0, bank?.longitude || 0 )
 		}
 	}
 }
