@@ -2776,15 +2776,15 @@ declare namespace $ {
         Route_text(): $$.$mol_text;
         Route(): $mol_view;
         Bank(): $$.$origami_app_bank;
-        Wow_text(): $$.$mol_text;
-        Wow(): $mol_view;
+        Atms_text(): $$.$mol_text;
+        Atms(): $mol_view;
         Todo_url(): $$.$mol_text;
         todo_test(): any;
         Todo_test(): $$.$mol_dump_value;
         Todo(): $mol_view;
         Map_link(): $origami_app_menu_link;
         Bank_link(): $origami_app_menu_link;
-        Profile_link(): $origami_app_menu_link;
+        Atms_link(): $origami_app_menu_link;
         Api_link(): $origami_app_menu_link;
     }
     class $origami_app_menu_link extends $mol_link {
