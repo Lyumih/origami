@@ -1,5 +1,9 @@
 [origami_app_bank_bank] {
 	flex-direction: column;
 	border-radius: 20px;
-	/* background: gray; */
+	/* background-color: white; */
+}
+
+[origami_app_bank_bank_list] {
+	gap: 0.5rem;
 }
