@@ -11,10 +11,6 @@
 	/* font-size: 2rem; */
 }
 
-[origami_app] {
-	background-color: #EAEDF5;
-}
-
 [origami_app_foot] {
 	border-radius: 20px 20px 0 0;
 	background-color: white;
@@ -26,3 +22,8 @@
 	flex: 1;
 	justify-content: center;
 }
+
+[origami_app] {
+	background-color: #EAEDF5;
+}
+

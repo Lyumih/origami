@@ -5,7 +5,7 @@ namespace $.$$ {
 		banks_data() {
 			console.log( 'banks' )
 			return this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all?offset=0&limit=10' ) as {
+				.json( 'https://origami-team.site/office/all?offset=0&limit=30' ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
@@ -42,8 +42,11 @@ namespace $.$$ {
 			return this.bank_id( id )?.address || ''
 		}
 
-		bank_type( id: any ): string {
-			return this.bank_id( id )?.type || ''
+		bank_distance( id: any ) {
+			const distance = this.bank_id( id )?.distance
+			if( !distance ) return ''
+			else if( distance > 1000 ) { return `${ ( distance / 1000 ).toFixed( 1 ) } км` }
+			else { return `${ distance } м` }
 		}
 
 		bank_workload( id: any ) {
@@ -51,11 +54,10 @@ namespace $.$$ {
 			return `Загруженность ${ workload }`
 		}
 
-		bank_distance( id: any ) {
-			const distance = this.bank_id( id )?.distance
-			if( !distance ) return ''
-			else if( distance > 1000 ) { return `${ ( distance / 1000 ).toFixed( 1 ) } км` }
-			else { return `${ distance } м` }
+		Bank_workload( id: any ) {
+			const workload = ( this.bank_id( id )?.salePointName?.length || 3 ) % 3
+			const icons = [ new this.$.$mol_icon_signal_cellular_outline(), new this.$.$mol_icon_signal_cellular_1(), new this.$.$mol_icon_signal_cellular_2(), new this.$.$mol_icon_signal_cellular_3() ]
+			return icons[ workload ]
 		}
 
 	}

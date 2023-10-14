@@ -11,6 +11,7 @@ $origami_app_bank $mol_list
 			rows <= bank_list /
 				<= Bank*0 $mol_view sub /
 					<= Bank_address* $mol_text text <= bank_address* \
-					<= Bank_type* $mol_text text <= bank_type* \
+					<= Bank_distance_icon* $mol_icon_map_marker_distance
 					<= Bank_distance* $mol_text text <= bank_distance* \
-					<= Bank_workload* $mol_text text <= bank_workload* \
+					<= Bank_workload* $mol_icon
+
