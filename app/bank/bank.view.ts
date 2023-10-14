@@ -5,7 +5,7 @@ namespace $.$$ {
 		banks_data(){
 			console.log('banks')
 			return this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all' ) as { id: string, salePointName?: string, address: string, type?: string, distance?: number }[]
+				.json( 'https://origami-team.site/office/all?offset=0&limit=50' ) as { id: string, salePointName?: string, address: string, type?: string, distance?: number }[]
 		}
 
 		banks() {
@@ -13,12 +13,12 @@ namespace $.$$ {
 		}
 
 		bank_id(id: string) {
-			return this.banks().find( (bank) => bank.id == id )
+			return this.banks().find( (bank) => bank.salePointName == id )
 		}
 
 		bank_list(): readonly any[] {
 			console.log(this.banks())
-			return this.banks().map( (bank) =>  this.Bank(bank.id))
+			return this.banks().map( (bank) =>  this.Bank(bank.salePointName))
 		}
 
 		bank_name( id: any ): string {
