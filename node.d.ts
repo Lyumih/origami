@@ -2823,6 +2823,24 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_icon_map extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_map_marker extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_map_marker_distance extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
     class $origami_app_bank extends $mol_list {
         rows(): readonly any[];
         filter_type(next?: any): string;
@@ -2830,15 +2848,43 @@ declare namespace $ {
         TypeSwitcher(): $$.$mol_switch;
         bank_address(id: any): string;
         Bank_address(id: any): $$.$mol_text;
-        bank_type(id: any): string;
-        Bank_type(id: any): $$.$mol_text;
+        Bank_distance_icon(id: any): $mol_icon_map_marker_distance;
         bank_distance(id: any): string;
         Bank_distance(id: any): $$.$mol_text;
-        bank_workload(id: any): string;
-        Bank_workload(id: any): $$.$mol_text;
+        Bank_workload(id: any): $mol_icon;
         Bank(id: any): $mol_view;
         bank_list(): readonly any[];
         Bank_list(): $$.$mol_list;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_signal extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_signal_cellular_outline extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_signal_cellular_1 extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_signal_cellular_2 extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_signal_cellular_3 extends $mol_icon {
+        path(): string;
     }
 }
 
@@ -2883,9 +2929,9 @@ declare namespace $.$$ {
         bank_list(): readonly any[];
         bank_name(id: any): string;
         bank_address(id: any): string;
-        bank_type(id: any): string;
-        bank_workload(id: any): string;
         bank_distance(id: any): string;
+        bank_workload(id: any): string;
+        Bank_workload(id: any): $mol_icon_signal_cellular_outline | $mol_icon_signal_cellular_1 | $mol_icon_signal_cellular_2 | $mol_icon_signal_cellular_3;
     }
 }
 
@@ -2983,18 +3029,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_icon_map extends $mol_icon {
-        path(): string;
-    }
-}
-
-declare namespace $ {
-    class $mol_icon_map_marker extends $mol_icon {
-        path(): string;
-    }
 }
 
 declare namespace $ {
