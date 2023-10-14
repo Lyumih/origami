@@ -1,4 +1,5 @@
-[origami_map] {
+[origami_app_world_map] {
 	filter: none;
 	min-height: calc(100vh - 270px);
+	min-width: 100px;
 }

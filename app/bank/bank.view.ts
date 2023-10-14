@@ -2,20 +2,27 @@ namespace $.$$ {
 	export class $origami_app_bank extends $.$origami_app_bank {
 
 		@$mol_mem
-		banks_data() {
+		static fetch_banks_data(limit?: number) {
 			const result = this.$.$mol_fetch
-				.json( 'https://origami-team.site/office/all?offset=0&limit=150' ) as {
+				.json( `https://origami-team.site/office/all?offset=0&limit=${limit || 10}` ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
 					type?: string,
 					distance?: number,
+					longitude?: number,
 					latitude?: number,
 					openHoursIndividual?: [],
 					openHours?: { day: string, hours: null | string }[],
 				}[]
 			console.log(result)
 			return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
+		}
+
+		@ $mol_mem
+		banks_data() {
+			console.log('get_data_banks')
+			return this.$.$origami_app_bank.fetch_banks_data()
 		}
 
 		@$mol_mem

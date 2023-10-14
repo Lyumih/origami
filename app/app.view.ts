@@ -10,7 +10,7 @@ namespace $.$$ {
 			let page = this.$.$mol_state_arg.value('page') || 'default'
 			const configs: Record< string, $mol_view | undefined> = {
 				route: this.Route(),
-				map: this.Map(),
+				map: this.World(),
 				bank: this.Bank(),
 				atms: this.Atms(),
 				todo: this.Todo(),

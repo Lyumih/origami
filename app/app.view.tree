@@ -7,19 +7,7 @@ $origami_app $mol_page
 			sub / <= Settings_icon $mol_icon_settings
 	body /
 		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
-		<= Map $mol_list
-			rows /
-				<= Map_text $mol_text text \Отображение отделений на карте и их загруженности
-				<= Map_show_2 $origami_map
-					zoom 10
-					center /
-						55.754742
-						37.621407
-					objects /
-						<= Place_3 $origami_map_mark
-							title <= place_title \
-							address <= place_addres \СПБ
-							content <= place_content \Вам нужно съездить в СПБ
+		<= World $origami_app_world
 		<= Route $mol_view
 			sub /
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
