@@ -3,7 +3,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		banks_data() {
-			const result = this.$.$origami_app_bank.fetch_banks_data(10)
+			const result = this.$.$origami_app_bank.fetch_banks_data(100)
 			console.log(result)
 			return result
 		}

@@ -4,7 +4,7 @@ namespace $.$$ {
 		@$mol_mem
 		static fetch_banks_data(limit?: number) {
 			const result = this.$.$mol_fetch
-				.json( `https://origami-team.site/office/all?offset=0&limit=${limit || 10}` ) as {
+				.json( `https://origami-team.site/office/all?offset=0&limit=${limit || 50}` ) as {
 					id: string,
 					salePointName?: string,
 					address: string,
