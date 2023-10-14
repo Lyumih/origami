@@ -13,12 +13,7 @@ $origami_app $mol_page
 				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
 		<= Atms $origami_app_atm
-		<= Todo $mol_page
-			body /
-				<= Todo_url $mol_text text \https://origami-team.site/docs
-				<= Todo_test $mol_dump_value
-					expanded true
-					value <= todo_test null
+		<= Profile $origami_app_profile
 	foot /
 		<= Map_link $origami_app_menu_link
 			img \origami/app/assets/img/main.svg
@@ -34,7 +29,7 @@ $origami_app $mol_page
 			title \Банкоматы
 		<= Api_link $origami_app_menu_link
 			img \origami/app/assets/img/profile.svg
-			link \todo
+			link \profile
 			title \Профиль
 
 $origami_app_menu_link $mol_link

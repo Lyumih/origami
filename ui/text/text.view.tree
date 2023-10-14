@@ -1,0 +1,8 @@
+$origami_ui_text $mol_text
+
+$origami_ui_text_light $origami_ui_text
+$origami_ui_text_main $origami_ui_text
+$origami_ui_text_dark $origami_ui_text
+
+$origami_ui_text_warning $origami_ui_text
+$origami_ui_text_success $origami_ui_text

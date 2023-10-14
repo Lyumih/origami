@@ -1,0 +1,14 @@
+$origami_app_profile $mol_list
+	rows /
+		<= LastOperations $mol_text text \Последние операции
+		<= Appeals $mol_text text \Обращения
+		<= Return_amount $origami_ui_card
+			top / <= Return_amount_text $mol_text text \**Возврат средств**
+			bottom /
+				<= Return_amount_date $origami_ui_text_main text \24 июня 2023 г
+				<= Return_amount_status $origami_ui_text_warning text \Обрабатывается
+		<= Disable_push $origami_ui_card
+			top / <= Disable_push_text $mol_text text \**Отключение push-оповещений**
+			bottom /
+				<= Disable_push_date $origami_ui_text_main text \23 марта 2022 г
+				<= Disable_push_status $origami_ui_text_success text \Исполнено

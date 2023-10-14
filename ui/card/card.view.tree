@@ -1,0 +1,7 @@
+$origami_ui_card $mol_view
+	sub /
+		<= Left $mol_list rows <= left /$mol_view
+		<= Content $mol_list rows /
+			<= Top $mol_list rows <= top /$mol_view
+			<= Bottom $mol_list rows <= bottom /$mol_view
+		<= Right $mol_list rows <= right /$mol_view

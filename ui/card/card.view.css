@@ -1,0 +1,16 @@
+[origami_ui_card] {
+	background-color: white;
+	border-radius: 20px;
+	padding: 0.5rem;
+}
+
+[origami_ui_card_content] {
+	flex-grow: 1;
+}
+
+[origami_ui_card_bottom] {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}

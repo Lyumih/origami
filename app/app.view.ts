@@ -13,7 +13,7 @@ namespace $.$$ {
 				map: this.World(),
 				bank: this.Bank(),
 				atms: this.Atms(),
-				todo: this.Todo(),
+				profile: this.Profile(),
 			}
 			return [configs[page] ?? this.Welcome()]
 		}
