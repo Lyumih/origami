@@ -31,27 +31,28 @@ $origami_app $mol_page
 					value <= todo_test null
 	foot /
 		<= Map_link $origami_app_menu_link
-			Icon <= Map_icon $mol_icon_map_marker
+			img \origami/app/assets/img/main.svg
 			link \map
 			title \Главная
 		- <= Office_link $origami_app_menu_link
 			Icon <= Office_icon $mol_icon_map
 			link \route
 		<= Bank_link $origami_app_menu_link
-			Icon <= Bank_icon $mol_icon_bank
+			img \origami/app/assets/img/office.svg
 			link \bank
 			title \Отделения
 		<= Profile_link $origami_app_menu_link
-			Icon <= Profile_icon $mol_icon_account
+			img \origami/app/assets/img/atms.svg
 			link \wow
 			title \Банкоматы
 		<= Api_link $origami_app_menu_link
-			Icon <= Api_icon $mol_icon_dots_vertical
+			img \origami/app/assets/img/profile.svg
 			link \todo
 			title \Профиль
 
 $origami_app_menu_link $mol_link
 	arg * page <= link \
 	sub /
-		<= Icon $mol_icon_bank
+		<= Icon $mol_image
+			uri <= img \
 		<= title \

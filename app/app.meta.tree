@@ -9,7 +9,10 @@ deploy \/origami/app/favicon.ico
 deploy \/origami/app/assets/img/logo.svg
 deploy \/origami/app/assets/img/logo_white.svg
 deploy \/origami/app/assets/img/logo_vtb.png
-
+deploy \/origami/app/assets/img/main.svg
+deploy \/origami/app/assets/img/office.svg
+deploy \/origami/app/assets/img/atms.svg
+deploy \/origami/app/assets/img/profile.svg
 
 deploy \/origami/app/assets/fonts/VTBGroupUI-Light.ttf
 deploy \/origami/app/assets/fonts/VTBGroupUI-Medium.ttf
