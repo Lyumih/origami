@@ -1,6 +1,6 @@
 [origami_ui_card] {
 	background-color: white;
-	border-radius: 20px;
+	border-radius: var(--origami_ui_theme_border_radius);
 	padding: 0.5rem;
 }
 
