@@ -16,8 +16,7 @@ namespace $.$$ {
 					openHoursIndividual?: [],
 					openHours?: { day: string, hours: null | string }[],
 				}[]
-			console.log( result )
-			return result.sort( ( a, b ) => Number( a.distance ) > Number( b.distance ) ? 1 : -1 )
+			return result
 		}
 
 		@$mol_mem

@@ -20,7 +20,6 @@ namespace $.$$ {
 				}[]
 
 			const mocked = result.map( atm => ( { distance: JSON.stringify( atm ).length, ...atm } ) )
-			console.log( result, mocked )
 			return mocked.sort( ( a, b ) => Number( a.distance ) > Number( b.distance ) ? 1 : -1 )
 		}
 
