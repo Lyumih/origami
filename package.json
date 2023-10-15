@@ -242,7 +242,9 @@
     "$mol_icon_plus",
     "$origami_app_atm",
     "$origami_app_profile",
-    "$mol_icon_chevron_right"
+    "$mol_icon_chevron_right",
+    "$mol_offline_install",
+    "$mol_offline"
   ],
   "dependencies": {
     "jsdom": "*",

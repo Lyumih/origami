@@ -3431,6 +3431,13 @@ declare namespace $.$$ {
     }
 }
 
+declare namespace $ {
+    function $mol_offline(): void;
+}
+
+declare namespace $ {
+}
+
 declare namespace $.$$ {
     class $origami_app extends $.$origami_app {
         autorun(): void;
