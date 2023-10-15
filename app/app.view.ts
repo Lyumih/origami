@@ -14,6 +14,7 @@ namespace $.$$ {
 				bank: this.Bank(),
 				atms: this.Atms(),
 				profile: this.Profile(),
+				vtb: this.Vtb(),
 			}
 			return [configs[page] ?? this.Main()]
 		}

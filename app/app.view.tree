@@ -13,6 +13,7 @@ $origami_app $mol_page
 		<= Bank $origami_app_bank
 		<= Atms $origami_app_atm
 		<= Profile $origami_app_profile
+		<= Vtb $vtb_office
 	foot /
 		<= Main_link $origami_app_menu_link
 			img \origami/app/assets/img/main.svg
@@ -30,6 +31,10 @@ $origami_app $mol_page
 			img \origami/app/assets/img/profile.svg
 			link \profile
 			title \Профиль
+		<= Vtb_link $origami_app_menu_link
+			img \origami/app/assets/img/office.svg
+			link \vtb
+			title \Твой офис
 
 $origami_app_menu_link $mol_link
 	arg * page <= link \
