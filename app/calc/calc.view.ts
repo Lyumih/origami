@@ -7,7 +7,7 @@ namespace $.$$ {
 			console.log( 123 )
 			if( !next ) return
 
-			return this.$.$mol_fetch.json( 'https://origami-team.site/calc/', {
+			const result =  this.$.$mol_fetch.json( 'https://origami-team.site/calc/', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
 				body: JSON.stringify( { loan_amount: this.amount(), interest_rate: this.rate(), loan_term: this.term() } )
@@ -26,6 +26,9 @@ namespace $.$$ {
 					longitude: number,
 				}
 			}
+			this.$.$mol_state_arg.value('bank', result.office.id)
+			console.log(result)
+			return result
 		}
 		loan_submit( next?: any ) {
 			console.log( next )
