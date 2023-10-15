@@ -87,6 +87,12 @@
 	deploy \/origami/app/assets/img/workload_1.svg
 	deploy \/origami/app/assets/img/workload_2.svg
 	deploy \/origami/app/assets/img/workload_3.svg
+	deploy \/origami/app/assets/img/telegram.svg
+	deploy \/origami/app/assets/img/settings.svg
+	deploy \/origami/app/assets/img/arrow_down.svg
+	deploy \/origami/app/assets/img/arrow_swap.svg
+	deploy \/origami/app/assets/img/vtb_logo_ru_rgb.svg
+	deploy \/origami/app/assets/img/mark.svg
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Light.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Medium.ttf
 	deploy \/origami/app/assets/fonts/VTBGroupUI-Regular.ttf
