@@ -66,7 +66,7 @@ namespace $.$$ {
 		open_map( id: string, next?: any ) {
 			const atm = this.atm_id( id )
 			console.log( next, atm )
-			this.$.$mol_state_arg.go( { 'page': 'map', atm: atm?.id || '' } )
+			this.$.$mol_state_arg.go( { 'page': 'map', 'lat': String(atm?.latitude) || "", 'lon': String(atm?.longitude || '') } )
 		}
 	}
 }
