@@ -10,7 +10,7 @@
 git clone https://github.com/hyoo-ru/mam.git
 cd mam
 npm install
-git clone https://github.com/Origami-TulaHack-2023/origami.git origami
+git clone https://github.com/origami-more-tech/origami.git origami
 npm start
 ```
 ```
