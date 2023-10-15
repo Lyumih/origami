@@ -3,7 +3,7 @@ namespace $.$$ {
 
 		@$mol_mem
 		banks_data() {
-			const result = this.$.$origami_app_bank.fetch_banks_data( 200 )
+			const result = this.$.$origami_app_bank.fetch_banks_data( 300 )
 			console.log( result )
 			return result
 		}
@@ -13,7 +13,7 @@ namespace $.$$ {
 		}
 
 		center(): $mol_vector_2d<number> {
-			const bank_id = this.$.$mol_state_arg.value( 'bank' )
+			const bank_id = this.$.$mol_state_arg.value( 'bank' ) || this.$.$mol_state_arg.value( 'bank_id' )
 			if( bank_id ) {
 				const central_bank = this.bank_id( bank_id )
 				return new $mol_vector_2d( central_bank?.latitude || 0, central_bank?.longitude || 0 )
