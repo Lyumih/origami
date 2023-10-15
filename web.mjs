@@ -9200,7 +9200,7 @@ var $;
         }
         Map() {
             const obj = new this.$.$mol_map_yandex();
-            obj.zoom = () => 13;
+            obj.zoom = () => 20;
             obj.center = () => this.center();
             obj.objects = () => this.banks_mark_list();
             return obj;
@@ -9229,8 +9229,7 @@ var $;
     (function ($$) {
         class $origami_app_world extends $.$origami_app_world {
             banks_data() {
-                const limit = this.$.$mol_state_arg.value('bank_solo');
-                const result = this.$.$origami_app_bank.fetch_banks_data(limit ? 1 : 100);
+                const result = this.$.$origami_app_bank.fetch_banks_data(100);
                 console.log(result);
                 return result;
             }
@@ -9264,8 +9263,8 @@ var $;
                     return 'Не найдено информации';
                 const workload = this.bank_id(id)?.workload_type || 0;
                 const workload_text = 'Загруженность банка: <b>' + (workload === 0 ? 'слабая' : workload === 1 ? 'средняя' : 'высокая') + '</b>';
-                const content = this.bank_id(id)?.salePointName;
-                return workload_text + '<br>' + content + '<br>Нажмите <b>"В Карты"</b> чтобы проложить маршрут';
+                const name = this.bank_id(id)?.salePointName;
+                return workload_text + '<br>' + name + '<br>Нажмите <b>"Как добраться"</b> чтобы проложить маршрут';
             }
         }
         __decorate([
@@ -10129,8 +10128,6 @@ var $;
     (function ($$) {
         class $origami_app_calc extends $.$origami_app_calc {
             result_loan_data(next) {
-                console.log(next);
-                console.log(123);
                 if (!next)
                     return;
                 const result = this.$.$mol_fetch.json('https://origami-team.site/calc/', {
@@ -10139,7 +10136,6 @@ var $;
                     body: JSON.stringify({ loan_amount: this.amount(), interest_rate: this.rate(), loan_term: this.term() })
                 });
                 this.$.$mol_state_arg.value('bank_id', result.office.id);
-                console.log(result);
                 return result;
             }
             loan_submit(next) {
@@ -10912,7 +10908,6 @@ var $;
                 return result.sort((a, b) => Number(a.distance) > Number(b.distance) ? 1 : -1);
             }
             banks_data() {
-                console.log('get_data_banks');
                 return this.$.$origami_app_bank.fetch_banks_data();
             }
             banks() {
@@ -10955,7 +10950,6 @@ var $;
             }
             open_map(id, next) {
                 const bank = this.bank_id(id);
-                console.log(next, bank);
                 this.$.$mol_state_arg.go({ 'page': 'map', bank: bank?.id || '' });
             }
         }
