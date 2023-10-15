@@ -3,8 +3,10 @@ $origami_app $mol_page
 	plugins /
 		<= Theme $mol_theme_auto theme \$mol_theme_light
 	tools /
-		<= Settings $mol_button_minor
-			sub / <= Settings_icon $mol_icon_settings
+		<= Settings $mol_link
+			title <= Settings_icon $mol_icon_telegram
+			hint \Журнал ВТБ
+			uri \https://t.me/vtb_more_tech_bot
 	body /
 		<= Main $origami_app_calc
 		<= World $origami_app_world
