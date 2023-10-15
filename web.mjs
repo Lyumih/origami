@@ -9748,7 +9748,8 @@ var $;
     (function ($$) {
         class $origami_app_world extends $.$origami_app_world {
             banks_data() {
-                const result = this.$.$origami_app_bank.fetch_banks_data(100);
+                const limit = this.$.$mol_state_arg.value('bank_solo');
+                const result = this.$.$origami_app_bank.fetch_banks_data(limit ? 1 : 100);
                 console.log(result);
                 return result;
             }
@@ -9756,7 +9757,7 @@ var $;
                 return this.banks_data().find((bank) => bank.id == id);
             }
             center() {
-                const bank_id = this.$.$mol_state_arg.value('bank');
+                const bank_id = this.$.$mol_state_arg.value('bank') || this.$.$mol_state_arg.value('bank_solo');
                 console.log(bank_id);
                 if (bank_id) {
                     const central_bank = this.bank_id(bank_id);
@@ -9777,8 +9778,13 @@ var $;
                 return this.bank_id(id)?.address || '';
             }
             place_content(id) {
+                const bank = this.bank_id(id);
+                if (!bank)
+                    return 'Не найдено информации';
+                const workload = this.bank_id(id)?.workload_type || 0;
+                const workload_text = 'Загруженность банка: <b>' + (workload === 0 ? 'слабая' : workload === 1 ? 'средняя' : 'высокая') + '</b>';
                 const content = this.bank_id(id)?.salePointName;
-                return content || '';
+                return workload_text + '<br>' + content + '<br>Нажмите <b>"В Карты"</b> чтобы проложить маршрут';
             }
         }
         __decorate([
@@ -9792,7 +9798,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/world/world.view.css", "[origami_app_world_map] {\n\tfilter: none;\n\theight: calc(100vh - 290px);\n\tmin-width: 100px;\n\tborder-radius: calc(var(--origami_ui_theme_border_radius));\n}\n\nymaps {\n\tborder-radius: calc(var(--origami_ui_theme_border_radius));\n}\n");
+    $mol_style_attach("origami/app/world/world.view.css", "[origami_app_world_map] {\n\tfilter: none;\n\theight: calc(100vh - 290px);\n\tmin-width: 100px;\n\tborder-radius: calc(var(--origami_ui_theme_border_radius));\n}\n\nymaps {\n\tborder-radius: 5px;\n}\n");
 })($ || ($ = {}));
 //origami/app/world/-css/world.view.css.ts
 ;
@@ -9870,6 +9876,7 @@ var $;
         Rate_control() {
             const obj = new this.$.$mol_number();
             obj.value = (next) => this.rate(next);
+            obj.value_max = () => 100;
             return obj;
         }
         Rate_field() {
@@ -10126,7 +10133,7 @@ var $;
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({ loan_amount: this.amount(), interest_rate: this.rate(), loan_term: this.term() })
                 });
-                this.$.$mol_state_arg.value('bank', result.office.id);
+                this.$.$mol_state_arg.value('bank_id', result.office.id);
                 console.log(result);
                 return result;
             }

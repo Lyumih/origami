@@ -735,6 +735,7 @@ $origami_app_calc $mol_list
 						bid <= rate_bid \
 						control <= Rate_control $mol_number
 							value? <=> rate? 18.3
+							value_max 100
 					<= Term_field $mol_form_field
 						name <= term_label \Срок кредита
 						bid <= term_bid \
