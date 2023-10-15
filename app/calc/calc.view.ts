@@ -30,9 +30,21 @@ namespace $.$$ {
 			console.log(result)
 			return result
 		}
+
 		loan_submit( next?: any ) {
-			console.log( next )
 			this.result_loan_data( true )
+		}
+
+		amount_bid(): string {
+			return this.amount() > 10000 ? "" : "*"
+		}
+
+		rate_bid(): string {
+			return this.rate() > 3 ? "" : "*"
+		}
+
+		is_enabled( next?: any ): boolean {
+			return (this.amount_bid() + this.rate_bid() + this.term_bid()) === ''
 		}
 
 		first_payment(): string {
@@ -56,5 +68,6 @@ namespace $.$$ {
 			return this.result_loan_data() ? [ this.Map(), this.Result_card() ] : [ this.Loan_card() ]
 			// return [ this.Map(), this.Result_card() ]
 		}
+
 	}
 }

@@ -1,11 +1,5 @@
 $origami_app_calc $mol_list
 	message_done \Done
-	bid_required* \Не заполнено
-	bid_min \Значение должны быть больше 0
-	bid_number \Должно быть число
-	bid_rate_max \Ставка по кредиту не может превышать 100%
-	bid_term_min \Минимальный срок кредита: 3 месяца
-	bid_term_max \Максимальный срок кредита: 360 месяцев
 	rows /
 		<= Loan_card $origami_ui_card top /
 			<= Loan_form_title $origami_ui_text_dark_large text \**Рассчитайте ваш кредит и выберите отделение банка**
@@ -14,22 +8,28 @@ $origami_app_calc $mol_list
 					<= Amount_field $mol_form_field
 						name <= amount_label \Введите сумму
 						bid <= amount_bid \
-						control <= Amount_control $mol_number
+						control <= Amount_control $origami_app_calc_number
 							value? <=> amount? 27000
+							value_min 1
+							value_max 100000000
 					<= Rate_field $mol_form_field
 						name <= rate_label \Ставка по кредиту
 						bid <= rate_bid \
-						control <= Rate_control $mol_number
+						control <= Rate_control $origami_app_calc_number
 							value? <=> rate? 18.3
+							value_min 1
 							value_max 100
 					<= Term_field $mol_form_field
 						name <= term_label \Срок кредита
 						bid <= term_bid \
-						control <= Term_control $mol_number
+						control <= Term_control $origami_app_calc_number
 							value? <=> term? 12
+							value_min 3
+							value_max 360
 				buttons /
 					<= Calculate $mol_button_major
 						title \Рассчитать
+						enabled <= is_enabled? true
 						event_click? <=> loan_submit? null
 		<= Map $origami_app_world
 		<= Result_card $origami_ui_card
@@ -56,3 +56,8 @@ $origami_app_calc_line $mol_view
 	sub /
 		<= Title $origami_ui_text_main text <= title \
 		<= Value $origami_ui_text_light text <= value \
+
+
+$origami_app_calc_number $mol_number
+	Inc null
+	Dec null

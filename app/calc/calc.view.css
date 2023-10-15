@@ -18,12 +18,21 @@
 	border-radius: none;
 	text-align: end;
 }
-/* 
-[origami_app_calc_map] {
-	height: 200px;
-	max-height: 200px;
-} */
 
 [origami_app_calc]>[origami_app_world_map] {
 	height: 150px!important;
+}
+
+[mol_form_field] {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+[mol_form_field_label] {
+	color: var(--origami_ui_theme_main);
+}
+
+[origami_app_calc_number] > * {
+	color: var(--origami_ui_theme_light)!important;
 }
