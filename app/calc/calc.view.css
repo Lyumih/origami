@@ -2,3 +2,19 @@
 	margin-top: 0!important;
 	flex-direction: column!important;
 }
+
+[origami_app_calc_line] {
+	justify-content: space-between;
+	position: relative;
+}
+
+[origami_app_calc_line_value]::after {
+	content: '';
+	position: absolute;
+	bottom: 10px;
+	right: 12px;
+	width: 105px;
+	border-bottom: 2px solid var(--origami_ui_theme_light);
+	border-radius: none;
+	text-align: end;
+}

@@ -48,8 +48,9 @@ $origami_app_calc $mol_list
 				<= Monthly_payment $origami_app_calc_line
 					title \Ежемесячный платёж
 					value <= monthly_payment \
+				<= Result_info $origami_ui_text_light_smallest text \Расчет калькулятора является предварительным, полные условия по платежам будут предоставлены банком после заключения договора.
 
 $origami_app_calc_line $mol_view
 	sub /
-		<= Title $origami_ui_text_dark text <= title \
+		<= Title $origami_ui_text_main text <= title \
 		<= Value $origami_ui_text_light text <= value \
