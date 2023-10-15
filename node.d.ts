@@ -2942,6 +2942,8 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $origami_app_calc extends $.$origami_app_calc {
+        fetch_loan(): unknown;
+        loan_submit(next?: any): void;
     }
 }
 

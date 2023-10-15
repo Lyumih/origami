@@ -9831,6 +9831,14 @@ var $;
     var $$;
     (function ($$) {
         class $origami_app_calc extends $.$origami_app_calc {
+            fetch_loan() {
+                const uri = `https://origami-team.site/calc/?loan_amount=${this.amount()}&interest_rate=${this.rate()}&loan_term=${this.term()}`;
+                return this.$.$mol_fetch.json(uri);
+            }
+            loan_submit(next) {
+                console.log(next);
+                this.fetch_loan();
+            }
         }
         $$.$origami_app_calc = $origami_app_calc;
     })($$ = $.$$ || ($.$$ = {}));
