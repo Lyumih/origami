@@ -1,0 +1,25 @@
+$origami_app_calc $mol_list
+	rows /
+		<= Loan_card $origami_ui_card top /
+			<= Loan_form_title $origami_ui_text_dark_large text \**Рассчитайте ваш кредит и выберите отделение банка**
+			<= Loan_form $mol_form
+				form_fields /
+					<= Amount_field $mol_form_field
+						name <= amount_label \Введите сумму
+						bid <= amount_bid \
+						control <= Amount_control $mol_number
+							value? <=> amount? 0
+					<= Rate_field $mol_form_field
+						name <= rate_label \Ставка по кредиту
+						bid <= rate_bid \
+						control <= Rate_control $mol_number
+							value? <=> rate? 0
+					<= Term_field $mol_form_field
+						name <= term_label \Срок кредита
+						bid <= term_bid \
+						control <= Term_control $mol_number
+							value? <=> term? 0
+				buttons /
+					<= Calculate $mol_button_major
+						title \Рассчитать
+						event_click? <=> loan_submit? null

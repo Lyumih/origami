@@ -6,18 +6,15 @@ $origami_app $mol_page
 		<= Settings $mol_button_minor
 			sub / <= Settings_icon $mol_icon_settings
 	body /
-		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
+		<= Main $origami_app_calc
 		<= World $origami_app_world
-		<= Route $mol_view
-			sub /
-				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
 		<= Atms $origami_app_atm
 		<= Profile $origami_app_profile
 	foot /
-		<= Map_link $origami_app_menu_link
+		<= Main_link $origami_app_menu_link
 			img \origami/app/assets/img/main.svg
-			link \map
+			link \main
 			title \Главная
 		<= Bank_link $origami_app_menu_link
 			img \origami/app/assets/img/office.svg

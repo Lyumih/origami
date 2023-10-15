@@ -9,13 +9,13 @@ namespace $.$$ {
 		body(): readonly any[] {
 			let page = this.$.$mol_state_arg.value('page') || 'default'
 			const configs: Record< string, $mol_view | undefined> = {
-				route: this.Route(),
+				main: this.Main(),
 				map: this.World(),
 				bank: this.Bank(),
 				atms: this.Atms(),
 				profile: this.Profile(),
 			}
-			return [configs[page] ?? this.Welcome()]
+			return [configs[page] ?? this.Main()]
 		}
 
 		@$mol_mem
