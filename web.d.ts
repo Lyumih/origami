@@ -2825,12 +2825,13 @@ declare namespace $ {
         Amount_all(): $origami_app_calc_line;
         monthly_payment(): string;
         Monthly_payment(): $origami_app_calc_line;
+        Result_info(): $origami_ui_text_light_smallest;
         Result_card(): $origami_ui_card;
     }
     class $origami_app_calc_line extends $mol_view {
         sub(): readonly any[];
         title(): string;
-        Title(): $origami_ui_text_dark;
+        Title(): $origami_ui_text_main;
         value(): string;
         Value(): $origami_ui_text_light;
     }

@@ -9226,6 +9226,11 @@ var $;
             obj.value = () => this.monthly_payment();
             return obj;
         }
+        Result_info() {
+            const obj = new this.$.$origami_ui_text_light_smallest();
+            obj.text = () => "Расчет калькулятора является предварительным, полные условия по платежам будут предоставлены банком после заключения договора.";
+            return obj;
+        }
         Result_card() {
             const obj = new this.$.$origami_ui_card();
             obj.top = () => [
@@ -9234,7 +9239,8 @@ var $;
                 this.Last_payment(),
                 this.Overpayment(),
                 this.Amount_all(),
-                this.Monthly_payment()
+                this.Monthly_payment(),
+                this.Result_info()
             ];
             return obj;
         }
@@ -9301,6 +9307,9 @@ var $;
     ], $origami_app_calc.prototype, "Monthly_payment", null);
     __decorate([
         $mol_mem
+    ], $origami_app_calc.prototype, "Result_info", null);
+    __decorate([
+        $mol_mem
     ], $origami_app_calc.prototype, "Result_card", null);
     $.$origami_app_calc = $origami_app_calc;
     class $origami_app_calc_line extends $mol_view {
@@ -9314,7 +9323,7 @@ var $;
             return "";
         }
         Title() {
-            const obj = new this.$.$origami_ui_text_dark();
+            const obj = new this.$.$origami_ui_text_main();
             obj.text = () => this.title();
             return obj;
         }
@@ -9388,7 +9397,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("origami/app/calc/calc.view.css", "[origami_app_calc] {\n\tmargin-top: 0!important;\n\tflex-direction: column!important;\n}\n");
+    $mol_style_attach("origami/app/calc/calc.view.css", "[origami_app_calc] {\n\tmargin-top: 0!important;\n\tflex-direction: column!important;\n}\n\n[origami_app_calc_line] {\n\tjustify-content: space-between;\n\tposition: relative;\n}\n\n[origami_app_calc_line_value]::after {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 10px;\n\tright: 12px;\n\twidth: 105px;\n\tborder-bottom: 2px solid var(--origami_ui_theme_light);\n\tborder-radius: none;\n\ttext-align: end;\n}\n");
 })($ || ($ = {}));
 //origami/app/calc/-css/calc.view.css.ts
 ;
