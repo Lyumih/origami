@@ -1,7 +1,7 @@
 $origami_app_world $mol_list
 	rows /
 		<= Map $mol_map_yandex
-			zoom 13
+			zoom 20
 			center <= center $mol_vector_2d /
 				0
 				0

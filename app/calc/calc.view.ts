@@ -3,8 +3,6 @@ namespace $.$$ {
 
 		@$mol_mem
 		result_loan_data( next?: any ) {
-			console.log( next )
-			console.log( 123 )
 			if( !next ) return
 
 			const result =  this.$.$mol_fetch.json( 'https://origami-team.site/calc/', {
@@ -27,7 +25,6 @@ namespace $.$$ {
 				}
 			}
 			this.$.$mol_state_arg.value('bank_id', result.office.id)
-			console.log(result)
 			return result
 		}
 
@@ -66,7 +63,6 @@ namespace $.$$ {
 
 		rows(): readonly $mol_view[] {
 			return this.result_loan_data() ? [ this.Map(), this.Result_card() ] : [ this.Loan_card() ]
-			// return [ this.Map(), this.Result_card() ]
 		}
 
 	}

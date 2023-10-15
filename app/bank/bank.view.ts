@@ -22,7 +22,6 @@ namespace $.$$ {
 
 		@$mol_mem
 		banks_data() {
-			console.log( 'get_data_banks' )
 			return this.$.$origami_app_bank.fetch_banks_data()
 		}
 
@@ -70,7 +69,6 @@ namespace $.$$ {
 		@$mol_action
 		open_map( id: string, next?: any ) {
 			const bank = this.bank_id( id )
-			console.log( next, bank )
 			this.$.$mol_state_arg.go( { 'page': 'map', bank: bank?.id || '' } )
 		}
 	}
