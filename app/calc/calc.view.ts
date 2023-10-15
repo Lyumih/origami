@@ -26,7 +26,7 @@ namespace $.$$ {
 					longitude: number,
 				}
 			}
-			this.$.$mol_state_arg.value('bank', result.office.id)
+			this.$.$mol_state_arg.value('bank_id', result.office.id)
 			console.log(result)
 			return result
 		}
