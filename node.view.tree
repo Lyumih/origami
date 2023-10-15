@@ -490,44 +490,19 @@ $mol_text_span $mol_paragraph
 		^
 		mol_text_type <= type \
 
-$mol_map_yandex_mark $mol_object
-	pos $mol_vector_2d /
-		0
-		0
-	box $mol_vector_2d /
-		<= box_lat $mol_vector_range /
-			0
-			0
-		<= box_lon $mol_vector_range /
-			0
-			0
-	hint \
-	title <= address \
-	content \
-	object null
+$mol_text_list $mol_text
+	auto_scroll null
+	attr *
+		^
+		mol_text_list_type <= type \
+	Paragraph* $mol_text_list_item
+		index <= item_index*
+		sub <= block_content*
 
-$mol_map_yandex $mol_view
-	zoom? 2
-	center? /
-		0
-		0
-	objects /$mol_map_yandex_mark
-
-$origami_app_world $mol_list
-	rows /
-		<= Map $mol_map_yandex
-			zoom 13
-			center <= center $mol_vector_2d /
-				0
-				0
-			objects <= banks_mark_list /
-				<= Place*0 $mol_map_yandex_mark
-					pos <= mark_pos* $mol_vector_2d /
-						0
-						0
-					title <= place_title* \
-					address <= place_address* \СПБ
-					content <= place_content* \Вам нужно съездить в СПБ
+$mol_text_list_item $mol_paragraph
+	attr *
+		^
+		mol_text_list_item_index <= index 0
 
 - Colors: common text(black), contrast(white); light(lightblue), main(blue), dark(darkblue); success(green), warning(orange);
 - Sizes: common(16px, 400-regular); large(18px, 500); largest(20px, 600); small(14px, 300); smallest(12px, 200);
@@ -581,6 +556,115 @@ $origami_ui_text_warning_largest $origami_ui_text_warning
 $origami_ui_text_warning_small $origami_ui_text_warning
 $origami_ui_text_warning_smallest $origami_ui_text_warning
 
+$mol_hotkey $mol_plugin
+	event *
+		^
+		keydown?event <=> keydown?event null
+	key *
+	mod_ctrl false
+	mod_alt false
+	mod_shift false
+
+$mol_string $mol_view
+	dom_name \input
+	enabled true
+	minimal_height 40
+	autocomplete false
+	selection? /number
+		0
+		0
+	auto /
+		<= selection_watcher null
+	field *
+		^
+		disabled <= disabled false
+		value <= value_changed? <=> value? \
+		placeholder <= hint_visible <= hint \
+		spellcheck <= spellcheck true
+		autocomplete <= autocomplete_native \
+		selectionEnd <= selection_end 0
+		selectionStart <= selection_start 0
+		inputMode <= keyboard \text
+		enterkeyhint <= enter \go
+	attr *
+		^
+		maxlength <= length_max +Infinity
+		type <= type? \text
+	event *
+		^
+		input?event <=> event_change?event null
+	plugins /
+		<= Submit $mol_hotkey
+			mod_ctrl <= submit_with_ctrl false
+			key * enter?event <=> submit?event null
+
+$mol_icon_minus $mol_icon path \M19,13H5V11H19V13Z
+
+$mol_icon_plus $mol_icon path \M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z
+
+$mol_number $mol_view
+	precision_view <= precision 1
+	precision_change <= precision 1
+	value_min -Infinity
+	value_max +Infinity
+	value? +NaN
+	enabled true
+	sub /
+		<= String $mol_string
+			- \ we don't want native number controls in mobile devices
+			- \ https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box
+			type <= type \tel
+			value? <=> value_string? \
+			hint <= hint \ 
+			enabled <= string_enabled <= enabled
+			submit? <=> submit? null
+		<= Dec $mol_button_minor
+			event_click? <=> event_dec? null
+			enabled <= dec_enabled <= enabled
+			sub / <= dec_icon $mol_icon_minus
+		<= Inc $mol_button_minor
+			event_click? <=> event_inc? null
+			enabled <= inc_enabled <= enabled
+			sub / <= inc_icon $mol_icon_plus
+
+$mol_labeler $mol_list
+	rows /
+		<= Label $mol_view
+			minimal_height 32
+			sub <= label /$mol_view_content
+				<= title
+		<= Content $mol_view
+			minimal_height 24
+			sub <= content /
+
+$mol_form_field $mol_labeler
+	bids /string
+	label /
+		<= name \
+		<= Bid $mol_view
+			sub / <= bid \
+	content / <= control null
+
+$mol_button_major $mol_button_typed
+	attr *
+		^
+		mol_theme \$mol_theme_accent
+
+$mol_row $mol_view
+
+$mol_form $mol_list
+	submit_allowed true
+	submit_blocked false
+	event *
+		^
+		keydown?event <=> keydown?event null
+	submit?event null
+	rows /
+		<= Body $mol_list
+			sub <= body <= form_fields /$mol_form_field
+		<= Foot $mol_row
+			sub <= foot <= buttons /$mol_view
+
 $origami_ui_card $mol_view
 	sub /
 		<= Left $mol_list rows <= left /$mol_view
@@ -588,6 +672,71 @@ $origami_ui_card $mol_view
 			<= Top $mol_list rows <= top /$mol_view
 			<= Bottom $mol_list rows <= bottom /$mol_view
 		<= Right $mol_list rows <= right /$mol_view
+
+$origami_app_calc $mol_list
+	rows /
+		<= Loan_card $origami_ui_card top /
+			<= Loan_form_title $origami_ui_text_dark_large text \**Рассчитайте ваш кредит и выберите отделение банка**
+			<= Loan_form $mol_form
+				form_fields /
+					<= Amount_field $mol_form_field
+						name <= amount_label \Введите сумму
+						bid <= amount_bid \
+						control <= Amount_control $mol_number
+							value? <=> amount? 0
+					<= Rate_field $mol_form_field
+						name <= rate_label \Ставка по кредиту
+						bid <= rate_bid \
+						control <= Rate_control $mol_number
+							value? <=> rate? 0
+					<= Term_field $mol_form_field
+						name <= term_label \Срок кредита
+						bid <= term_bid \
+						control <= Term_control $mol_number
+							value? <=> term? 0
+				buttons /
+					<= Calculate $mol_button_major
+						title \Рассчитать
+						event_click? <=> loan_submit? null
+
+$mol_map_yandex_mark $mol_object
+	pos $mol_vector_2d /
+		0
+		0
+	box $mol_vector_2d /
+		<= box_lat $mol_vector_range /
+			0
+			0
+		<= box_lon $mol_vector_range /
+			0
+			0
+	hint \
+	title <= address \
+	content \
+	object null
+
+$mol_map_yandex $mol_view
+	zoom? 2
+	center? /
+		0
+		0
+	objects /$mol_map_yandex_mark
+
+$origami_app_world $mol_list
+	rows /
+		<= Map $mol_map_yandex
+			zoom 13
+			center <= center $mol_vector_2d /
+				0
+				0
+			objects <= banks_mark_list /
+				<= Place*0 $mol_map_yandex_mark
+					pos <= mark_pos* $mol_vector_2d /
+						0
+						0
+					title <= place_title* \
+					address <= place_address* \СПБ
+					content <= place_content* \Вам нужно съездить в СПБ
 
 $mol_icon_chevron_right $mol_icon path \M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z
 
@@ -622,20 +771,6 @@ $origami_app_profile_card $origami_ui_card
 		<= Amount $origami_ui_text_main_large text <= amount \
 	right / <= Arrow $mol_icon_chevron_right
 
-$mol_text_list $mol_text
-	auto_scroll null
-	attr *
-		^
-		mol_text_list_type <= type \
-	Paragraph* $mol_text_list_item
-		index <= item_index*
-		sub <= block_content*
-
-$mol_text_list_item $mol_paragraph
-	attr *
-		^
-		mol_text_list_item_index <= index 0
-
 $origami_app $mol_page
 	title \More Tech 5.0
 	plugins /
@@ -644,18 +779,15 @@ $origami_app $mol_page
 		<= Settings $mol_button_minor
 			sub / <= Settings_icon $mol_icon_settings
 	body /
-		<= Welcome $mol_text text \Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.
+		<= Main $origami_app_calc
 		<= World $origami_app_world
-		<= Route $mol_view
-			sub /
-				<= Route_text $mol_text text \Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)
 		<= Bank $origami_app_bank
 		<= Atms $origami_app_atm
 		<= Profile $origami_app_profile
 	foot /
-		<= Map_link $origami_app_menu_link
+		<= Main_link $origami_app_menu_link
 			img \origami/app/assets/img/main.svg
-			link \map
+			link \main
 			title \Главная
 		<= Bank_link $origami_app_menu_link
 			img \origami/app/assets/img/office.svg
@@ -676,11 +808,6 @@ $origami_app_menu_link $mol_link
 		<= Icon $mol_image
 			uri <= img \
 		<= title \
-
-$mol_button_major $mol_button_typed
-	attr *
-		^
-		mol_theme \$mol_theme_accent
 
 $mol_check_list $mol_view
 	dictionary *

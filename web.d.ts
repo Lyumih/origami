@@ -1958,7 +1958,7 @@ declare namespace $.$$ {
         col_head_content(colId: string): readonly string[];
         rows(): readonly $mol_view[];
         cells(row_id: string[]): readonly $mol_view[];
-        col_type(col_id: string): "number" | "text" | "branch";
+        col_type(col_id: string): "text" | "number" | "branch";
         Cell(id: {
             row: string[];
             col: string;
@@ -2370,6 +2370,455 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_text_list extends $mol_text {
+        auto_scroll(): any;
+        attr(): Record<string, any>;
+        Paragraph(id: any): $mol_text_list_item;
+        type(): string;
+    }
+    class $mol_text_list_item extends $mol_paragraph {
+        attr(): Record<string, any>;
+        index(): number;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $origami_ui_text extends $mol_text {
+    }
+    class $origami_ui_text_large extends $origami_ui_text {
+    }
+    class $origami_ui_text_largest extends $origami_ui_text {
+    }
+    class $origami_ui_text_small extends $origami_ui_text {
+    }
+    class $origami_ui_text_smallest extends $origami_ui_text {
+    }
+    class $origami_ui_text_contrast extends $origami_ui_text {
+    }
+    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
+    }
+    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
+    }
+    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
+    }
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
+    }
+    class $origami_ui_text_light extends $origami_ui_text {
+    }
+    class $origami_ui_text_light_large extends $origami_ui_text_light {
+    }
+    class $origami_ui_text_light_largest extends $origami_ui_text_light {
+    }
+    class $origami_ui_text_light_small extends $origami_ui_text_light {
+    }
+    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
+    }
+    class $origami_ui_text_main extends $origami_ui_text {
+    }
+    class $origami_ui_text_main_large extends $origami_ui_text_main {
+    }
+    class $origami_ui_text_main_largest extends $origami_ui_text_main {
+    }
+    class $origami_ui_text_main_small extends $origami_ui_text_main {
+    }
+    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
+    }
+    class $origami_ui_text_dark extends $origami_ui_text {
+    }
+    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
+    }
+    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
+    }
+    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
+    }
+    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
+    }
+    class $origami_ui_text_success extends $origami_ui_text {
+    }
+    class $origami_ui_text_success_large extends $origami_ui_text_success {
+    }
+    class $origami_ui_text_success_largest extends $origami_ui_text_success {
+    }
+    class $origami_ui_text_success_small extends $origami_ui_text_success {
+    }
+    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
+    }
+    class $origami_ui_text_warning extends $origami_ui_text {
+    }
+    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
+    }
+    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
+    }
+    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
+    }
+    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_hotkey extends $mol_plugin {
+        event(): Record<string, any>;
+        key(): Record<string, any>;
+        mod_ctrl(): boolean;
+        mod_alt(): boolean;
+        mod_shift(): boolean;
+        keydown(event?: any): any;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_hotkey extends $.$mol_hotkey {
+        key(): {
+            [x: number]: ((event: KeyboardEvent) => void) | undefined;
+            readonly backspace?: ((event: KeyboardEvent) => void) | undefined;
+            readonly tab?: ((event: KeyboardEvent) => void) | undefined;
+            readonly enter?: ((event: KeyboardEvent) => void) | undefined;
+            readonly shift?: ((event: KeyboardEvent) => void) | undefined;
+            readonly ctrl?: ((event: KeyboardEvent) => void) | undefined;
+            readonly alt?: ((event: KeyboardEvent) => void) | undefined;
+            readonly pause?: ((event: KeyboardEvent) => void) | undefined;
+            readonly capsLock?: ((event: KeyboardEvent) => void) | undefined;
+            readonly escape?: ((event: KeyboardEvent) => void) | undefined;
+            readonly space?: ((event: KeyboardEvent) => void) | undefined;
+            readonly pageUp?: ((event: KeyboardEvent) => void) | undefined;
+            readonly pageDown?: ((event: KeyboardEvent) => void) | undefined;
+            readonly end?: ((event: KeyboardEvent) => void) | undefined;
+            readonly home?: ((event: KeyboardEvent) => void) | undefined;
+            readonly left?: ((event: KeyboardEvent) => void) | undefined;
+            readonly up?: ((event: KeyboardEvent) => void) | undefined;
+            readonly right?: ((event: KeyboardEvent) => void) | undefined;
+            readonly down?: ((event: KeyboardEvent) => void) | undefined;
+            readonly insert?: ((event: KeyboardEvent) => void) | undefined;
+            readonly delete?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key0?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key1?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key2?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key3?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key4?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key5?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key6?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key7?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key8?: ((event: KeyboardEvent) => void) | undefined;
+            readonly key9?: ((event: KeyboardEvent) => void) | undefined;
+            readonly A?: ((event: KeyboardEvent) => void) | undefined;
+            readonly B?: ((event: KeyboardEvent) => void) | undefined;
+            readonly C?: ((event: KeyboardEvent) => void) | undefined;
+            readonly D?: ((event: KeyboardEvent) => void) | undefined;
+            readonly E?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F?: ((event: KeyboardEvent) => void) | undefined;
+            readonly G?: ((event: KeyboardEvent) => void) | undefined;
+            readonly H?: ((event: KeyboardEvent) => void) | undefined;
+            readonly I?: ((event: KeyboardEvent) => void) | undefined;
+            readonly J?: ((event: KeyboardEvent) => void) | undefined;
+            readonly K?: ((event: KeyboardEvent) => void) | undefined;
+            readonly L?: ((event: KeyboardEvent) => void) | undefined;
+            readonly M?: ((event: KeyboardEvent) => void) | undefined;
+            readonly N?: ((event: KeyboardEvent) => void) | undefined;
+            readonly O?: ((event: KeyboardEvent) => void) | undefined;
+            readonly P?: ((event: KeyboardEvent) => void) | undefined;
+            readonly Q?: ((event: KeyboardEvent) => void) | undefined;
+            readonly R?: ((event: KeyboardEvent) => void) | undefined;
+            readonly S?: ((event: KeyboardEvent) => void) | undefined;
+            readonly T?: ((event: KeyboardEvent) => void) | undefined;
+            readonly U?: ((event: KeyboardEvent) => void) | undefined;
+            readonly V?: ((event: KeyboardEvent) => void) | undefined;
+            readonly W?: ((event: KeyboardEvent) => void) | undefined;
+            readonly X?: ((event: KeyboardEvent) => void) | undefined;
+            readonly Y?: ((event: KeyboardEvent) => void) | undefined;
+            readonly Z?: ((event: KeyboardEvent) => void) | undefined;
+            readonly metaLeft?: ((event: KeyboardEvent) => void) | undefined;
+            readonly metaRight?: ((event: KeyboardEvent) => void) | undefined;
+            readonly select?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad0?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad1?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad2?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad3?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad4?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad5?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad6?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad7?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad8?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numpad9?: ((event: KeyboardEvent) => void) | undefined;
+            readonly multiply?: ((event: KeyboardEvent) => void) | undefined;
+            readonly add?: ((event: KeyboardEvent) => void) | undefined;
+            readonly subtract?: ((event: KeyboardEvent) => void) | undefined;
+            readonly decimal?: ((event: KeyboardEvent) => void) | undefined;
+            readonly divide?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F1?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F2?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F3?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F4?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F5?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F6?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F7?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F8?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F9?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F10?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F11?: ((event: KeyboardEvent) => void) | undefined;
+            readonly F12?: ((event: KeyboardEvent) => void) | undefined;
+            readonly numLock?: ((event: KeyboardEvent) => void) | undefined;
+            readonly scrollLock?: ((event: KeyboardEvent) => void) | undefined;
+            readonly semicolon?: ((event: KeyboardEvent) => void) | undefined;
+            readonly equals?: ((event: KeyboardEvent) => void) | undefined;
+            readonly comma?: ((event: KeyboardEvent) => void) | undefined;
+            readonly dash?: ((event: KeyboardEvent) => void) | undefined;
+            readonly period?: ((event: KeyboardEvent) => void) | undefined;
+            readonly forwardSlash?: ((event: KeyboardEvent) => void) | undefined;
+            readonly graveAccent?: ((event: KeyboardEvent) => void) | undefined;
+            readonly bracketOpen?: ((event: KeyboardEvent) => void) | undefined;
+            readonly slashBack?: ((event: KeyboardEvent) => void) | undefined;
+            readonly slashBackLeft?: ((event: KeyboardEvent) => void) | undefined;
+            readonly bracketClose?: ((event: KeyboardEvent) => void) | undefined;
+            readonly quoteSingle?: ((event: KeyboardEvent) => void) | undefined;
+        };
+        keydown(event?: KeyboardEvent): void;
+    }
+}
+
+declare namespace $ {
+    class $mol_string extends $mol_view {
+        dom_name(): string;
+        enabled(): boolean;
+        minimal_height(): number;
+        autocomplete(): boolean;
+        selection(next?: any): readonly number[];
+        auto(): readonly any[];
+        field(): Record<string, any>;
+        attr(): Record<string, any>;
+        event(): Record<string, any>;
+        plugins(): readonly any[];
+        selection_watcher(): any;
+        disabled(): boolean;
+        value(next?: any): string;
+        value_changed(next?: any): string;
+        hint(): string;
+        hint_visible(): string;
+        spellcheck(): boolean;
+        autocomplete_native(): string;
+        selection_end(): number;
+        selection_start(): number;
+        keyboard(): string;
+        enter(): string;
+        length_max(): number;
+        type(next?: any): string;
+        event_change(event?: any): any;
+        submit_with_ctrl(): boolean;
+        submit(event?: any): any;
+        Submit(): $$.$mol_hotkey;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_string extends $.$mol_string {
+        event_change(next?: Event): void;
+        hint_visible(): string;
+        disabled(): boolean;
+        autocomplete_native(): "on" | "off";
+        selection_watcher(): $mol_dom_listener;
+        selection_change(event: Event): void;
+        selection_start(): number;
+        selection_end(): number;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_icon_minus extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_plus extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_number extends $mol_view {
+        precision_view(): number;
+        precision_change(): number;
+        value_min(): number;
+        value_max(): number;
+        value(next?: any): number;
+        enabled(): boolean;
+        sub(): readonly any[];
+        precision(): number;
+        type(): string;
+        value_string(next?: any): string;
+        hint(): string;
+        string_enabled(): boolean;
+        submit(next?: any): any;
+        String(): $$.$mol_string;
+        event_dec(next?: any): any;
+        dec_enabled(): boolean;
+        dec_icon(): $mol_icon_minus;
+        Dec(): $mol_button_minor;
+        event_inc(next?: any): any;
+        inc_enabled(): boolean;
+        inc_icon(): $mol_icon_plus;
+        Inc(): $mol_button_minor;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $.$$ {
+    class $mol_number extends $.$mol_number {
+        value_limited(next?: any): number;
+        event_dec(next?: Event): void;
+        event_inc(next?: Event): void;
+        value_string(next?: string): string;
+        dec_enabled(): boolean;
+        inc_enabled(): boolean;
+    }
+}
+
+declare namespace $ {
+    class $mol_labeler extends $mol_list {
+        rows(): readonly any[];
+        label(): readonly $mol_view_content[];
+        Label(): $mol_view;
+        content(): readonly any[];
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_form_field extends $mol_labeler {
+        bids(): readonly string[];
+        label(): readonly any[];
+        content(): readonly any[];
+        name(): string;
+        bid(): string;
+        Bid(): $mol_view;
+        control(): any;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_form_field extends $.$mol_form_field {
+        bid(): string;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_button_major extends $mol_button_typed {
+        attr(): Record<string, any>;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_row extends $mol_view {
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_form extends $mol_list {
+        submit_allowed(): boolean;
+        submit_blocked(): boolean;
+        event(): Record<string, any>;
+        submit(event?: any): any;
+        rows(): readonly any[];
+        keydown(event?: any): any;
+        form_fields(): readonly $mol_form_field[];
+        body(): readonly $mol_form_field[];
+        Body(): $$.$mol_list;
+        buttons(): readonly $mol_view[];
+        foot(): readonly $mol_view[];
+        Foot(): $mol_row;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_form extends $.$mol_form {
+        form_fields(): readonly $mol_form_field[];
+        submit_allowed(): boolean;
+        submit_blocked(): boolean;
+        keydown(next: KeyboardEvent): void;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $origami_ui_card extends $mol_view {
+        sub(): readonly any[];
+        left(): readonly $mol_view[];
+        Left(): $$.$mol_list;
+        top(): readonly $mol_view[];
+        Top(): $$.$mol_list;
+        bottom(): readonly $mol_view[];
+        Bottom(): $$.$mol_list;
+        Content(): $$.$mol_list;
+        right(): readonly $mol_view[];
+        Right(): $$.$mol_list;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $origami_app_calc extends $mol_list {
+        rows(): readonly any[];
+        Loan_form_title(): $origami_ui_text_dark_large;
+        amount_label(): string;
+        amount_bid(): string;
+        amount(next?: any): number;
+        Amount_control(): $$.$mol_number;
+        Amount_field(): $$.$mol_form_field;
+        rate_label(): string;
+        rate_bid(): string;
+        rate(next?: any): number;
+        Rate_control(): $$.$mol_number;
+        Rate_field(): $$.$mol_form_field;
+        term_label(): string;
+        term_bid(): string;
+        term(next?: any): number;
+        Term_control(): $$.$mol_number;
+        Term_field(): $$.$mol_form_field;
+        loan_submit(next?: any): any;
+        Calculate(): $mol_button_major;
+        Loan_form(): $$.$mol_form;
+        Loan_card(): $origami_ui_card;
+    }
+}
+
+declare namespace $.$$ {
+    class $origami_app_calc extends $.$origami_app_calc {
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_vector<Value, Length extends number> extends Array<Value> {
         get length(): Length;
         constructor(...values: Value[] & {
@@ -2686,103 +3135,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $origami_ui_text extends $mol_text {
-    }
-    class $origami_ui_text_large extends $origami_ui_text {
-    }
-    class $origami_ui_text_largest extends $origami_ui_text {
-    }
-    class $origami_ui_text_small extends $origami_ui_text {
-    }
-    class $origami_ui_text_smallest extends $origami_ui_text {
-    }
-    class $origami_ui_text_contrast extends $origami_ui_text {
-    }
-    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
-    }
-    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
-    }
-    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
-    }
-    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
-    }
-    class $origami_ui_text_light extends $origami_ui_text {
-    }
-    class $origami_ui_text_light_large extends $origami_ui_text_light {
-    }
-    class $origami_ui_text_light_largest extends $origami_ui_text_light {
-    }
-    class $origami_ui_text_light_small extends $origami_ui_text_light {
-    }
-    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
-    }
-    class $origami_ui_text_main extends $origami_ui_text {
-    }
-    class $origami_ui_text_main_large extends $origami_ui_text_main {
-    }
-    class $origami_ui_text_main_largest extends $origami_ui_text_main {
-    }
-    class $origami_ui_text_main_small extends $origami_ui_text_main {
-    }
-    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
-    }
-    class $origami_ui_text_dark extends $origami_ui_text {
-    }
-    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
-    }
-    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
-    }
-    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
-    }
-    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
-    }
-    class $origami_ui_text_success extends $origami_ui_text {
-    }
-    class $origami_ui_text_success_large extends $origami_ui_text_success {
-    }
-    class $origami_ui_text_success_largest extends $origami_ui_text_success {
-    }
-    class $origami_ui_text_success_small extends $origami_ui_text_success {
-    }
-    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
-    }
-    class $origami_ui_text_warning extends $origami_ui_text {
-    }
-    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
-    }
-    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
-    }
-    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
-    }
-    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $origami_ui_card extends $mol_view {
-        sub(): readonly any[];
-        left(): readonly $mol_view[];
-        Left(): $$.$mol_list;
-        top(): readonly $mol_view[];
-        Top(): $$.$mol_list;
-        bottom(): readonly $mol_view[];
-        Bottom(): $$.$mol_list;
-        Content(): $$.$mol_list;
-        right(): readonly $mol_view[];
-        Right(): $$.$mol_list;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $mol_icon_chevron_right extends $mol_icon {
         path(): string;
     }
@@ -2822,22 +3174,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_text_list extends $mol_text {
-        auto_scroll(): any;
-        attr(): Record<string, any>;
-        Paragraph(id: any): $mol_text_list_item;
-        type(): string;
-    }
-    class $mol_text_list_item extends $mol_paragraph {
-        attr(): Record<string, any>;
-        index(): number;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $origami_app extends $mol_page {
         title(): string;
         plugins(): readonly any[];
@@ -2847,14 +3183,12 @@ declare namespace $ {
         Theme(): $$.$mol_theme_auto;
         Settings_icon(): $mol_icon_settings;
         Settings(): $mol_button_minor;
-        Welcome(): $$.$mol_text;
+        Main(): $$.$origami_app_calc;
         World(): $$.$origami_app_world;
-        Route_text(): $$.$mol_text;
-        Route(): $mol_view;
         Bank(): $$.$origami_app_bank;
         Atms(): $$.$origami_app_atm;
         Profile(): $origami_app_profile;
-        Map_link(): $origami_app_menu_link;
+        Main_link(): $origami_app_menu_link;
         Bank_link(): $origami_app_menu_link;
         Atms_link(): $origami_app_menu_link;
         Api_link(): $origami_app_menu_link;
@@ -2867,15 +3201,6 @@ declare namespace $ {
         Icon(): $$.$mol_image;
         title(): string;
     }
-}
-
-declare namespace $ {
-    class $mol_button_major extends $mol_button_typed {
-        attr(): Record<string, any>;
-    }
-}
-
-declare namespace $ {
 }
 
 declare namespace $ {

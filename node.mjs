@@ -8633,6 +8633,1220 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_text_list extends $mol_text {
+        auto_scroll() {
+            return null;
+        }
+        attr() {
+            return {
+                ...super.attr(),
+                mol_text_list_type: this.type()
+            };
+        }
+        Paragraph(id) {
+            const obj = new this.$.$mol_text_list_item();
+            obj.index = () => this.item_index(id);
+            obj.sub = () => this.block_content(id);
+            return obj;
+        }
+        type() {
+            return "";
+        }
+    }
+    __decorate([
+        $mol_mem_key
+    ], $mol_text_list.prototype, "Paragraph", null);
+    $.$mol_text_list = $mol_text_list;
+    class $mol_text_list_item extends $mol_paragraph {
+        attr() {
+            return {
+                ...super.attr(),
+                mol_text_list_item_index: this.index()
+            };
+        }
+        index() {
+            return 0;
+        }
+    }
+    $.$mol_text_list_item = $mol_text_list_item;
+})($ || ($ = {}));
+//mol/text/list/-view.tree/list.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/text/list/list.view.css", "[mol_text_list] {\r\n\tpadding-left: 1.75rem;\r\n}\r\n\r\n[mol_text_list_item] {\r\n\tcontain: none;\r\n\tdisplay: list-item;\r\n}\r\n\r\n[mol_text_list_item]::before {\r\n\tcontent: attr( mol_text_list_item_index ) \".\";\r\n\twidth: 1.25rem;\r\n\tdisplay: inline-block;\r\n\tposition: absolute;\r\n\tmargin-left: -1.75rem;\r\n\ttext-align: end;\r\n}\r\n\r\n[mol_text_list_type=\"-\"] > [mol_text_list_item]::before,\r\n[mol_text_list_type=\"*\"] > [mol_text_list_item]::before {\r\n\tcontent: \"•\";\r\n}\r\n");
+})($ || ($ = {}));
+//mol/text/list/-css/list.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_ui_text extends $mol_text {
+    }
+    $.$origami_ui_text = $origami_ui_text;
+    class $origami_ui_text_large extends $origami_ui_text {
+    }
+    $.$origami_ui_text_large = $origami_ui_text_large;
+    class $origami_ui_text_largest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_largest = $origami_ui_text_largest;
+    class $origami_ui_text_small extends $origami_ui_text {
+    }
+    $.$origami_ui_text_small = $origami_ui_text_small;
+    class $origami_ui_text_smallest extends $origami_ui_text {
+    }
+    $.$origami_ui_text_smallest = $origami_ui_text_smallest;
+    class $origami_ui_text_contrast extends $origami_ui_text {
+    }
+    $.$origami_ui_text_contrast = $origami_ui_text_contrast;
+    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
+    }
+    $.$origami_ui_text_contrast_large = $origami_ui_text_contrast_large;
+    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
+    }
+    $.$origami_ui_text_contrast_largest = $origami_ui_text_contrast_largest;
+    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
+    }
+    $.$origami_ui_text_contrast_small = $origami_ui_text_contrast_small;
+    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
+    }
+    $.$origami_ui_text_contrast_smallest = $origami_ui_text_contrast_smallest;
+    class $origami_ui_text_light extends $origami_ui_text {
+    }
+    $.$origami_ui_text_light = $origami_ui_text_light;
+    class $origami_ui_text_light_large extends $origami_ui_text_light {
+    }
+    $.$origami_ui_text_light_large = $origami_ui_text_light_large;
+    class $origami_ui_text_light_largest extends $origami_ui_text_light {
+    }
+    $.$origami_ui_text_light_largest = $origami_ui_text_light_largest;
+    class $origami_ui_text_light_small extends $origami_ui_text_light {
+    }
+    $.$origami_ui_text_light_small = $origami_ui_text_light_small;
+    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
+    }
+    $.$origami_ui_text_light_smallest = $origami_ui_text_light_smallest;
+    class $origami_ui_text_main extends $origami_ui_text {
+    }
+    $.$origami_ui_text_main = $origami_ui_text_main;
+    class $origami_ui_text_main_large extends $origami_ui_text_main {
+    }
+    $.$origami_ui_text_main_large = $origami_ui_text_main_large;
+    class $origami_ui_text_main_largest extends $origami_ui_text_main {
+    }
+    $.$origami_ui_text_main_largest = $origami_ui_text_main_largest;
+    class $origami_ui_text_main_small extends $origami_ui_text_main {
+    }
+    $.$origami_ui_text_main_small = $origami_ui_text_main_small;
+    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
+    }
+    $.$origami_ui_text_main_smallest = $origami_ui_text_main_smallest;
+    class $origami_ui_text_dark extends $origami_ui_text {
+    }
+    $.$origami_ui_text_dark = $origami_ui_text_dark;
+    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
+    }
+    $.$origami_ui_text_dark_large = $origami_ui_text_dark_large;
+    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
+    }
+    $.$origami_ui_text_dark_largest = $origami_ui_text_dark_largest;
+    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
+    }
+    $.$origami_ui_text_dark_small = $origami_ui_text_dark_small;
+    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
+    }
+    $.$origami_ui_text_dark_smallest = $origami_ui_text_dark_smallest;
+    class $origami_ui_text_success extends $origami_ui_text {
+    }
+    $.$origami_ui_text_success = $origami_ui_text_success;
+    class $origami_ui_text_success_large extends $origami_ui_text_success {
+    }
+    $.$origami_ui_text_success_large = $origami_ui_text_success_large;
+    class $origami_ui_text_success_largest extends $origami_ui_text_success {
+    }
+    $.$origami_ui_text_success_largest = $origami_ui_text_success_largest;
+    class $origami_ui_text_success_small extends $origami_ui_text_success {
+    }
+    $.$origami_ui_text_success_small = $origami_ui_text_success_small;
+    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
+    }
+    $.$origami_ui_text_success_smallest = $origami_ui_text_success_smallest;
+    class $origami_ui_text_warning extends $origami_ui_text {
+    }
+    $.$origami_ui_text_warning = $origami_ui_text_warning;
+    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
+    }
+    $.$origami_ui_text_warning_large = $origami_ui_text_warning_large;
+    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
+    }
+    $.$origami_ui_text_warning_largest = $origami_ui_text_warning_largest;
+    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
+    }
+    $.$origami_ui_text_warning_small = $origami_ui_text_warning_small;
+    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
+    }
+    $.$origami_ui_text_warning_smallest = $origami_ui_text_warning_smallest;
+})($ || ($ = {}));
+//origami/ui/text/-view.tree/text.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_common: #000000;\n\t--origami_ui_theme_contrast: #FFFFFF;\n\n\t--origami_ui_theme_light: #99A9CD;\n\t--origami_ui_theme_main: #1E4BD2;\n\t--origami_ui_theme_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
+})($ || ($ = {}));
+//origami/ui/theme/-css/theme.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/ui/text/text.view.css", "/*** COLORS ***/\n\n[origami_ui_text] {\n\tcolor: var(--origami_ui_theme_common);\n}\n\n[origami_ui_text_contrast] {\n\tcolor: var(--origami_ui_theme_contrast);\n}\n\n[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n\n/*** FONT-SIZE ***/\n/* COMMON TEXT */\n[origami_ui_text],\n[origami_ui_text_contrast],\n[origami_ui_text_light],\n[origami_ui_text_main],\n[origami_ui_text_dark],\n[origami_ui_text_success],\n[origami_ui_text_warning] {\n\tfont-size: calc(var(--origami_ui_theme_font_size));\n}\n\n/* LARGE */\n[origami_ui_text_large],\n[origami_ui_text_contrast_large],\n[origami_ui_text_light_large],\n[origami_ui_text_main_large],\n[origami_ui_text_dark_large],\n[origami_ui_text_success_warning_large],\n[origami_ui_text_large] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));\n}\n\n/* LARGEST */\n[origami_ui_text_largest],\n[origami_ui_text_contrast_largest],\n[origami_ui_text_light_largest],\n[origami_ui_text_main_largest],\n[origami_ui_text_dark_largest],\n[origami_ui_text_success_largest],\n[origami_ui_text_warning_largest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);\n}\n\n/* SMALL */\n[origami_ui_text_small],\n[origami_ui_text_contrast_small],\n[origami_ui_text_light_small],\n[origami_ui_text_main_small],\n[origami_ui_text_dark_small],\n[origami_ui_text_success_small],\n[origami_ui_text_warning_small] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));\n}\n\n/* SMALLEST */\n[origami_ui_text_smallest],\n[origami_ui_text_contrast_smallest],\n[origami_ui_text_light_smallest],\n[origami_ui_text_main_smallest],\n[origami_ui_text_dark_smallest],\n[origami_ui_text_success_smallest],\n[origami_ui_text_warning_smallest]{\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);\n}\n");
+})($ || ($ = {}));
+//origami/ui/text/-css/text.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_hotkey extends $mol_plugin {
+        event() {
+            return {
+                ...super.event(),
+                keydown: (event) => this.keydown(event)
+            };
+        }
+        key() {
+            return {};
+        }
+        mod_ctrl() {
+            return false;
+        }
+        mod_alt() {
+            return false;
+        }
+        mod_shift() {
+            return false;
+        }
+        keydown(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_hotkey.prototype, "keydown", null);
+    $.$mol_hotkey = $mol_hotkey;
+})($ || ($ = {}));
+//mol/hotkey/-view.tree/hotkey.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_hotkey extends $.$mol_hotkey {
+            key() {
+                return super.key();
+            }
+            keydown(event) {
+                if (!event)
+                    return;
+                if (event.defaultPrevented)
+                    return;
+                let name = $mol_keyboard_code[event.keyCode];
+                if (this.mod_ctrl() !== (event.ctrlKey || event.metaKey))
+                    return;
+                if (this.mod_alt() !== event.altKey)
+                    return;
+                if (this.mod_shift() !== event.shiftKey)
+                    return;
+                const handle = this.key()[name];
+                if (handle)
+                    handle(event);
+            }
+        }
+        $$.$mol_hotkey = $mol_hotkey;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/hotkey/hotkey.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_string extends $mol_view {
+        dom_name() {
+            return "input";
+        }
+        enabled() {
+            return true;
+        }
+        minimal_height() {
+            return 40;
+        }
+        autocomplete() {
+            return false;
+        }
+        selection(next) {
+            if (next !== undefined)
+                return next;
+            return [
+                0,
+                0
+            ];
+        }
+        auto() {
+            return [
+                this.selection_watcher()
+            ];
+        }
+        field() {
+            return {
+                ...super.field(),
+                disabled: this.disabled(),
+                value: this.value_changed(),
+                placeholder: this.hint_visible(),
+                spellcheck: this.spellcheck(),
+                autocomplete: this.autocomplete_native(),
+                selectionEnd: this.selection_end(),
+                selectionStart: this.selection_start(),
+                inputMode: this.keyboard(),
+                enterkeyhint: this.enter()
+            };
+        }
+        attr() {
+            return {
+                ...super.attr(),
+                maxlength: this.length_max(),
+                type: this.type()
+            };
+        }
+        event() {
+            return {
+                ...super.event(),
+                input: (event) => this.event_change(event)
+            };
+        }
+        plugins() {
+            return [
+                this.Submit()
+            ];
+        }
+        selection_watcher() {
+            return null;
+        }
+        disabled() {
+            return false;
+        }
+        value(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        value_changed(next) {
+            return this.value(next);
+        }
+        hint() {
+            return "";
+        }
+        hint_visible() {
+            return this.hint();
+        }
+        spellcheck() {
+            return true;
+        }
+        autocomplete_native() {
+            return "";
+        }
+        selection_end() {
+            return 0;
+        }
+        selection_start() {
+            return 0;
+        }
+        keyboard() {
+            return "text";
+        }
+        enter() {
+            return "go";
+        }
+        length_max() {
+            return +Infinity;
+        }
+        type(next) {
+            if (next !== undefined)
+                return next;
+            return "text";
+        }
+        event_change(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        submit_with_ctrl() {
+            return false;
+        }
+        submit(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        Submit() {
+            const obj = new this.$.$mol_hotkey();
+            obj.mod_ctrl = () => this.submit_with_ctrl();
+            obj.key = () => ({
+                enter: (event) => this.submit(event)
+            });
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "selection", null);
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "value", null);
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "type", null);
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "event_change", null);
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "submit", null);
+    __decorate([
+        $mol_mem
+    ], $mol_string.prototype, "Submit", null);
+    $.$mol_string = $mol_string;
+})($ || ($ = {}));
+//mol/string/-view.tree/string.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_string extends $.$mol_string {
+            event_change(next) {
+                if (!next)
+                    return;
+                const el = next.target;
+                const from = el.selectionStart;
+                const to = el.selectionEnd;
+                el.value = this.value_changed(el.value);
+                if (to === null)
+                    return;
+                el.selectionEnd = to;
+                el.selectionStart = from;
+                this.selection_change(next);
+            }
+            hint_visible() {
+                return (this.enabled() ? this.hint() : '') || ' ';
+            }
+            disabled() {
+                return !this.enabled();
+            }
+            autocomplete_native() {
+                return this.autocomplete() ? 'on' : 'off';
+            }
+            selection_watcher() {
+                return new $mol_dom_listener(this.$.$mol_dom_context.document, 'selectionchange', $mol_wire_async(event => this.selection_change(event)));
+            }
+            selection_change(event) {
+                const el = this.dom_node();
+                if (el !== this.$.$mol_dom_context.document.activeElement)
+                    return;
+                const [from, to] = this.selection([
+                    el.selectionStart,
+                    el.selectionEnd,
+                ]);
+                el.selectionEnd = to;
+                el.selectionStart = from;
+                if (to !== from && el.selectionEnd === el.selectionStart) {
+                    el.selectionEnd = to;
+                }
+            }
+            selection_start() {
+                const el = this.dom_node();
+                if (el.selectionStart === null)
+                    return undefined;
+                return this.selection()[0];
+            }
+            selection_end() {
+                const el = this.dom_node();
+                if (el.selectionEnd === null)
+                    return undefined;
+                return this.selection()[1];
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_string.prototype, "selection_watcher", null);
+        $$.$mol_string = $mol_string;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/string/string.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/string/string.view.css", "[mol_string] {\n\tbox-sizing: border-box;\n\toutline-offset: 0;\n\tborder: none;\n\tborder-radius: var(--mol_gap_round);\n\twhite-space: pre-line;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n\tpadding: var(--mol_gap_text);\n\ttext-align: left;\n\tposition: relative;\n\tfont: inherit;\n\tflex: 1 1 auto;\n\tbackground: transparent;\n\tmin-width: 0;\n\tcolor: inherit;\n\tbackground: var(--mol_theme_field);\n}\n\n[mol_string]:disabled:not(:placeholder-shown) {\n\tbackground-color: transparent;\n\tcolor: var(--mol_theme_text);\n}\n\n[mol_string]:where(:not(:disabled)) {\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_line);\n}\n\n[mol_string]:where(:not(:disabled)):hover {\n\tbox-shadow: inset 0 0 0 2px var(--mol_theme_line);\n\tz-index: var(--mol_layer_hover);\n}\n\n[mol_string]:focus {\n\toutline: none;\n\tz-index: var(--mol_layer_focus);\n\tcolor: var(--mol_theme_text);\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_focus);\n}\n\n[mol_string]::placeholder {\n\tcolor: var(--mol_theme_shade);\n}\n\n[mol_string]::-ms-clear {\n\tdisplay: none;\n}\n");
+})($ || ($ = {}));
+//mol/string/-css/string.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_minus extends $mol_icon {
+        path() {
+            return "M19,13H5V11H19V13Z";
+        }
+    }
+    $.$mol_icon_minus = $mol_icon_minus;
+})($ || ($ = {}));
+//mol/icon/minus/-view.tree/minus.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_icon_plus extends $mol_icon {
+        path() {
+            return "M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z";
+        }
+    }
+    $.$mol_icon_plus = $mol_icon_plus;
+})($ || ($ = {}));
+//mol/icon/plus/-view.tree/plus.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_number extends $mol_view {
+        precision_view() {
+            return this.precision();
+        }
+        precision_change() {
+            return this.precision();
+        }
+        value_min() {
+            return -Infinity;
+        }
+        value_max() {
+            return +Infinity;
+        }
+        value(next) {
+            if (next !== undefined)
+                return next;
+            return +NaN;
+        }
+        enabled() {
+            return true;
+        }
+        sub() {
+            return [
+                this.String(),
+                this.Dec(),
+                this.Inc()
+            ];
+        }
+        precision() {
+            return 1;
+        }
+        type() {
+            return "tel";
+        }
+        value_string(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        hint() {
+            return " ";
+        }
+        string_enabled() {
+            return this.enabled();
+        }
+        submit(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        String() {
+            const obj = new this.$.$mol_string();
+            obj.type = () => this.type();
+            obj.value = (next) => this.value_string(next);
+            obj.hint = () => this.hint();
+            obj.enabled = () => this.string_enabled();
+            obj.submit = (next) => this.submit(next);
+            return obj;
+        }
+        event_dec(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        dec_enabled() {
+            return this.enabled();
+        }
+        dec_icon() {
+            const obj = new this.$.$mol_icon_minus();
+            return obj;
+        }
+        Dec() {
+            const obj = new this.$.$mol_button_minor();
+            obj.event_click = (next) => this.event_dec(next);
+            obj.enabled = () => this.dec_enabled();
+            obj.sub = () => [
+                this.dec_icon()
+            ];
+            return obj;
+        }
+        event_inc(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        inc_enabled() {
+            return this.enabled();
+        }
+        inc_icon() {
+            const obj = new this.$.$mol_icon_plus();
+            return obj;
+        }
+        Inc() {
+            const obj = new this.$.$mol_button_minor();
+            obj.event_click = (next) => this.event_inc(next);
+            obj.enabled = () => this.inc_enabled();
+            obj.sub = () => [
+                this.inc_icon()
+            ];
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "value", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "value_string", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "submit", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "String", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "event_dec", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "dec_icon", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "Dec", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "event_inc", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "inc_icon", null);
+    __decorate([
+        $mol_mem
+    ], $mol_number.prototype, "Inc", null);
+    $.$mol_number = $mol_number;
+})($ || ($ = {}));
+//mol/number/-view.tree/number.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/number/number.css", "[mol_number] {\n\tdisplay: flex;\n\tflex: 0 1 auto;\n\tposition: relative;\n\talign-items: stretch;\n\tmax-width: 100%;\n}\n\n[mol_number_string] {\n\tappearance: textfield;\n\tflex: 1 1 7rem;\n\twidth: 7rem;\n}\n\n[mol_number_string]::-webkit-inner-spin-button {\n\tdisplay: none;\n}\n");
+})($ || ($ = {}));
+//mol/number/-css/number.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_number extends $.$mol_number {
+            value_limited(next) {
+                if (next === undefined)
+                    return this.value();
+                if (next === '')
+                    return this.value(Number.NaN);
+                const min = this.value_min();
+                const max = this.value_max();
+                const val = Number(next);
+                if (val < min)
+                    return this.value(min);
+                if (val > max)
+                    return this.value(max);
+                return this.value(val);
+            }
+            event_dec(next) {
+                this.value_limited((this.value_limited() || 0) - this.precision_change());
+            }
+            event_inc(next) {
+                this.value_limited((this.value_limited() || 0) + this.precision_change());
+            }
+            value_string(next) {
+                const next_num = this.value_limited(next);
+                const precisionView = this.precision_view();
+                if (next_num === 0)
+                    return '0';
+                if (!next_num)
+                    return '';
+                if (precisionView >= 1) {
+                    return (next_num / precisionView).toFixed();
+                }
+                else {
+                    const fixedNumber = Math.log10(1 / precisionView);
+                    return next_num.toFixed(Math.ceil(fixedNumber));
+                }
+            }
+            dec_enabled() {
+                return this.enabled() && (!((this.value() || 0) <= this.value_min()));
+            }
+            inc_enabled() {
+                return this.enabled() && (!((this.value() || 0) >= this.value_max()));
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_number.prototype, "dec_enabled", null);
+        __decorate([
+            $mol_mem
+        ], $mol_number.prototype, "inc_enabled", null);
+        $$.$mol_number = $mol_number;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/number/number.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_labeler extends $mol_list {
+        rows() {
+            return [
+                this.Label(),
+                this.Content()
+            ];
+        }
+        label() {
+            return [
+                this.title()
+            ];
+        }
+        Label() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 32;
+            obj.sub = () => this.label();
+            return obj;
+        }
+        content() {
+            return [];
+        }
+        Content() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 24;
+            obj.sub = () => this.content();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Label", null);
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Content", null);
+    $.$mol_labeler = $mol_labeler;
+})($ || ($ = {}));
+//mol/labeler/-view.tree/labeler.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/labeler/labeler.view.css", "[mol_labeler] {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: stretch;\n\tcursor: inherit;\n}\n\n[mol_labeler_label] {\n\tmin-height: 2rem;\n\tcolor: var(--mol_theme_shade);\n\tpadding: .5rem .75rem 0;\n\tgap: 0 var(--mol_gap_block);\n\tflex-wrap: wrap;\n}\n\n[mol_labeler_content] {\n\tdisplay: flex;\n\tpadding: var(--mol_gap_text);\n}\n");
+})($ || ($ = {}));
+//mol/labeler/-css/labeler.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_form_field extends $mol_labeler {
+        bids() {
+            return [];
+        }
+        label() {
+            return [
+                this.name(),
+                this.Bid()
+            ];
+        }
+        content() {
+            return [
+                this.control()
+            ];
+        }
+        name() {
+            return "";
+        }
+        bid() {
+            return "";
+        }
+        Bid() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.bid()
+            ];
+            return obj;
+        }
+        control() {
+            return null;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_form_field.prototype, "Bid", null);
+    $.$mol_form_field = $mol_form_field;
+})($ || ($ = {}));
+//mol/form/field/-view.tree/field.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_form_field extends $.$mol_form_field {
+            bid() {
+                return this.bids().filter(Boolean)[0] ?? '';
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_form_field.prototype, "bid", null);
+        $$.$mol_form_field = $mol_form_field;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/form/field/field.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/form/field/field.view.css", "[mol_form_field] {\n\talign-items: stretch;\n}\n\n[mol_form_field_bid] {\n\tcolor: var(--mol_theme_focus);\n\tdisplay: inline-block;\n\ttext-shadow: 0 0;\n}\n\n[mol_form_field_content] {\n\tborder-radius: var(--mol_gap_round);\n}\n");
+})($ || ($ = {}));
+//mol/form/field/-css/field.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_button_major extends $mol_button_typed {
+        attr() {
+            return {
+                ...super.attr(),
+                mol_theme: "$mol_theme_accent"
+            };
+        }
+    }
+    $.$mol_button_major = $mol_button_major;
+})($ || ($ = {}));
+//mol/button/major/-view.tree/major.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/button/major/major.view.css", "[mol_button_major][disabled] {\n\topacity: .5;\n\tfilter: grayscale();\n}\n");
+})($ || ($ = {}));
+//mol/button/major/-css/major.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_row extends $mol_view {
+    }
+    $.$mol_row = $mol_row;
+})($ || ($ = {}));
+//mol/row/-view.tree/row.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/row/row.view.css", "[mol_row] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\talign-items: flex-start;\n\talign-content: flex-start;\n\tjustify-content: flex-start;\n\tpadding: var(--mol_gap_block);\n\tgap: var(--mol_gap_block);\n\tflex: 0 0 auto;\n\tbox-sizing: border-box;\n\tmax-width: 100%;\n}\n\n[mol_row] > * {\n\tmax-width: 100%;\n}\n");
+})($ || ($ = {}));
+//mol/row/-css/row.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_form extends $mol_list {
+        submit_allowed() {
+            return true;
+        }
+        submit_blocked() {
+            return false;
+        }
+        event() {
+            return {
+                ...super.event(),
+                keydown: (event) => this.keydown(event)
+            };
+        }
+        submit(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        rows() {
+            return [
+                this.Body(),
+                this.Foot()
+            ];
+        }
+        keydown(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        form_fields() {
+            return [];
+        }
+        body() {
+            return this.form_fields();
+        }
+        Body() {
+            const obj = new this.$.$mol_list();
+            obj.sub = () => this.body();
+            return obj;
+        }
+        buttons() {
+            return [];
+        }
+        foot() {
+            return this.buttons();
+        }
+        Foot() {
+            const obj = new this.$.$mol_row();
+            obj.sub = () => this.foot();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "submit", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "keydown", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "Body", null);
+    __decorate([
+        $mol_mem
+    ], $mol_form.prototype, "Foot", null);
+    $.$mol_form = $mol_form;
+})($ || ($ = {}));
+//mol/form/-view.tree/form.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_form extends $.$mol_form {
+            form_fields() {
+                return [...this.view_find(view => view instanceof $mol_form_field)]
+                    .map(path => path[path.length - 1]);
+            }
+            submit_allowed() {
+                return this.form_fields().every(field => !field.bid());
+            }
+            submit_blocked() {
+                return !this.submit_allowed();
+            }
+            keydown(next) {
+                if (next.ctrlKey && next.keyCode === $mol_keyboard_code.enter && !this.submit_blocked())
+                    this.submit(event);
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_form.prototype, "form_fields", null);
+        __decorate([
+            $mol_mem
+        ], $mol_form.prototype, "submit_allowed", null);
+        $$.$mol_form = $mol_form;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/form/form.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/form/form.view.css", "[mol_form] {\r\n\tgap: var(--mol_gap_block);\r\n}\r\n\r\n[mol_form_body] {\r\n\tgap: var(--mol_gap_block);\r\n}");
+})($ || ($ = {}));
+//mol/form/-css/form.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_ui_card extends $mol_view {
+        sub() {
+            return [
+                this.Left(),
+                this.Content(),
+                this.Right()
+            ];
+        }
+        left() {
+            return [];
+        }
+        Left() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.left();
+            return obj;
+        }
+        top() {
+            return [];
+        }
+        Top() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.top();
+            return obj;
+        }
+        bottom() {
+            return [];
+        }
+        Bottom() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.bottom();
+            return obj;
+        }
+        Content() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => [
+                this.Top(),
+                this.Bottom()
+            ];
+            return obj;
+        }
+        right() {
+            return [];
+        }
+        Right() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.right();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_ui_card.prototype, "Left", null);
+    __decorate([
+        $mol_mem
+    ], $origami_ui_card.prototype, "Top", null);
+    __decorate([
+        $mol_mem
+    ], $origami_ui_card.prototype, "Bottom", null);
+    __decorate([
+        $mol_mem
+    ], $origami_ui_card.prototype, "Content", null);
+    __decorate([
+        $mol_mem
+    ], $origami_ui_card.prototype, "Right", null);
+    $.$origami_ui_card = $origami_ui_card;
+})($ || ($ = {}));
+//origami/ui/card/-view.tree/card.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: var(--origami_ui_theme_border_radius);\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n\n[origami_ui_card_top]+[origami_ui_card_bottom] {\n\tmargin-top: -0.5rem;\n}\n");
+})($ || ($ = {}));
+//origami/ui/card/-css/card.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $origami_app_calc extends $mol_list {
+        rows() {
+            return [
+                this.Loan_card()
+            ];
+        }
+        Loan_form_title() {
+            const obj = new this.$.$origami_ui_text_dark_large();
+            obj.text = () => "**Рассчитайте ваш кредит и выберите отделение банка**";
+            return obj;
+        }
+        amount_label() {
+            return "Введите сумму";
+        }
+        amount_bid() {
+            return "";
+        }
+        amount(next) {
+            if (next !== undefined)
+                return next;
+            return 0;
+        }
+        Amount_control() {
+            const obj = new this.$.$mol_number();
+            obj.value = (next) => this.amount(next);
+            return obj;
+        }
+        Amount_field() {
+            const obj = new this.$.$mol_form_field();
+            obj.name = () => this.amount_label();
+            obj.bid = () => this.amount_bid();
+            obj.control = () => this.Amount_control();
+            return obj;
+        }
+        rate_label() {
+            return "Ставка по кредиту";
+        }
+        rate_bid() {
+            return "";
+        }
+        rate(next) {
+            if (next !== undefined)
+                return next;
+            return 0;
+        }
+        Rate_control() {
+            const obj = new this.$.$mol_number();
+            obj.value = (next) => this.rate(next);
+            return obj;
+        }
+        Rate_field() {
+            const obj = new this.$.$mol_form_field();
+            obj.name = () => this.rate_label();
+            obj.bid = () => this.rate_bid();
+            obj.control = () => this.Rate_control();
+            return obj;
+        }
+        term_label() {
+            return "Срок кредита";
+        }
+        term_bid() {
+            return "";
+        }
+        term(next) {
+            if (next !== undefined)
+                return next;
+            return 0;
+        }
+        Term_control() {
+            const obj = new this.$.$mol_number();
+            obj.value = (next) => this.term(next);
+            return obj;
+        }
+        Term_field() {
+            const obj = new this.$.$mol_form_field();
+            obj.name = () => this.term_label();
+            obj.bid = () => this.term_bid();
+            obj.control = () => this.Term_control();
+            return obj;
+        }
+        loan_submit(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        Calculate() {
+            const obj = new this.$.$mol_button_major();
+            obj.title = () => "Рассчитать";
+            obj.event_click = (next) => this.loan_submit(next);
+            return obj;
+        }
+        Loan_form() {
+            const obj = new this.$.$mol_form();
+            obj.form_fields = () => [
+                this.Amount_field(),
+                this.Rate_field(),
+                this.Term_field()
+            ];
+            obj.buttons = () => [
+                this.Calculate()
+            ];
+            return obj;
+        }
+        Loan_card() {
+            const obj = new this.$.$origami_ui_card();
+            obj.top = () => [
+                this.Loan_form_title(),
+                this.Loan_form()
+            ];
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Loan_form_title", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "amount", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Amount_control", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Amount_field", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "rate", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Rate_control", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Rate_field", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "term", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Term_control", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Term_field", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "loan_submit", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Calculate", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Loan_form", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Loan_card", null);
+    $.$origami_app_calc = $origami_app_calc;
+})($ || ($ = {}));
+//origami/app/calc/-view.tree/calc.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $origami_app_calc extends $.$origami_app_calc {
+        }
+        $$.$origami_app_calc = $origami_app_calc;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//origami/app/calc/calc.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("origami/app/calc/calc.view.css", "[origami_app_calc] {\n\tmargin-top: 0!important;\n\tflex-direction: column!important;\n}\n");
+})($ || ($ = {}));
+//origami/app/calc/-css/calc.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_vector extends Array {
         get length() {
             return super.length;
@@ -9389,209 +10603,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $origami_ui_text extends $mol_text {
-    }
-    $.$origami_ui_text = $origami_ui_text;
-    class $origami_ui_text_large extends $origami_ui_text {
-    }
-    $.$origami_ui_text_large = $origami_ui_text_large;
-    class $origami_ui_text_largest extends $origami_ui_text {
-    }
-    $.$origami_ui_text_largest = $origami_ui_text_largest;
-    class $origami_ui_text_small extends $origami_ui_text {
-    }
-    $.$origami_ui_text_small = $origami_ui_text_small;
-    class $origami_ui_text_smallest extends $origami_ui_text {
-    }
-    $.$origami_ui_text_smallest = $origami_ui_text_smallest;
-    class $origami_ui_text_contrast extends $origami_ui_text {
-    }
-    $.$origami_ui_text_contrast = $origami_ui_text_contrast;
-    class $origami_ui_text_contrast_large extends $origami_ui_text_contrast {
-    }
-    $.$origami_ui_text_contrast_large = $origami_ui_text_contrast_large;
-    class $origami_ui_text_contrast_largest extends $origami_ui_text_contrast {
-    }
-    $.$origami_ui_text_contrast_largest = $origami_ui_text_contrast_largest;
-    class $origami_ui_text_contrast_small extends $origami_ui_text_contrast {
-    }
-    $.$origami_ui_text_contrast_small = $origami_ui_text_contrast_small;
-    class $origami_ui_text_contrast_smallest extends $origami_ui_text_contrast {
-    }
-    $.$origami_ui_text_contrast_smallest = $origami_ui_text_contrast_smallest;
-    class $origami_ui_text_light extends $origami_ui_text {
-    }
-    $.$origami_ui_text_light = $origami_ui_text_light;
-    class $origami_ui_text_light_large extends $origami_ui_text_light {
-    }
-    $.$origami_ui_text_light_large = $origami_ui_text_light_large;
-    class $origami_ui_text_light_largest extends $origami_ui_text_light {
-    }
-    $.$origami_ui_text_light_largest = $origami_ui_text_light_largest;
-    class $origami_ui_text_light_small extends $origami_ui_text_light {
-    }
-    $.$origami_ui_text_light_small = $origami_ui_text_light_small;
-    class $origami_ui_text_light_smallest extends $origami_ui_text_light {
-    }
-    $.$origami_ui_text_light_smallest = $origami_ui_text_light_smallest;
-    class $origami_ui_text_main extends $origami_ui_text {
-    }
-    $.$origami_ui_text_main = $origami_ui_text_main;
-    class $origami_ui_text_main_large extends $origami_ui_text_main {
-    }
-    $.$origami_ui_text_main_large = $origami_ui_text_main_large;
-    class $origami_ui_text_main_largest extends $origami_ui_text_main {
-    }
-    $.$origami_ui_text_main_largest = $origami_ui_text_main_largest;
-    class $origami_ui_text_main_small extends $origami_ui_text_main {
-    }
-    $.$origami_ui_text_main_small = $origami_ui_text_main_small;
-    class $origami_ui_text_main_smallest extends $origami_ui_text_main {
-    }
-    $.$origami_ui_text_main_smallest = $origami_ui_text_main_smallest;
-    class $origami_ui_text_dark extends $origami_ui_text {
-    }
-    $.$origami_ui_text_dark = $origami_ui_text_dark;
-    class $origami_ui_text_dark_large extends $origami_ui_text_dark {
-    }
-    $.$origami_ui_text_dark_large = $origami_ui_text_dark_large;
-    class $origami_ui_text_dark_largest extends $origami_ui_text_dark {
-    }
-    $.$origami_ui_text_dark_largest = $origami_ui_text_dark_largest;
-    class $origami_ui_text_dark_small extends $origami_ui_text_dark {
-    }
-    $.$origami_ui_text_dark_small = $origami_ui_text_dark_small;
-    class $origami_ui_text_dark_smallest extends $origami_ui_text_dark {
-    }
-    $.$origami_ui_text_dark_smallest = $origami_ui_text_dark_smallest;
-    class $origami_ui_text_success extends $origami_ui_text {
-    }
-    $.$origami_ui_text_success = $origami_ui_text_success;
-    class $origami_ui_text_success_large extends $origami_ui_text_success {
-    }
-    $.$origami_ui_text_success_large = $origami_ui_text_success_large;
-    class $origami_ui_text_success_largest extends $origami_ui_text_success {
-    }
-    $.$origami_ui_text_success_largest = $origami_ui_text_success_largest;
-    class $origami_ui_text_success_small extends $origami_ui_text_success {
-    }
-    $.$origami_ui_text_success_small = $origami_ui_text_success_small;
-    class $origami_ui_text_success_smallest extends $origami_ui_text_success {
-    }
-    $.$origami_ui_text_success_smallest = $origami_ui_text_success_smallest;
-    class $origami_ui_text_warning extends $origami_ui_text {
-    }
-    $.$origami_ui_text_warning = $origami_ui_text_warning;
-    class $origami_ui_text_warning_large extends $origami_ui_text_warning {
-    }
-    $.$origami_ui_text_warning_large = $origami_ui_text_warning_large;
-    class $origami_ui_text_warning_largest extends $origami_ui_text_warning {
-    }
-    $.$origami_ui_text_warning_largest = $origami_ui_text_warning_largest;
-    class $origami_ui_text_warning_small extends $origami_ui_text_warning {
-    }
-    $.$origami_ui_text_warning_small = $origami_ui_text_warning_small;
-    class $origami_ui_text_warning_smallest extends $origami_ui_text_warning {
-    }
-    $.$origami_ui_text_warning_smallest = $origami_ui_text_warning_smallest;
-})($ || ($ = {}));
-//origami/ui/text/-view.tree/text.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("origami/ui/theme/theme.view.css", ":root {\n\t/* FONT STEP */\n\t--origami_ui_theme_font_size: 16px;\n\t--origami_ui_theme_font_size_step: 2px;\n\n\n\t/* COLORS */\n\t--origami_ui_theme_common: #000000;\n\t--origami_ui_theme_contrast: #FFFFFF;\n\n\t--origami_ui_theme_light: #99A9CD;\n\t--origami_ui_theme_main: #1E4BD2;\n\t--origami_ui_theme_dark: #002882;\n\n\t--origami_ui_theme_warning: #F1A038;\n\t--origami_ui_theme_success: #4CC864;\n\n\t--origami_ui_theme_background: #EAEDF5;\n\n\n\t/* BORDER RADIUS */\n\t--origami_ui_theme_border_radius: 20px;\n}\n");
-})($ || ($ = {}));
-//origami/ui/theme/-css/theme.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("origami/ui/text/text.view.css", "/*** COLORS ***/\n\n[origami_ui_text] {\n\tcolor: var(--origami_ui_theme_common);\n}\n\n[origami_ui_text_contrast] {\n\tcolor: var(--origami_ui_theme_contrast);\n}\n\n[origami_ui_text_light] {\n\tcolor: var(--origami_ui_theme_light);\n}\n\n[origami_ui_text_main] {\n\tcolor: var(--origami_ui_theme_main);\n}\n\n[origami_ui_text_dark] {\n\tcolor: var(--origami_ui_theme_dark);\n}\n\n[origami_ui_text_warning] {\n\tcolor: var(--origami_ui_theme_warning);\n}\n\n[origami_ui_text_success] {\n\tcolor: var(--origami_ui_theme_success);\n}\n\n/*** FONT-SIZE ***/\n/* COMMON TEXT */\n[origami_ui_text],\n[origami_ui_text_contrast],\n[origami_ui_text_light],\n[origami_ui_text_main],\n[origami_ui_text_dark],\n[origami_ui_text_success],\n[origami_ui_text_warning] {\n\tfont-size: calc(var(--origami_ui_theme_font_size));\n}\n\n/* LARGE */\n[origami_ui_text_large],\n[origami_ui_text_contrast_large],\n[origami_ui_text_light_large],\n[origami_ui_text_main_large],\n[origami_ui_text_dark_large],\n[origami_ui_text_success_warning_large],\n[origami_ui_text_large] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step));\n}\n\n/* LARGEST */\n[origami_ui_text_largest],\n[origami_ui_text_contrast_largest],\n[origami_ui_text_light_largest],\n[origami_ui_text_main_largest],\n[origami_ui_text_dark_largest],\n[origami_ui_text_success_largest],\n[origami_ui_text_warning_largest] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) + var(--origami_ui_theme_font_size_step) * 2);\n}\n\n/* SMALL */\n[origami_ui_text_small],\n[origami_ui_text_contrast_small],\n[origami_ui_text_light_small],\n[origami_ui_text_main_small],\n[origami_ui_text_dark_small],\n[origami_ui_text_success_small],\n[origami_ui_text_warning_small] {\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step));\n}\n\n/* SMALLEST */\n[origami_ui_text_smallest],\n[origami_ui_text_contrast_smallest],\n[origami_ui_text_light_smallest],\n[origami_ui_text_main_smallest],\n[origami_ui_text_dark_smallest],\n[origami_ui_text_success_smallest],\n[origami_ui_text_warning_smallest]{\n\tfont-size: calc(var(--origami_ui_theme_font_size) - var(--origami_ui_theme_font_size_step) * 2);\n}\n");
-})($ || ($ = {}));
-//origami/ui/text/-css/text.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $origami_ui_card extends $mol_view {
-        sub() {
-            return [
-                this.Left(),
-                this.Content(),
-                this.Right()
-            ];
-        }
-        left() {
-            return [];
-        }
-        Left() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.left();
-            return obj;
-        }
-        top() {
-            return [];
-        }
-        Top() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.top();
-            return obj;
-        }
-        bottom() {
-            return [];
-        }
-        Bottom() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.bottom();
-            return obj;
-        }
-        Content() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Top(),
-                this.Bottom()
-            ];
-            return obj;
-        }
-        right() {
-            return [];
-        }
-        Right() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.right();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $origami_ui_card.prototype, "Left", null);
-    __decorate([
-        $mol_mem
-    ], $origami_ui_card.prototype, "Top", null);
-    __decorate([
-        $mol_mem
-    ], $origami_ui_card.prototype, "Bottom", null);
-    __decorate([
-        $mol_mem
-    ], $origami_ui_card.prototype, "Content", null);
-    __decorate([
-        $mol_mem
-    ], $origami_ui_card.prototype, "Right", null);
-    $.$origami_ui_card = $origami_ui_card;
-})($ || ($ = {}));
-//origami/ui/card/-view.tree/card.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("origami/ui/card/card.view.css", "[origami_ui_card] {\n\tbackground-color: white;\n\tborder-radius: var(--origami_ui_theme_border_radius);\n\tpadding: 0.5rem;\n}\n\n[origami_ui_card_content] {\n\tflex-grow: 1;\n}\n\n[origami_ui_card_bottom] {\n\tflex-direction: row;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n}\n\n[origami_ui_card_top]+[origami_ui_card_bottom] {\n\tmargin-top: -0.5rem;\n}\n");
-})($ || ($ = {}));
-//origami/ui/card/-css/card.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_icon_chevron_right extends $mol_icon {
         path() {
             return "M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z";
@@ -9807,55 +10818,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_text_list extends $mol_text {
-        auto_scroll() {
-            return null;
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                mol_text_list_type: this.type()
-            };
-        }
-        Paragraph(id) {
-            const obj = new this.$.$mol_text_list_item();
-            obj.index = () => this.item_index(id);
-            obj.sub = () => this.block_content(id);
-            return obj;
-        }
-        type() {
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_text_list.prototype, "Paragraph", null);
-    $.$mol_text_list = $mol_text_list;
-    class $mol_text_list_item extends $mol_paragraph {
-        attr() {
-            return {
-                ...super.attr(),
-                mol_text_list_item_index: this.index()
-            };
-        }
-        index() {
-            return 0;
-        }
-    }
-    $.$mol_text_list_item = $mol_text_list_item;
-})($ || ($ = {}));
-//mol/text/list/-view.tree/list.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/text/list/list.view.css", "[mol_text_list] {\r\n\tpadding-left: 1.75rem;\r\n}\r\n\r\n[mol_text_list_item] {\r\n\tcontain: none;\r\n\tdisplay: list-item;\r\n}\r\n\r\n[mol_text_list_item]::before {\r\n\tcontent: attr( mol_text_list_item_index ) \".\";\r\n\twidth: 1.25rem;\r\n\tdisplay: inline-block;\r\n\tposition: absolute;\r\n\tmargin-left: -1.75rem;\r\n\ttext-align: end;\r\n}\r\n\r\n[mol_text_list_type=\"-\"] > [mol_text_list_item]::before,\r\n[mol_text_list_type=\"*\"] > [mol_text_list_item]::before {\r\n\tcontent: \"•\";\r\n}\r\n");
-})($ || ($ = {}));
-//mol/text/list/-css/list.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $origami_app extends $mol_page {
         title() {
             return "More Tech 5.0";
@@ -9872,9 +10834,8 @@ var $;
         }
         body() {
             return [
-                this.Welcome(),
+                this.Main(),
                 this.World(),
-                this.Route(),
                 this.Bank(),
                 this.Atms(),
                 this.Profile()
@@ -9882,7 +10843,7 @@ var $;
         }
         foot() {
             return [
-                this.Map_link(),
+                this.Main_link(),
                 this.Bank_link(),
                 this.Atms_link(),
                 this.Api_link()
@@ -9904,25 +10865,12 @@ var $;
             ];
             return obj;
         }
-        Welcome() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "Сервис для подбора оптимального отделения банка, учитывая потребности клиента и доступность услуг.";
+        Main() {
+            const obj = new this.$.$origami_app_calc();
             return obj;
         }
         World() {
             const obj = new this.$.$origami_app_world();
-            return obj;
-        }
-        Route_text() {
-            const obj = new this.$.$mol_text();
-            obj.text = () => "Построение пешего и автомобильного маршрута (допустимо использование сторонних сервисов)";
-            return obj;
-        }
-        Route() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Route_text()
-            ];
             return obj;
         }
         Bank() {
@@ -9937,10 +10885,10 @@ var $;
             const obj = new this.$.$origami_app_profile();
             return obj;
         }
-        Map_link() {
+        Main_link() {
             const obj = new this.$.$origami_app_menu_link();
             obj.img = () => "origami/app/assets/img/main.svg";
-            obj.link = () => "map";
+            obj.link = () => "main";
             obj.title = () => "Главная";
             return obj;
         }
@@ -9977,16 +10925,10 @@ var $;
     ], $origami_app.prototype, "Settings", null);
     __decorate([
         $mol_mem
-    ], $origami_app.prototype, "Welcome", null);
+    ], $origami_app.prototype, "Main", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "World", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Route_text", null);
-    __decorate([
-        $mol_mem
-    ], $origami_app.prototype, "Route", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Bank", null);
@@ -9998,7 +10940,7 @@ var $;
     ], $origami_app.prototype, "Profile", null);
     __decorate([
         $mol_mem
-    ], $origami_app.prototype, "Map_link", null);
+    ], $origami_app.prototype, "Main_link", null);
     __decorate([
         $mol_mem
     ], $origami_app.prototype, "Bank_link", null);
@@ -10042,28 +10984,6 @@ var $;
     $.$origami_app_menu_link = $origami_app_menu_link;
 })($ || ($ = {}));
 //origami/app/-view.tree/app.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_button_major extends $mol_button_typed {
-        attr() {
-            return {
-                ...super.attr(),
-                mol_theme: "$mol_theme_accent"
-            };
-        }
-    }
-    $.$mol_button_major = $mol_button_major;
-})($ || ($ = {}));
-//mol/button/major/-view.tree/major.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/button/major/major.view.css", "[mol_button_major][disabled] {\n\topacity: .5;\n\tfilter: grayscale();\n}\n");
-})($ || ($ = {}));
-//mol/button/major/-css/major.view.css.ts
 ;
 "use strict";
 var $;
@@ -10226,13 +11146,13 @@ var $;
             body() {
                 let page = this.$.$mol_state_arg.value('page') || 'default';
                 const configs = {
-                    route: this.Route(),
+                    main: this.Main(),
                     map: this.World(),
                     bank: this.Bank(),
                     atms: this.Atms(),
                     profile: this.Profile(),
                 };
-                return [configs[page] ?? this.Welcome()];
+                return [configs[page] ?? this.Main()];
             }
             todo_test() {
                 let result = this.$.$mol_fetch.json('https://origami-team.site/office/all');
