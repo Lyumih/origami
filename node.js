@@ -9668,9 +9668,31 @@ var $;
 var $;
 (function ($) {
     class $origami_app_calc extends $mol_list {
+        message_done() {
+            return "Done";
+        }
+        bid_required(id) {
+            return "Не заполнено";
+        }
+        bid_min() {
+            return "Значение должны быть больше 0";
+        }
+        bid_number() {
+            return "Должно быть число";
+        }
+        bid_rate_max() {
+            return "Ставка по кредиту не может превышать 100%";
+        }
+        bid_term_min() {
+            return "Минимальный срок кредита: 3 месяца";
+        }
+        bid_term_max() {
+            return "Максимальный срок кредита: 360 месяцев";
+        }
         rows() {
             return [
-                this.Loan_card()
+                this.Loan_card(),
+                this.Result_card()
             ];
         }
         Loan_form_title() {
@@ -9687,7 +9709,7 @@ var $;
         amount(next) {
             if (next !== undefined)
                 return next;
-            return 0;
+            return 27000;
         }
         Amount_control() {
             const obj = new this.$.$mol_number();
@@ -9710,7 +9732,7 @@ var $;
         rate(next) {
             if (next !== undefined)
                 return next;
-            return 0;
+            return 18.3;
         }
         Rate_control() {
             const obj = new this.$.$mol_number();
@@ -9733,7 +9755,7 @@ var $;
         term(next) {
             if (next !== undefined)
                 return next;
-            return 0;
+            return 12;
         }
         Term_control() {
             const obj = new this.$.$mol_number();
@@ -9775,6 +9797,68 @@ var $;
             obj.top = () => [
                 this.Loan_form_title(),
                 this.Loan_form()
+            ];
+            return obj;
+        }
+        Result_title() {
+            const obj = new this.$.$origami_ui_text_dark_large();
+            obj.text = () => "Расчет вашего кредита";
+            return obj;
+        }
+        first_payment() {
+            return "";
+        }
+        First_payment() {
+            const obj = new this.$.$origami_app_calc_line();
+            obj.title = () => "Дата первого платежа";
+            obj.value = () => this.first_payment();
+            return obj;
+        }
+        last_payment() {
+            return "";
+        }
+        Last_payment() {
+            const obj = new this.$.$origami_app_calc_line();
+            obj.title = () => "Дата последнего платежа";
+            obj.value = () => this.last_payment();
+            return obj;
+        }
+        overpayment() {
+            return "";
+        }
+        Overpayment() {
+            const obj = new this.$.$origami_app_calc_line();
+            obj.title = () => "Переплата";
+            obj.value = () => this.overpayment();
+            return obj;
+        }
+        amount_all() {
+            return "";
+        }
+        Amount_all() {
+            const obj = new this.$.$origami_app_calc_line();
+            obj.title = () => "Общая сумма";
+            obj.value = () => this.amount_all();
+            return obj;
+        }
+        monthly_payment() {
+            return "";
+        }
+        Monthly_payment() {
+            const obj = new this.$.$origami_app_calc_line();
+            obj.title = () => "Ежемесячный платёж";
+            obj.value = () => this.monthly_payment();
+            return obj;
+        }
+        Result_card() {
+            const obj = new this.$.$origami_ui_card();
+            obj.top = () => [
+                this.Result_title(),
+                this.First_payment(),
+                this.Last_payment(),
+                this.Overpayment(),
+                this.Amount_all(),
+                this.Monthly_payment()
             ];
             return obj;
         }
@@ -9821,7 +9905,59 @@ var $;
     __decorate([
         $mol_mem
     ], $origami_app_calc.prototype, "Loan_card", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Result_title", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "First_payment", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Last_payment", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Overpayment", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Amount_all", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Monthly_payment", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc.prototype, "Result_card", null);
     $.$origami_app_calc = $origami_app_calc;
+    class $origami_app_calc_line extends $mol_view {
+        sub() {
+            return [
+                this.Title(),
+                this.Value()
+            ];
+        }
+        title() {
+            return "";
+        }
+        Title() {
+            const obj = new this.$.$origami_ui_text_dark();
+            obj.text = () => this.title();
+            return obj;
+        }
+        value() {
+            return "";
+        }
+        Value() {
+            const obj = new this.$.$origami_ui_text_light();
+            obj.text = () => this.value();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc_line.prototype, "Title", null);
+    __decorate([
+        $mol_mem
+    ], $origami_app_calc_line.prototype, "Value", null);
+    $.$origami_app_calc_line = $origami_app_calc_line;
 })($ || ($ = {}));
 //origami/app/calc/-view.tree/calc.view.tree.ts
 ;
@@ -9831,15 +9967,43 @@ var $;
     var $$;
     (function ($$) {
         class $origami_app_calc extends $.$origami_app_calc {
-            fetch_loan() {
-                const uri = `https://origami-team.site/calc/?loan_amount=${this.amount()}&interest_rate=${this.rate()}&loan_term=${this.term()}`;
-                return this.$.$mol_fetch.json(uri);
+            result_loan_data(next) {
+                console.log(next);
+                console.log(123);
+                if (!next)
+                    return;
+                return this.$.$mol_fetch.json('https://origami-team.site/calc/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ loan_amount: this.amount(), interest_rate: this.rate(), loan_term: this.term() })
+                });
             }
             loan_submit(next) {
                 console.log(next);
-                this.fetch_loan();
+                this.result_loan_data(true);
+            }
+            first_payment() {
+                return this.result_loan_data()?.createdAt ?? '';
+            }
+            last_payment() {
+                return this.result_loan_data()?.dateAtLast ?? '';
+            }
+            overpayment() {
+                return String(this.result_loan_data()?.overpayment ?? '') + ' ₽';
+            }
+            amount_all() {
+                return String(this.result_loan_data()?.sumCreditFull ?? '') + ' ₽';
+            }
+            monthly_payment() {
+                return String(this.result_loan_data()?.monthlyPayment ?? '') + ' ₽';
+            }
+            rows() {
+                return this.result_loan_data() ? [this.Result_card()] : [this.Loan_card()];
             }
         }
+        __decorate([
+            $mol_mem
+        ], $origami_app_calc.prototype, "result_loan_data", null);
         $$.$origami_app_calc = $origami_app_calc;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));

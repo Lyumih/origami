@@ -2916,6 +2916,13 @@ declare namespace $ {
 
 declare namespace $ {
     class $origami_app_calc extends $mol_list {
+        message_done(): string;
+        bid_required(id: any): string;
+        bid_min(): string;
+        bid_number(): string;
+        bid_rate_max(): string;
+        bid_term_min(): string;
+        bid_term_max(): string;
         rows(): readonly any[];
         Loan_form_title(): $origami_ui_text_dark_large;
         amount_label(): string;
@@ -2937,13 +2944,52 @@ declare namespace $ {
         Calculate(): $mol_button_major;
         Loan_form(): $$.$mol_form;
         Loan_card(): $origami_ui_card;
+        Result_title(): $origami_ui_text_dark_large;
+        first_payment(): string;
+        First_payment(): $origami_app_calc_line;
+        last_payment(): string;
+        Last_payment(): $origami_app_calc_line;
+        overpayment(): string;
+        Overpayment(): $origami_app_calc_line;
+        amount_all(): string;
+        Amount_all(): $origami_app_calc_line;
+        monthly_payment(): string;
+        Monthly_payment(): $origami_app_calc_line;
+        Result_card(): $origami_ui_card;
+    }
+    class $origami_app_calc_line extends $mol_view {
+        sub(): readonly any[];
+        title(): string;
+        Title(): $origami_ui_text_dark;
+        value(): string;
+        Value(): $origami_ui_text_light;
     }
 }
 
 declare namespace $.$$ {
     class $origami_app_calc extends $.$origami_app_calc {
-        fetch_loan(): unknown;
+        result_loan_data(next?: any): {
+            monthlyPayment: number;
+            sumCreditFull: number;
+            sumPayment: number;
+            overpayment: number;
+            createdAt: string;
+            dateAtLast: string;
+            office: {
+                id: string;
+                salePointName: string;
+                address: string;
+                latitude: number;
+                longitude: number;
+            };
+        } | undefined;
         loan_submit(next?: any): void;
+        first_payment(): string;
+        last_payment(): string;
+        overpayment(): string;
+        amount_all(): string;
+        monthly_payment(): string;
+        rows(): readonly $mol_view[];
     }
 }
 

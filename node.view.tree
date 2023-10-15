@@ -674,6 +674,13 @@ $origami_ui_card $mol_view
 		<= Right $mol_list rows <= right /$mol_view
 
 $origami_app_calc $mol_list
+	message_done \Done
+	bid_required* \Не заполнено
+	bid_min \Значение должны быть больше 0
+	bid_number \Должно быть число
+	bid_rate_max \Ставка по кредиту не может превышать 100%
+	bid_term_min \Минимальный срок кредита: 3 месяца
+	bid_term_max \Максимальный срок кредита: 360 месяцев
 	rows /
 		<= Loan_card $origami_ui_card top /
 			<= Loan_form_title $origami_ui_text_dark_large text \**Рассчитайте ваш кредит и выберите отделение банка**
@@ -683,21 +690,44 @@ $origami_app_calc $mol_list
 						name <= amount_label \Введите сумму
 						bid <= amount_bid \
 						control <= Amount_control $mol_number
-							value? <=> amount? 0
+							value? <=> amount? 27000
 					<= Rate_field $mol_form_field
 						name <= rate_label \Ставка по кредиту
 						bid <= rate_bid \
 						control <= Rate_control $mol_number
-							value? <=> rate? 0
+							value? <=> rate? 18.3
 					<= Term_field $mol_form_field
 						name <= term_label \Срок кредита
 						bid <= term_bid \
 						control <= Term_control $mol_number
-							value? <=> term? 0
+							value? <=> term? 12
 				buttons /
 					<= Calculate $mol_button_major
 						title \Рассчитать
 						event_click? <=> loan_submit? null
+		<= Result_card $origami_ui_card
+			top /
+				<= Result_title $origami_ui_text_dark_large text \Расчет вашего кредита
+				<= First_payment $origami_app_calc_line
+					title \Дата первого платежа
+					value <= first_payment \
+				<= Last_payment $origami_app_calc_line
+					title \Дата последнего платежа
+					value <= last_payment \
+				<= Overpayment $origami_app_calc_line
+					title \Переплата
+					value <= overpayment \
+				<= Amount_all $origami_app_calc_line
+					title \Общая сумма
+					value <= amount_all \
+				<= Monthly_payment $origami_app_calc_line
+					title \Ежемесячный платёж
+					value <= monthly_payment \
+
+$origami_app_calc_line $mol_view
+	sub /
+		<= Title $origami_ui_text_dark text <= title \
+		<= Value $origami_ui_text_light text <= value \
 
 $mol_map_yandex_mark $mol_object
 	pos $mol_vector_2d /
