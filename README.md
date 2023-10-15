@@ -2,7 +2,7 @@
 
 Команда Origami
 
-САЙТ: 
+САЙТ: https://lyumih.github.io/origami/#!page=bank
 
 Инструкция по запуску локально:
 
