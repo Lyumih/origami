@@ -18,3 +18,12 @@
 	border-radius: none;
 	text-align: end;
 }
+/* 
+[origami_app_calc_map] {
+	height: 200px;
+	max-height: 200px;
+} */
+
+[origami_app_calc]>[origami_app_world_map] {
+	height: 150px!important;
+}

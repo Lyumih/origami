@@ -1,5 +1,10 @@
 [origami_app_world_map] {
 	filter: none;
-	min-height: calc(100vh - 270px);
+	height: calc(100vh - 290px);
 	min-width: 100px;
+	border-radius: calc(var(--origami_ui_theme_border_radius));
+}
+
+ymaps {
+	border-radius: calc(var(--origami_ui_theme_border_radius));
 }

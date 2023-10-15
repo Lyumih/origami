@@ -30,6 +30,7 @@ $origami_app_calc $mol_list
 					<= Calculate $mol_button_major
 						title \Рассчитать
 						event_click? <=> loan_submit? null
+		<= Map $origami_app_world
 		<= Result_card $origami_ui_card
 			top /
 				<= Result_title $origami_ui_text_dark_large text \Расчет вашего кредита

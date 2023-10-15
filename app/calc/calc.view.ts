@@ -5,7 +5,7 @@ namespace $.$$ {
 		result_loan_data( next?: any ) {
 			console.log( next )
 			console.log( 123 )
-			if (!next) return
+			if( !next ) return
 
 			return this.$.$mol_fetch.json( 'https://origami-team.site/calc/', {
 				method: 'POST',
@@ -29,7 +29,7 @@ namespace $.$$ {
 		}
 		loan_submit( next?: any ) {
 			console.log( next )
-			this.result_loan_data(true)
+			this.result_loan_data( true )
 		}
 
 		first_payment(): string {
@@ -40,17 +40,18 @@ namespace $.$$ {
 			return this.result_loan_data()?.dateAtLast ?? ''
 		}
 		overpayment(): string {
-			return String(this.result_loan_data()?.overpayment ?? '') + ' ₽'
+			return String( this.result_loan_data()?.overpayment ?? '' ) + ' ₽'
 		}
 		amount_all(): string {
-			return String(this.result_loan_data()?.sumCreditFull ?? '') + ' ₽'
+			return String( this.result_loan_data()?.sumCreditFull ?? '' ) + ' ₽'
 		}
 		monthly_payment(): string {
-			return String(this.result_loan_data()?.monthlyPayment ?? '') + ' ₽'
+			return String( this.result_loan_data()?.monthlyPayment ?? '' ) + ' ₽'
 		}
 
 		rows(): readonly $mol_view[] {
-			return this.result_loan_data() ? [this.Result_card()] : [this.Loan_card()]
+			return this.result_loan_data() ? [ this.Map(), this.Result_card() ] : [ this.Loan_card() ]
+			// return [ this.Map(), this.Result_card() ]
 		}
 	}
 }
